@@ -1,0 +1,2 @@
+1. Install Freescale MQX RTOS http://www.freescale.com/mqx into this folder.
+2. Overwrite the default config\twrk70f120m\user_config.h file with the one from _config subfolder.
