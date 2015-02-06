@@ -1,33 +1,28 @@
-/**HEADER**********************************************************************
+/*HEADER**********************************************************************
 *
-* Copyright (c) 2008 Freescale Semiconductor;
-* All Rights Reserved
+* Copyright 2008 Freescale Semiconductor, Inc.
 *
-*******************************************************************************
+* This software is owned or controlled by Freescale Semiconductor.
+* Use of this software is governed by the Freescale MQX RTOS License
+* distributed with this Material.
+* See the MQX_RTOS_LICENSE file distributed for more details.
 *
-* THIS SOFTWARE IS PROVIDED BY FREESCALE "AS IS" AND ANY EXPRESSED OR
-* IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
-* OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
-* IN NO EVENT SHALL FREESCALE OR ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
-* INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
-* (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-* SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
-* HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
-* STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING
-* IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF
-* THE POSSIBILITY OF SUCH DAMAGE.
-*
-*******************************************************************************
-*
-* $FileName: user_config.h$
-* $Version : 3.8.15.0$
-* $Date    : Sep-5-2012$
+* Brief License Summary:
+* This software is provided in source form for you to use free of charge,
+* but it is not open source software. You are allowed to use this software
+* but you cannot redistribute it or derivative works of it in source form.
+* The software may be used only in connection with a product containing
+* a Freescale microprocessor, microcontroller, or digital signal processor.
+* See license agreement file for full license terms including other
+* restrictions.
+*****************************************************************************
 *
 * Comments:
 *
 *   User configuration for MQX components
 *
-*END**************************************************************************/
+*
+*END************************************************************************/
 
 #ifndef __user_config_h__
 #define __user_config_h__
@@ -35,7 +30,14 @@
 /* mandatory CPU identification */
 #define MQX_CPU                 PSP_CPU_MK70F120M
 
-/* Silicon version number */
+/* BSPCFG_ENABLE_LEGACY_II2C_SLAVE is the flag to enable interrupt driven i2c
+   slave driver.
+   If it's enabled, the driver will register interrupt handler to corresponding
+   I2C SDA pin muxing port vector, and please make sure your application would not
+   register handler on same interrupt vector.
+ */
+#define BSPCFG_ENABLE_LEGACY_II2C_SLAVE     0
+
 #define MK70_REV_1_0             1
 
 /* MGCT: <generated_code> */
