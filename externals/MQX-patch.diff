@@ -1,72 +1,13 @@
 diff --git a/externals/MQX_4_1/config/twrk70f120m/user_config.h b/externals/MQX_4_1/config/twrk70f120m/user_config.h
-index 4040dd2..ae3b53e 100644
+index 4040dd2..535b03a 100644
 --- a/externals/MQX_4_1/config/twrk70f120m/user_config.h
 +++ b/externals/MQX_4_1/config/twrk70f120m/user_config.h
-@@ -1,28 +1,33 @@
--/*HEADER**********************************************************************
-+/**HEADER**********************************************************************
- *
--* Copyright 2008 Freescale Semiconductor, Inc.
-+* Copyright (c) 2008 Freescale Semiconductor;
-+* All Rights Reserved
- *
--* This software is owned or controlled by Freescale Semiconductor.
--* Use of this software is governed by the Freescale MQX RTOS License
--* distributed with this Material.
--* See the MQX_RTOS_LICENSE file distributed for more details.
-+*******************************************************************************
- *
--* Brief License Summary:
--* This software is provided in source form for you to use free of charge,
--* but it is not open source software. You are allowed to use this software
--* but you cannot redistribute it or derivative works of it in source form.
--* The software may be used only in connection with a product containing
--* a Freescale microprocessor, microcontroller, or digital signal processor.
--* See license agreement file for full license terms including other
--* restrictions.
--*****************************************************************************
-+* THIS SOFTWARE IS PROVIDED BY FREESCALE "AS IS" AND ANY EXPRESSED OR
-+* IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
-+* OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
-+* IN NO EVENT SHALL FREESCALE OR ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
-+* INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
-+* (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-+* SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
-+* HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
-+* STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING
-+* IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF
-+* THE POSSIBILITY OF SUCH DAMAGE.
-+*
-+*******************************************************************************
-+*
-+* $FileName: user_config.h$
-+* $Version : 3.8.15.0$
-+* $Date    : Sep-5-2012$
- *
- * Comments:
- *
- *   User configuration for MQX components
- *
--*
--*END************************************************************************/
-+*END**************************************************************************/
+@@ -38,12 +38,14 @@
+  */
+ #define BSPCFG_ENABLE_LEGACY_II2C_SLAVE     0
  
- #ifndef __user_config_h__
- #define __user_config_h__
-@@ -30,20 +35,15 @@
- /* mandatory CPU identification */
- #define MQX_CPU                 PSP_CPU_MK70F120M
- 
--/* BSPCFG_ENABLE_LEGACY_II2C_SLAVE is the flag to enable interrupt driven i2c
--   slave driver.
--   If it's enabled, the driver will register interrupt handler to corresponding
--   I2C SDA pin muxing port vector, and please make sure your application would not
--   register handler on same interrupt vector.
-- */
--#define BSPCFG_ENABLE_LEGACY_II2C_SLAVE     0
-+/* Silicon version number */
 +#define MK70_REV_1_0             1
- 
++
  /* MGCT: <generated_code> */
  #define BSPCFG_ENABLE_TTYA       0
  #define BSPCFG_ENABLE_ITTYA      0
@@ -77,7 +18,7 @@ index 4040dd2..ae3b53e 100644
  #define BSPCFG_ENABLE_ITTYC      0
  #define BSPCFG_ENABLE_TTYD       0
  #define BSPCFG_ENABLE_ITTYD      0
-@@ -51,24 +51,27 @@
+@@ -51,24 +53,27 @@
  #define BSPCFG_ENABLE_ITTYE      0
  #define BSPCFG_ENABLE_TTYF       0
  #define BSPCFG_ENABLE_ITTYF      0
@@ -111,7 +52,7 @@ index 4040dd2..ae3b53e 100644
  
  #define MQX_USE_UNCACHED_MEM     1
  #define MQX_USE_LWMEM_ALLOCATOR  0
-@@ -89,12 +92,12 @@
+@@ -89,12 +94,12 @@
  #define FTPDCFG_USES_MFS         1
  #define RTCSCFG_ENABLE_SNMP      0
  
@@ -126,7 +67,7 @@ index 4040dd2..ae3b53e 100644
  /* MGCT: </generated_code> */
  
  #define ENETCFG_SUPPORT_PTP      0
-@@ -102,8 +105,17 @@
+@@ -102,8 +107,17 @@
  /*
  ** include common settings
  */
