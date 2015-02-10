@@ -1,0 +1,2818 @@
+###############################################################################
+#
+# IAR ELF Linker V7.30.1.7746/W32 for ARM                 08/Dec/2014  19:54:28
+# Copyright 2007-2014 IAR Systems AB.
+#
+#    Output file  =  
+#        D:\Work\Buchi\DeviceHive-MQX\iar\Release\Exe\twrk70f120m.out
+#    Map file     =  
+#        D:\Work\Buchi\DeviceHive-MQX\iar\Release\List\twrk70f120m.map
+#    Command line =  
+#        D:\Work\Buchi\DeviceHive-MQX\iar\Release\Obj\Application.o
+#        D:\Work\Buchi\DeviceHive-MQX\MQX_4_1\lib\twrk70f120m.iar\release\bsp\bsp.a
+#        D:\Work\Buchi\DeviceHive-MQX\iar\Release\Obj\CCriticalSection.o
+#        D:\Work\Buchi\DeviceHive-MQX\iar\Release\Obj\CEvent.o
+#        D:\Work\Buchi\DeviceHive-MQX\iar\Release\Obj\CFileIO.o
+#        D:\Work\Buchi\DeviceHive-MQX\iar\Release\Obj\cJSON.o
+#        D:\Work\Buchi\DeviceHive-MQX\iar\Release\Obj\CommandExecutor.o
+#        D:\Work\Buchi\DeviceHive-MQX\iar\Release\Obj\Connection.o
+#        D:\Work\Buchi\DeviceHive-MQX\iar\Release\Obj\ConnectionGuard.o
+#        D:\Work\Buchi\DeviceHive-MQX\iar\Release\Obj\CThread.o
+#        D:\Work\Buchi\DeviceHive-MQX\SSL\IDE\IAR-EWARM\Projects\CyaSSL-Lib\Release\Exe\CyaSSL-Lib.a
+#        D:\Work\Buchi\DeviceHive-MQX\iar\Release\Obj\DeviceHiveMain.o
+#        D:\Work\Buchi\DeviceHive-MQX\iar\Release\Obj\GatewayDH.o
+#        D:\Work\Buchi\DeviceHive-MQX\iar\Release\Obj\HttpClient.o
+#        D:\Work\Buchi\DeviceHive-MQX\iar\Release\Obj\HttpTask.o
+#        D:\Work\Buchi\DeviceHive-MQX\iar\Release\Obj\iic.o
+#        D:\Work\Buchi\DeviceHive-MQX\iar\Release\Obj\Logger.o
+#        D:\Work\Buchi\DeviceHive-MQX\iar\Release\Obj\Main.o
+#        D:\Work\Buchi\DeviceHive-MQX\MQX_4_1\lib\twrk70f120m.iar\release\mfs\mfs.a
+#        D:\Work\Buchi\DeviceHive-MQX\iar\Release\Obj\OS.o
+#        D:\Work\Buchi\DeviceHive-MQX\MQX_4_1\lib\twrk70f120m.iar\release\psp\psp.a
+#        D:\Work\Buchi\DeviceHive-MQX\iar\Release\Obj\REST.o
+#        D:\Work\Buchi\DeviceHive-MQX\MQX_4_1\lib\twrk70f120m.iar\release\rtcs\rtcs.a
+#        D:\Work\Buchi\DeviceHive-MQX\iar\Release\Obj\TestPin_think.o
+#        D:\Work\Buchi\DeviceHive-MQX\iar\Release\Obj\wdog.o --redirect
+#        _Printf=_PrintfFull --redirect _Scanf=_ScanfFull -o
+#        D:\Work\Buchi\DeviceHive-MQX\iar\Release\Exe\twrk70f120m.out --keep
+#        SSLCert
+#        --image_input=D:\Work\Buchi\DeviceHive-MQX\iar\CA_ROOT.pem,SSLCert,hugo,4
+#        --map D:\Work\Buchi\DeviceHive-MQX\iar\Release\List\twrk70f120m.map
+#        --config
+#        D:\Work\Buchi\DeviceHive-MQX\iar\LinkerConfigFiles\intflash_ddrdata.icf
+#        --redirect __iar_dlmalloc=malloc --redirect __iar_dlcalloc=calloc
+#        --redirect __iar_dlfree=free --entry __iar_program_start --inline
+#        --vfe
+#
+###############################################################################
+
+*******************************************************************************
+*** MESSAGES
+***
+
+Warning[Li026]: the module "D:\Work\Buchi\DeviceHive-MQX\iar\CA_ROOT.pem" (and
+          0 other modules) do not contain information to support Virtual
+          Function Elimination
+
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor                     = *
+__CPP_Exceptions              = Used
+__CPP_Language                = C++
+__SystemLibrary               = DLib
+__dlib_has_iterator_debugging = 0
+__dlib_jmp_buf_num_elements   = 16
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A1":  place at 0x00004000 { ro section .intvec, block CFMPROTROM };
+"P1":  place in [from 0x00004000 to 0x000fffff] { ro, last block FLASHX_POOL };
+"A2":  place at 0x1fff0000 { section USB_BDT_Z, section .sram_pool };
+"A4":  place at 0x70040000 { rw, rw section .data };
+"P2":  place in [from 0x71f00000 to 0x72000000] { last block KERNEL_DATA };
+
+  Section             Kind        Address     Size  Object
+  -------             ----        -------     ----  ------
+"A1":                                        0x414
+  .intvec             const    0x00004000    0x400  vectors.o [5]
+  CFMPROTROM                   0x00004400     0x14  <Block>
+    .cfmconfig        const    0x00004400     0x10  vectors.o [5]
+    .cfmconfig        const    0x00004410      0x0  vectors.o [5]
+    CFMPROTROM        const    0x00004410      0x4  <Block tail>
+                             - 0x00004414    0x414
+
+"P1":                                      0x36be1
+  .text               ro code  0x00004420     0x28  support.o [9]
+  .text               ro code  0x00004450     0x2e  iodebug_asm.o [5]
+  .text               ro code  0x00004480     0x64  boot.o [9]
+  .text               ro code  0x000044e4     0x16  comp.o [9]
+  .text               ro code  0x000044fa      0x2  CommandExecutor.o [2]
+  .text               ro code  0x000044fc    0x2d0  init_hw.o [5]
+  .text               ro code  0x000047cc    0xf88  mem.o [9]
+  .text               ro code  0x00005754      0xc  cstartup_M.o [10]
+  .text               ro code  0x00005760    0x7ae  bsp_cm.o [5]
+  .text               ro code  0x00005f0e      0x2  ConnectionGuard.o [2]
+  .text               ro code  0x00005f10     0xe8  init_gpio.o [5]
+  .text               ro code  0x00005ff8    0x1f4  klog.o [9]
+  .text               ro code  0x000061ec    0x2d0  int.o [9]
+  .text               ro code  0x000064bc    0xa20  task.o [9]
+  .text               ro code  0x00006edc      0x6  ABImemclr.o [10]
+  .text               ro code  0x00006ee2     0xae  queue.o [9]
+  .text               ro code  0x00006f90    0x3f4  lwsem.o [9]
+  .text               ro code  0x00007384     0x22  fpinit_M.o [8]
+  .text               ro code  0x000073a6      0x2  HttpTask.o [2]
+  .text               ro code  0x000073a8     0x1a  cmain.o [10]
+  .text               ro code  0x000073c2     0x52  macnet_rejoin.o [5]
+  .text               ro code  0x00007414    0x118  hwtimer.o [5]
+  .text               ro code  0x0000752c    0x118  lwlog.o [9]
+  KERNEL              ro code  0x00007650    0x384  dispatch.o [9]
+  .text               ro code  0x000079d4     0x9a  stack_bu.o [9]
+  .text               ro code  0x00007a6e      0xa  xsprout.o [6]
+  .text               ro code  0x00007a78     0x66  ABImemset.o [10]
+  .text               ro code  0x00007ade     0x22  zero_init3.o [10]
+  .text               ro code  0x00007b00     0x28  data_init.o [10]
+  .text               ro code  0x00007b28     0x10  mqx_main.o [5]
+  .text               ro code  0x00007b38      0x4  exit.o [6]
+  .text               ro code  0x00007b3c    0x3ec  time.o [9]
+  .text               ro code  0x00007f28     0x44  psp_tiad.o [9]
+  .text               ro code  0x00007f6c      0x6  ABImemclr4.o [10]
+  .text               ro code  0x00007f74    0x460  mqx.o [9]
+  .text               ro code  0x000083d4      0xa  cexit.o [10]
+  .text               ro code  0x000083e0    0x1ac  sched.o [9]
+  .text               ro code  0x0000858c     0x7c  psp_mstiq.o [9]
+  .text               ro code  0x00008608     0x3c  psp_tisu.o [9]
+  .text               ro code  0x00008644     0x9c  psp_tims.o [9]
+  .text               ro code  0x000086e0     0x84  psp_tkti.o [9]
+  .text               ro code  0x00008764     0x34  psp_tinm.o [9]
+  .text               ro code  0x00008798     0x3a  ABImemset48.o [10]
+  .text               ro code  0x000087d4     0x76  ABImemcpy_unaligned.o [10]
+  .text               ro code  0x0000884c     0xa8  sc_irdyq.o [9]
+  .text               ro code  0x000088f4    0x180  init_bsp.o [5]
+  .text               ro code  0x00008a74      0xc  XXexit.o [10]
+  .text               ro code  0x00008a80    0x132  I64DivMod.o [10]
+  .text               ro code  0x00008bb2     0x8c  psp_mat1.o [9]
+  .text               ro code  0x00008c3e     0x32  psp_mat3.o [9]
+  .text               ro code  0x00008c70     0xaa  psp_mat2.o [9]
+  .text               ro code  0x00008d1a     0x12  psp_iinit.o [9]
+  .text               ro code  0x00008d2c     0x10  int_vtab.o [9]
+  .text               ro code  0x00008d3c     0x18  kinetis_mpu.o [9]
+  .text               ro code  0x00008d54     0x90  dma.o [5]
+  .text               ro code  0x00008de4     0x24  io_init.o [9]
+  .text               ro code  0x00008e08     0x84  cache.o [9]
+  .text               ro code  0x00008e8c    0xe3c  esdhc.o [5]
+  .text               ro code  0x00009cc8    0x2a4  iodebug.o [5]
+  .text               ro code  0x00009f6c     0x2c  io_sinit.o [5]
+  .text               ro code  0x00009f98      0x2  I64DivZer.o [10]
+  .text               ro code  0x00009f9c     0x10  int_inst.o [9]
+  .text               ro code  0x00009fac     0x9e  nvic.o [9]
+  .text               ro code  0x0000a04c    0x510  lwevent.o [9]
+  .text               ro code  0x0000a55c     0x1a  esdhc_mk70.o [5]
+  .text               ro code  0x0000a578     0xd0  io_instx.o [9]
+  .text               ro code  0x0000a648     0x8c  io_fopen.o [9]
+  .text               ro code  0x0000a6d4     0x2a  strncmp.o [6]
+  .text               ro code  0x0000a700    0x8c0  pow.o [8]
+  .text               ro code  0x0000afc0     0x42  xdnorm.o [8]
+  .text               ro code  0x0000b002     0x7e  xdint.o [8]
+  .text               ro code  0x0000b080     0x20  DblCmpEq.o [8]
+  .text               ro code  0x0000b0a0      0xc  errno.o [6]
+  .text               ro code  0x0000b0ac     0x2e  DblCmpGe.o [8]
+  .text               ro code  0x0000b0dc     0x2e  DblCmpLe.o [8]
+  .text               ro code  0x0000b10c    0x1a2  DblMul.o [8]
+  .text               ro code  0x0000b2b0     0xe8  DblAdd.o [8]
+  .text               ro code  0x0000b398     0x58  DblToI32.o [8]
+  .text               ro code  0x0000b3f0     0x30  I32ToDbl.o [8]
+  .text               ro code  0x0000b420    0x180  DblSub.o [8]
+  .text               ro code  0x0000b5a0    0x246  DblDiv.o [8]
+  .text               ro code  0x0000b7e8     0xb0  xlog.o [8]
+  .text               ro code  0x0000b898    0x2c6  xexp.o [8]
+  .text               ro code  0x0000bb5e      0x2  xtls.o [6]
+  .text               ro code  0x0000bb60     0x40  xdtest.o [8]
+  .text               ro code  0x0000bba0    0x114  xdscale.o [8]
+  .rodata             const    0x0000bcb4      0x4  Logger.o [2]
+  .text               ro code  0x0000bcb8    0x200  xdtento.o [8]
+  .text               ro code  0x0000beb8     0x56  xdunscal.o [8]
+  .rodata             const    0x0000bf10     0x20  Application.o [2]
+  .rodata             const    0x0000bf30     0x20  Application.o [2]
+  .rodata             const    0x0000bf50     0x20  Application.o [2]
+  .rodata             const    0x0000bf70     0x20  Application.o [2]
+  .rodata             const    0x0000bf90     0x10  CCriticalSection.o [2]
+  .rodata             const    0x0000bfa0     0x20  CommandExecutor.o [2]
+  .rodata             const    0x0000bfc0     0x20  Connection.o [2]
+  .rodata             const    0x0000bfe0     0x20  Connection.o [2]
+  .rodata             const    0x0000c000     0x20  Connection.o [2]
+  .rodata             const    0x0000c020     0x20  ConnectionGuard.o [2]
+  .rodata             const    0x0000c040     0x20  CThread.o [2]
+  .rodata             const    0x0000c060     0x20  GatewayDH.o [2]
+  .rodata             const    0x0000c080     0x10  HttpClient.o [2]
+  .rodata             const    0x0000c090     0x20  HttpTask.o [2]
+  .rodata             const    0x0000c0b0     0x48  Main.o [2]
+  .rodata             const    0x0000c0f8     0x10  REST.o [2]
+  .rodata             const    0x0000c108     0x3c  sstream.o [11]
+  .rodata             const    0x0000c144      0x8  sotcp.o [11]
+  .rodata             const    0x0000c14c     0x10  dnsinit.o [11]
+  .rodata             const    0x0000c15c      0x8  rtcscmd.o [11]
+  .rodata             const    0x0000c164      0x8  ipcfg.o [11]
+  .rodata             const    0x0000c16c      0x8  init_bsp.o [5]
+  .rodata             const    0x0000c174      0xc  init_bsp.o [5]
+  .rodata             const    0x0000c180     0x18  lwgpio_kgpio.o [5]
+  .rodata             const    0x0000c198     0x14  io_dopr.o [9]
+  .rodata             const    0x0000c1ac     0x14  io_dopr.o [9]
+  .rodata             const    0x0000c1c0     0x18  mqx.o [9]
+  .rodata             const    0x0000c1d8     0x10  mqx.o [9]
+  .rodata             const    0x0000c1e8     0x10  mqx.o [9]
+  .rodata             const    0x0000c1f8      0xc  mqx.o [9]
+  .rodata             const    0x0000c204      0x4  mqx.o [9]
+  .rodata             const    0x0000c208      0x4  mqx.o [9]
+  .rodata             const    0x0000c20c     0x14  dnshosts.o [11]
+  .rodata             const    0x0000c220     0x14  dnshosts.o [11]
+  .rodata             const    0x0000c234     0x14  dnshosts.o [11]
+  .rodata             const    0x0000c248     0x14  dnshosts.o [11]
+  .rodata             const    0x0000c25c     0x14  dnshosts.o [11]
+  .rodata             const    0x0000c270     0x14  dnshosts.o [11]
+  .rodata             const    0x0000c284     0x14  dnshosts.o [11]
+  .rodata             const    0x0000c298     0x14  dnshosts.o [11]
+  .rodata             const    0x0000c2ac     0x14  dnshosts.o [11]
+  .rodata             const    0x0000c2c0     0x14  dnshosts.o [11]
+  .rodata             const    0x0000c2d4     0x14  dnshosts.o [11]
+  .rodata             const    0x0000c2e8     0x14  dnshosts.o [11]
+  .rodata             const    0x0000c2fc     0x14  dnshosts.o [11]
+  .rodata             const    0x0000c310     0x10  resolver.o [11]
+  .rodata             const    0x0000c320     0x3c  sdgram.o [11]
+  .rodata             const    0x0000c35c      0x8  sdgram.o [11]
+  .rodata             const    0x0000c364      0x8  sdgram.o [11]
+  .rodata             const    0x0000c36c     0x14  ip-e.o [11]
+  .rodata             const    0x0000c380      0x4  ip-e.o [11]
+  .rodata             const    0x0000c384      0xc  dnsutil.o [11]
+  .rodata             const    0x0000c390     0x10  dnsutil.o [11]
+  .rodata             const    0x0000c3a0     0x18  init_dma.o [5]
+  .rodata             const    0x0000c3b8      0xc  init_esdhc.o [5]
+  .rodata             const    0x0000c3c4      0xc  init_iodebug.o [5]
+  .rodata             const    0x0000c3d0     0x1c  bsp_cm.o [5]
+  .rodata             const    0x0000c3ec     0x78  bsp_cm.o [5]
+  .rodata             const    0x0000c464     0x18  hwtimer_systick.o [5]
+  .rodata             const    0x0000c47c   0x1428  aes.o [4]
+  .rodata             const    0x0000d8a4     0x14  iplocal.o [11]
+  .rodata             const    0x0000d8b8      0x4  iplocal.o [11]
+  .rodata             const    0x0000d8bc      0xc  rtcsinit.o [11]
+  .rodata             const    0x0000d8c8     0x14  init_enet.o [5]
+  .rodata             const    0x0000d8dc     0x10  init_enet.o [5]
+  .rodata             const    0x0000d8ec     0x24  init_enet.o [5]
+  .rodata             const    0x0000d910      0xc  rtcshost.o [11]
+  .rodata             const    0x0000d91c     0x14  rtcshost.o [11]
+  .rodata             const    0x0000d930      0x4  rtcshost.o [11]
+  .rodata             const    0x0000d934      0xc  rtcshost.o [11]
+  .rodata             const    0x0000d940    0x130  rtcshost.o [11]
+  .rodata             const    0x0000da70     0x20  macnet_init.o [5]
+  .rodata             const    0x0000da90     0x14  phy_ksz8041.o [5]
+  .rodata             const    0x0000daa4     0x40  edma_kinetisf.o [5]
+  .rodata             const    0x0000dae4      0x4  edma_kinetisf.o [5]
+  .rodata             const    0x0000dae8     0x40  macnet_mk70.o [5]
+  .rodata             const    0x0000db28      0xc  mqx_init.o [5]
+  .rodata             const    0x0000db34     0x30  mqx_init.o [5]
+  .text               ro code  0x0000db64    0xf14  Application.o [2]
+  .text               ro code  0x0000ea78      0xa  delop_0.o [7]
+  .text               ro code  0x0000ea84     0x24  newop_0.o [7]
+  .text               ro code  0x0000eaa8    0x12e  CThread.o [2]
+  .text               ro code  0x0000ebd8     0xb8  Logger.o [2]
+  .text               ro code  0x0000ec90   0x1178  GatewayDH.o [2]
+  .text               ro code  0x0000fe08    0x6b4  mutex.o [9]
+  .text               ro code  0x000104bc     0x32  io_spr.o [9]
+  .text               ro code  0x000104f0    0xfe4  cJSON.o [2]
+  .text               ro code  0x000114d4     0x36  strlen.o [10]
+  .text               ro code  0x0001150c    0x378  CommandExecutor.o [2]
+  .text               ro code  0x00011884    0x158  iic.o [2]
+  .text               ro code  0x000119dc     0xe0  OS.o [2]
+  .text               ro code  0x00011abc     0xac  TestPin_think.o [2]
+  .text               ro code  0x00011b68      0x4  nomemory.o [7]
+  .text               ro code  0x00011b6c     0x28  io_pntf.o [9]
+  .text               ro code  0x00011b94   0x1748  REST.o [2]
+  .text               ro code  0x000132dc      0x4  delaop_0.o [7]
+  .text               ro code  0x000132e0    0x230  rtcscmd.o [11]
+  .text               ro code  0x00013510    0x7dc  ipcfg.o [11]
+  .text               ro code  0x00013cec    0x1a4  dnsinit.o [11]
+  .text               ro code  0x00013e90      0x8  newaop_0.o [7]
+  .text               ro code  0x00013e98     0x44  strcpy_unaligned.o [10]
+  .text               ro code  0x00013edc    0x9c8  ssl.o [4]
+  .text               ro code  0x000148a4    0xb1c  io_dopr.o [9]
+  .text               ro code  0x000153c0     0x16  strchr.o [10]
+  .text               ro code  0x000153d8     0x34  sprintf.o [6]
+  .text               ro code  0x0001540c     0x6e  floor.o [8]
+  .text               ro code  0x0001547c     0xd6  lwgpio_kgpio.o [5]
+  .text               ro code  0x00015552      0x6  abort.o [6]
+  .text               ro code  0x00015558     0x40  io_ghand.o [9]
+  .text               ro code  0x00015598    0xc14  HttpClient.o [2]
+  .text               ro code  0x000161ac   0x1358  HttpTask.o [2]
+  .text               ro code  0x00017504    0x180  rtcspart.o [11]
+  .text               ro code  0x00017684    0x714  msgq.o [9]
+  .text               ro code  0x00017d98    0x2e8  msgpool.o [9]
+  .text               ro code  0x00018080     0xa2  rtcstask.o [11]
+  .text               ro code  0x00018124    0x484  msg.o [9]
+  .text               ro code  0x000185a8    0x1f8  ifdns.o [11]
+  .text               ro code  0x000187a0     0x50  ifdhcp.o [11]
+  .text               ro code  0x000187f0     0x40  ifrem.o [11]
+  .text               ro code  0x00018830     0xa8  ifadd.o [11]
+  .text               ro code  0x000188d8     0x70  dhcputil.o [11]
+  .text               ro code  0x00018948     0xe8  eninit.o [5]
+  .text               ro code  0x00018a30     0x44  enstop.o [5]
+  .text               ro code  0x00018a74     0xde  rtcs.o [11]
+  .text               ro code  0x00018b54   0x4e08  internal.o [4]
+  .text               ro code  0x0001d95c     0x28  wc_port.o [4]
+  .text               ro code  0x0001d984   0x1e7a  asn.o [4]
+  .text               ro code  0x0001f800     0x62  memcmp_unaligned.o [10]
+  .text               ro code  0x0001f864    0x844  md5.o [4]
+  .text               ro code  0x000200a8    0x6aa  io_fp.o [9]
+  .text               ro code  0x00020754    0xdaa  xprintffull.o [6]
+  .text               ro code  0x00021500     0x78  CCriticalSection.o [2]
+  .text               ro code  0x00021578     0x42  strcmp_unaligned.o [10]
+  .text               ro code  0x000215bc    0x500  ConnectionGuard.o [2]
+  .text               ro code  0x00021abc    0xef0  Connection.o [2]
+  .text               ro code  0x000229ac     0x1c  strcat.o [6]
+  .text               ro code  0x000229c8     0x2c  strstr.o [6]
+  .text               ro code  0x000229f4     0x22  strcspn.o [6]
+  .text               ro code  0x00022a16     0x10  io_sscan.o [9]
+  .text               ro code  0x00022a28    0x678  partition.o [9]
+  .text               ro code  0x000230a0    0x8c6  dnsutil.o [11]
+  .text               ro code  0x00023966     0x58  enutil.o [5]
+  .text               ro code  0x000239c0     0xfc  sockutil.o [11]
+  .text               ro code  0x00023abc   0x114e  sha.o [4]
+  .text               ro code  0x00024c0c    0x5ac  sha256.o [4]
+  .text               ro code  0x000251b8     0x6c  strncpy_unaligned.o [10]
+  .text               ro code  0x00025224     0xa8  random.o [4]
+  .text               ro code  0x000252cc    0x38e  rsa.o [4]
+  .text               ro code  0x0002565c    0x52c  tls.o [4]
+  .text               ro code  0x00025b88     0x78  ABImemmove_unaligned.o [10]
+  .text               ro code  0x00025c00   0x2112  aes.o [4]
+  .text               ro code  0x00027d14    0xe30  des3.o [4]
+  .text               ro code  0x00028b44     0x98  arc4.o [4]
+  .text               ro code  0x00028bdc    0xd88  error.o [4]
+  .text               ro code  0x00029964    0x7c8  keys.o [4]
+  .text               ro code  0x0002a12c   0x1750  tfm.o [4]
+  .text               ro code  0x0002b87c      0xa  gmtime.o [6]
+  .text               ro code  0x0002b888     0xc0  modf.o [8]
+  .text               ro code  0x0002b948     0x58  memchr.o [10]
+  .text               ro code  0x0002b9a0      0xe  div.o [6]
+  .text               ro code  0x0002b9b0     0x4e  FltToDbl.o [8]
+  .text               ro code  0x0002ba00    0x1b0  sosel.o [11]
+  .text               ro code  0x0002bbb0    0x53e  io_scanl.o [9]
+  .text               ro code  0x0002c0ee      0xa  isdigit.o [6]
+  .text               ro code  0x0002c0f8     0x1e  isalnum.o [6]
+  .text               ro code  0x0002c116      0xc  memcpy.o [6]
+  .text               ro code  0x0002c122     0x14  memset.o [6]
+  .text               ro code  0x0002c136    0x274  hmac.o [4]
+  .text               ro code  0x0002c3ac    0x188  xttotm.o [6]
+  .text               ro code  0x0002c534     0xac  timer.o [11]
+  .text               ro code  0x0002c5e0      0xe  strtod.o [8]
+  .text               ro code  0x0002c5f0     0x90  DblToFlt.o [8]
+  .text               ro code  0x0002c680    0x134  xisdst.o [6]
+  .text               ro code  0x0002c7b4    0x168  xstod.o [8]
+  .text               ro code  0x0002c91c     0x29  setlocale.o [6]
+  .text               ro code  0x0002c948      0xa  getzone.o [6]
+  .text               ro code  0x0002c952     0x42  xgettime.o [6]
+  .text               ro code  0x0002c994    0x164  xgetdst.o [6]
+  .text               ro code  0x0002caf8    0x130  xstopfx.o [6]
+  .text               ro code  0x0002cc28    0x1b4  xstoflt.o [6]
+  .text               ro code  0x0002cddc    0x200  xstoxflt.o [6]
+  .text               ro code  0x0002cfdc     0xa0  DeviceHiveMain.o [2]
+  .text               ro code  0x0002d07c     0x22  Main.o [2]
+  .text               ro code  0x0002d0a0    0x5fc  sstream.o [11]
+  .text               ro code  0x0002d69c    0x340  tcp_clos.o [11]
+  .text               ro code  0x0002d9dc    0x67a  tcp_rcv.o [11]
+  .text               ro code  0x0002e056    0x334  ticker.o [11]
+  .text               ro code  0x0002e38c   0x132a  tcp.o [11]
+  .text               ro code  0x0002f6b8    0xec6  tcp_send.o [11]
+  .text               ro code  0x0003057e    0x34c  tcp_buf.o [11]
+  .text               ro code  0x000308ca     0x1a  rtcsmsec.o [11]
+  .text               ro code  0x000308e4    0x1b4  iplocal.o [11]
+  .text               ro code  0x00030a98    0x28c  iputil.o [11]
+  .text               ro code  0x00030d24    0x41a  rtcspcb.o [11]
+  .text               ro code  0x00031140    0x8cc  ip.o [11]
+  .text               ro code  0x00031a0c     0x72  checksum.o [11]
+  .text               ro code  0x00031a80     0xec  rtcsrand.o [11]
+  .text               ro code  0x00031b6c    0x8d4  iproute.o [11]
+  .text               ro code  0x00032440    0x612  icmp.o [11]
+  .text               ro code  0x00032a52    0x1c6  ipradix.o [11]
+  .text               ro code  0x00032c18     0x34  ipsum.o [9]
+  .text               ro code  0x00032c4c     0x22  route.o [11]
+  .text               ro code  0x00032c70   0x1400  resolver.o [11]
+  .text               ro code  0x00034070      0xc  tolower.o [6]
+  .text               ro code  0x0003407c    0x364  sdgram.o [11]
+  .text               ro code  0x000343e0    0x134  tcpip.o [11]
+  .text               ro code  0x00034514      0xc  arpinit.o [11]
+  .text               ro code  0x00034520     0x14  bootinit.o [11]
+  .text               ro code  0x00034534    0x3ac  ip-e.o [11]
+  .text               ro code  0x000348e0    0x7d4  arp.o [11]
+  .text               ro code  0x000350b4     0x80  enopen.o [5]
+  .text               ro code  0x00035134     0x7c  enclose.o [5]
+  .text               ro code  0x000351b0     0x1c  enaddr.o [5]
+  .text               ro code  0x000351cc    0x160  ensend.o [5]
+  .text               ro code  0x0003532c     0x98  enjoin.o [5]
+  .text               ro code  0x000353c4     0xb0  enleave.o [5]
+  .text               ro code  0x00035474    0x128  hwtimer_systick.o [5]
+  .text               ro code  0x0003559c     0x44  idletask.o [9]
+  .text               ro code  0x000355e0     0x60  inittask.o [9]
+  .text               ro code  0x00035640    0x13c  io.o [4]
+  .text               ro code  0x0003577c    0x962  udp.o [11]
+  .text               ro code  0x000360e0    0x1a0  ipif_add.o [11]
+  .text               ro code  0x00036280   0x1038  dhcpclnt.o [11]
+  .text               ro code  0x000372b8     0x58  bootcomm.o [11]
+  .text               ro code  0x00037310     0x86  ipif_rem.o [11]
+  .text               ro code  0x00037398    0x7cc  edma.o [5]
+  .text               ro code  0x00037b64     0x50  edma_kinetisf.o [5]
+  .text               ro code  0x00037bb4    0x414  macnet_init.o [5]
+  .text               ro code  0x00037fc8     0x1a  macnet_mk70.o [5]
+  .text               ro code  0x00037fe4    0x192  macnet_util.o [5]
+  .text               ro code  0x00038178    0x42e  macnet_receive.o [5]
+  .text               ro code  0x000385a6     0xc4  enrecv.o [5]
+  .text               ro code  0x0003866c     0x78  macnet_join.o [5]
+  .text               ro code  0x000386e4     0xb6  macnet_mii.o [5]
+  .text               ro code  0x0003879c    0x2a8  macnet_send.o [5]
+  .text               ro code  0x00038a44     0x4c  macnet_stop.o [5]
+  hugo                const    0x00038a90   0x11b2  CA_ROOT.pem [1]
+  .text               ro code  0x00039c42      0xc  Application.o [2]
+  .text               ro code  0x00039c4e      0xc  Application.o [2]
+  .text               ro code  0x00039c5a      0xc  Application.o [2]
+  .text               ro code  0x00039c66     0x12  Application.o [2]
+  .text               ro code  0x00039c78     0x12  Application.o [2]
+  .text               ro code  0x00039c8a     0x12  Application.o [2]
+  .text               ro code  0x00039c9c     0x3c  sotcp.o [11]
+  .text               ro code  0x00039cd8     0x30  io_fputc.o [9]
+  .text               ro code  0x00039d08    0x164  phy_ksz8041.o [5]
+  .text               ro code  0x00039e6c      0x4  xpurevirtual.o [6]
+  .text               ro code  0x00039e70     0xd2  packbits_init.o [10]
+  .iar.init_table     const    0x00039f44     0x6c  - Linker created -
+  .rodata             const    0x00039fb0      0x0  zero_init3.o [10]
+  .rodata             const    0x00039fb0      0x0  packbits_init.o [10]
+  Initializer bytes   ro data  0x00039fb0    0x1b0  <for rw section .data-1>
+  Initializer bytes   ro data  0x0003a160      0x2  <for rw-1>
+  Initializer bytes   ro data  0x0003a162      0x2  <for KERNEL_DATA-1>
+  FLASHX_POOL                  0x0003b000      0x1  <Block>
+    .flashx           const    0x0003b000      0x1  vectors.o [5]
+    .flashx           const    0x0003b001      0x0  vectors.o [5]
+                             - 0x0003b001  0x36be1
+
+"A2":                                          0x4
+  .sram_pool          zero     0x1fff0000      0x1  vectors.o [5]
+                             - 0x1fff0001      0x1
+
+"A4":                                       0x25d4
+  rw-1                         0x70040000     0x40  <Init block>
+    __DLIB_PERTHREAD  inited   0x70040000      0x4  errno.o [6]
+    __DLIB_PERTHREAD  inited   0x70040004     0x2c  xttotm.o [6]
+    __DLIB_PERTHREAD  inited   0x70040030      0x4  xisdst.o [6]
+    __DLIB_PERTHREAD  inited   0x70040034      0x8  setlocale.o [6]
+    __DLIB_PERTHREAD  inited   0x7004003c      0x4  xisdstData.o [6]
+  .bss                zero     0x70040040     0x40  init_bsp.o [5]
+  .bss                zero     0x70040080      0x4  Application.o [2]
+  .bss                zero     0x70040084      0x4  DeviceHiveMain.o [2]
+  .bss                zero     0x70040088      0x4  GatewayDH.o [2]
+  .bss                zero     0x7004008c      0x4  HttpClient.o [2]
+  .bss                zero     0x70040090      0x4  Logger.o [2]
+  .bss                zero     0x70040094     0x3c  Logger.o [2]
+  .bss                zero     0x700400d0      0x4  REST.o [2]
+  .bss                zero     0x700400d4     0x10  TestPin_think.o [2]
+  .bss                zero     0x700400e4     0x64  ssl.o [4]
+  .bss                zero     0x70040148    0xec8  ssl.o [4]
+  .bss                zero     0x70041010     0xdc  ssl.o [4]
+  .bss                zero     0x700410ec     0x80  ipcfg.o [11]
+  .bss                zero     0x7004116c      0x4  init_bsp.o [5]
+  .bss                zero     0x70041170      0x4  mqx.o [9]
+  .bss                zero     0x70041174      0x4  mqx.o [9]
+  .bss                zero     0x70041178      0x4  mqx.o [9]
+  .bss                zero     0x7004117c      0x4  mqx.o [9]
+  .bss                zero     0x70041180      0x4  psp_mstiq.o [9]
+  .bss                zero     0x70041184      0x4  psp_mstiq.o [9]
+  .bss                zero     0x70041188      0x4  timer.o [11]
+  .bss                zero     0x7004118c      0x4  dnshosts.o [11]
+  .bss                zero     0x70041190      0x4  resolver.o [11]
+  .bss                zero     0x70041194      0x4  resolver.o [11]
+  .bss                zero     0x70041198      0x4  resolver.o [11]
+  .bss                zero     0x7004119c      0x4  rtcsglob.o [11]
+  .bss                zero     0x700411a0      0x4  rtcsglob.o [11]
+  .bss                zero     0x700411a4      0x4  rtcsglob.o [11]
+  .bss                zero     0x700411a8      0x4  tcpip.o [11]
+  .bss                zero     0x700411ac     0x9c  dnsutil.o [11]
+  .bss                zero     0x70041248    0xff0  dnsutil.o [11]
+  .bss                zero     0x70042238     0x40  dnsutil.o [11]
+  .bss                zero     0x70042278      0x4  dma.o [5]
+  .bss                zero     0x7004227c      0x4  dma.o [5]
+  .bss                zero     0x70042280      0x4  iplocal.o [11]
+  .bss                zero     0x70042284      0x4  rtcsrand.o [11]
+  .bss                zero     0x70042288      0x4  rtcsrand.o [11]
+  .bss                zero     0x7004228c      0x4  arpinit.o [11]
+  .bss                zero     0x70042290      0x4  bootinit.o [11]
+  .bss                zero     0x70042294      0x4  bootinit.o [11]
+  .bss                zero     0x70042298      0x4  ipif_add.o [11]
+  .bss                zero     0x7004229c     0x80  edma.o [5]
+  .bss                zero     0x7004231c      0x4  new.o [7]
+  .bss                zero     0x70042320      0x4  HttpTask.o [2]
+  .bss                zero     0x70042324      0x2  resolver.o [11]
+  .bss                zero     0x70042326      0x1  Application.o [2]
+  .bss                zero     0x70042327      0x1  OS.o [2]
+  .bss                zero     0x70042328      0x1  rtcsglob.o [11]
+  .bss                zero     0x70042329      0x1  rtcsglob.o [11]
+  .bss                zero     0x7004232a      0x1  rtcsglob.o [11]
+  .bss                zero     0x7004232b      0x1  rtcsglob.o [11]
+  .bss                zero     0x7004232c      0x1  rtcsglob.o [11]
+  .bss                zero     0x7004232d      0x1  bsp_cm.o [5]
+  rw section .data-1           0x70042330    0x2a4  <Init block>
+    .data             inited   0x70042330      0xc  cJSON.o [2]
+    .data             inited   0x7004233c     0x18  lwgpio_kgpio.o [5]
+    .data             inited   0x70042354      0x4  mqx.o [9]
+    .data             inited   0x70042358      0x2  dnshosts.o [11]
+    .data             inited   0x7004235c     0x24  dnshosts.o [11]
+    .data             inited   0x70042380     0x24  dnshosts.o [11]
+    .data             inited   0x700423a4     0x24  dnshosts.o [11]
+    .data             inited   0x700423c8     0x24  dnshosts.o [11]
+    .data             inited   0x700423ec     0x24  dnshosts.o [11]
+    .data             inited   0x70042410     0x24  dnshosts.o [11]
+    .data             inited   0x70042434     0x24  dnshosts.o [11]
+    .data             inited   0x70042458     0x24  dnshosts.o [11]
+    .data             inited   0x7004247c     0x24  dnshosts.o [11]
+    .data             inited   0x700424a0     0x24  dnshosts.o [11]
+    .data             inited   0x700424c4     0x24  dnshosts.o [11]
+    .data             inited   0x700424e8     0x24  dnshosts.o [11]
+    .data             inited   0x7004250c     0x24  dnshosts.o [11]
+    .data             inited   0x70042530      0xc  dnshosts.o [11]
+    .data             inited   0x7004253c     0x24  dnshosts.o [11]
+    .data             inited   0x70042560      0x4  dnshosts.o [11]
+    .data             inited   0x70042564      0x4  rtcsglob.o [11]
+    .data             inited   0x70042568      0x4  rtcsglob.o [11]
+    .data             inited   0x7004256c      0x4  rtcsglob.o [11]
+    .data             inited   0x70042570      0x4  rtcsglob.o [11]
+    .data             inited   0x70042574      0x4  rtcsglob.o [11]
+    .data             inited   0x70042578      0x4  rtcsglob.o [11]
+    .data             inited   0x7004257c      0x4  rtcsglob.o [11]
+    .data             inited   0x70042580      0x4  rtcsglob.o [11]
+    .data             inited   0x70042584      0x4  rtcsglob.o [11]
+    .data             inited   0x70042588      0x4  rtcsglob.o [11]
+    .data             inited   0x7004258c      0x4  rtcsglob.o [11]
+    .data             inited   0x70042590      0x4  rtcsglob.o [11]
+    .data             inited   0x70042594      0x4  rtcsglob.o [11]
+    .data             inited   0x70042598      0x4  rtcsrand.o [11]
+    .data             inited   0x7004259c     0x2c  edma.o [5]
+    .data             inited   0x700425c8      0x4  edma.o [5]
+    .data             inited   0x700425cc      0x8  edma.o [5]
+                             - 0x700425d4   0x25d4
+
+"P2":                                          0x4
+  KERNEL_DATA                  0x71f00000      0x4  <Block>
+    KERNEL_DATA-1              0x71f00000      0x4  <Init block>
+      .kernel_data    inited   0x71f00000      0x4  kernel_symbols.o [9]
+                             - 0x71f00004      0x4
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address     Size
+          -------     ----
+Zero (__iar_zero_init3)
+    2 destination ranges, total size 0x22ef:
+          0x1fff0000     0x1
+          0x70040040  0x22ee
+
+Copy/packbits (__iar_packbits_init3)
+    1 source range, total size 0x2 (3% of destination):
+          0x0003a160     0x2
+    1 destination range, total size 0x40:
+          0x70040000    0x40
+
+Copy/packbits (__iar_packbits_init3)
+    1 source range, total size 0x1b0 (63% of destination):
+          0x00039fb0   0x1b0
+    1 destination range, total size 0x2a4:
+          0x70042330   0x2a4
+
+Copy/packbits (__iar_packbits_init3)
+    1 source range, total size 0x2 (50% of destination):
+          0x0003a162     0x2
+    1 destination range, total size 0x4:
+          0x71f00000     0x4
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                  ro code  ro data  rw data
+    ------                  -------  -------  -------
+D:\Work\Buchi\DeviceHive-MQX\iar: [1]
+    CA_ROOT.pem                        4 530
+    -------------------------------------------------
+    Total:                             4 530
+
+D:\Work\Buchi\DeviceHive-MQX\iar\Release\Obj: [2]
+    Application.o             3 950      128        5
+    CCriticalSection.o          120       16
+    CThread.o                   302       32
+    CommandExecutor.o           890       32
+    Connection.o              3 824       96
+    ConnectionGuard.o         1 282       32
+    DeviceHiveMain.o            160                 4
+    GatewayDH.o               4 472       32        4
+    HttpClient.o              3 092       16        4
+    HttpTask.o                4 954       32        4
+    Logger.o                    184        4       64
+    Main.o                       34       72
+    OS.o                        224                 1
+    REST.o                    5 960       16        4
+    TestPin_think.o             172                16
+    cJSON.o                   4 068        7       12
+    iic.o                       344
+    -------------------------------------------------
+    Total:                   34 032      515      118
+
+command line: [3]
+    -------------------------------------------------
+    Total:
+
+CyaSSL-Lib.a: [4]
+    aes.o                     8 466    5 160
+    arc4.o                      152
+    asn.o                     7 802
+    des3.o                    3 632
+    error.o                   3 464
+    hmac.o                      628
+    internal.o               19 976
+    io.o                        316
+    keys.o                    1 992
+    md5.o                     2 116
+    random.o                    168
+    rsa.o                       910
+    sha.o                     4 430
+    sha256.o                  1 452
+    ssl.o                     2 504             4 104
+    tfm.o                     5 968
+    tls.o                     1 324
+    wc_port.o                    40
+    -------------------------------------------------
+    Total:                   65 340    5 160    4 104
+
+bsp.a: [5]
+    bsp_cm.o                  1 966      148        1
+    dma.o                       144                 8
+    edma.o                    1 996       36      184
+    edma_kinetisf.o              80       68
+    enaddr.o                     28
+    enclose.o                   124
+    eninit.o                    232
+    enjoin.o                    152
+    enleave.o                   176
+    enopen.o                    128
+    enrecv.o                    196
+    ensend.o                    352
+    enstop.o                     68
+    enutil.o                     88
+    esdhc.o                   3 644
+    esdhc_mk70.o                 26
+    hwtimer.o                   280
+    hwtimer_systick.o           296       24
+    init_bsp.o                  384       20       68
+    init_dma.o                            24
+    init_enet.o                           72
+    init_esdhc.o                          12
+    init_gpio.o                 232
+    init_hw.o                   720
+    init_iodebug.o                        12
+    io_sinit.o                   44
+    iodebug.o                   676
+    iodebug_asm.o                46
+    lwgpio_kgpio.o              214       40       24
+    macnet_init.o             1 044       32
+    macnet_join.o               120
+    macnet_mii.o                182
+    macnet_mk70.o                26       64
+    macnet_receive.o          1 070
+    macnet_rejoin.o              82
+    macnet_send.o               680
+    macnet_stop.o                76
+    macnet_util.o               402
+    mqx_init.o                            60
+    mqx_main.o                   16
+    phy_ksz8041.o               356       20
+    vectors.o                          1 041        1
+    -------------------------------------------------
+    Total:                   16 346    1 673      286
+
+dl7M_tln.a: [6]
+    abort.o                       6
+    div.o                        14
+    errno.o                      12                 4
+    exit.o                        4
+    getzone.o                    10
+    gmtime.o                     10
+    isalnum.o                    30
+    isdigit.o                    10
+    memcpy.o                     12
+    memset.o                     20
+    setlocale.o                  41                 8
+    sprintf.o                    52
+    strcat.o                     28
+    strcspn.o                    34
+    strncmp.o                    42
+    strstr.o                     44
+    tolower.o                    12
+    xgetdst.o                   356
+    xgettime.o                   66
+    xisdst.o                    308                 4
+    xisdstData.o                           1        4
+    xprintffull.o             3 498
+    xpurevirtual.o                4
+    xsprout.o                    10
+    xstoflt.o                   436
+    xstopfx.o                   304
+    xstoxflt.o                  512
+    xtls.o                        2
+    xttotm.o                    392        1       44
+    -------------------------------------------------
+    Total:                    6 269        2       64
+
+dlpp7M_tl_nc.a: [7]
+    delaop_0.o                    4
+    delop_0.o                    10
+    new.o                                           4
+    newaop_0.o                    8
+    newop_0.o                    36
+    nomemory.o                    4
+    -------------------------------------------------
+    Total:                       62                 4
+
+m7M_tlv.a: [8]
+    DblAdd.o                    232
+    DblCmpEq.o                   32
+    DblCmpGe.o                   46
+    DblCmpLe.o                   46
+    DblDiv.o                    582
+    DblMul.o                    418
+    DblSub.o                    384
+    DblToFlt.o                  144
+    DblToI32.o                   88
+    FltToDbl.o                   78
+    I32ToDbl.o                   48
+    floor.o                     110
+    fpinit_M.o                   34
+    modf.o                      192
+    pow.o                     2 240
+    strtod.o                     14
+    xdint.o                     126
+    xdnorm.o                     66
+    xdscale.o                   276
+    xdtento.o                   512
+    xdtest.o                     64
+    xdunscal.o                   86
+    xexp.o                      710
+    xlog.o                      176
+    xstod.o                     360
+    -------------------------------------------------
+    Total:                    7 064
+
+psp.a: [9]
+    boot.o                      100
+    cache.o                     132
+    comp.o                       22
+    dispatch.o                  900
+    idletask.o                   68
+    inittask.o                   96
+    int.o                       720
+    int_inst.o                   16
+    int_vtab.o                   16
+    io_dopr.o                 2 844       40
+    io_fopen.o                  140
+    io_fp.o                   1 706
+    io_fputc.o                   48
+    io_ghand.o                   64
+    io_init.o                    36
+    io_instx.o                  208
+    io_pntf.o                    40
+    io_scanl.o                1 342
+    io_spr.o                     50
+    io_sscan.o                   16
+    ipsum.o                      52
+    kernel_symbols.o                       2        4
+    kinetis_mpu.o                24
+    klog.o                      500
+    lwevent.o                 1 296
+    lwlog.o                     280
+    lwsem.o                   1 012
+    mem.o                     3 976
+    mqx.o                     1 120       78       20
+    msg.o                     1 156
+    msgpool.o                   744
+    msgq.o                    1 812
+    mutex.o                   1 716
+    nvic.o                      158
+    partition.o               1 656
+    psp_iinit.o                  18
+    psp_mat1.o                  140
+    psp_mat2.o                  170
+    psp_mat3.o                   50
+    psp_mstiq.o                 124                 8
+    psp_tiad.o                   68
+    psp_tims.o                  156
+    psp_tinm.o                   52
+    psp_tisu.o                   60
+    psp_tkti.o                  132
+    queue.o                     174
+    sc_irdyq.o                  168
+    sched.o                     428
+    stack_bu.o                  154
+    support.o                    40
+    task.o                    2 592
+    time.o                    1 004
+    -------------------------------------------------
+    Total:                   29 596      120       32
+
+rt7M_tl.a: [10]
+    ABImemclr.o                   6
+    ABImemclr4.o                  6
+    ABImemcpy_unaligned.o       118
+    ABImemmove_unaligned.o      120
+    ABImemset.o                 102
+    ABImemset48.o                58
+    I64DivMod.o                 306
+    I64DivZer.o                   2
+    XXexit.o                     12
+    cexit.o                      10
+    cmain.o                      26
+    cstartup_M.o                 12
+    data_init.o                  40
+    memchr.o                     88
+    memcmp_unaligned.o           98
+    packbits_init.o             210
+    strchr.o                     22
+    strcmp_unaligned.o           66
+    strcpy_unaligned.o           68
+    strlen.o                     54
+    strncpy_unaligned.o         108
+    zero_init3.o                 34
+    -------------------------------------------------
+    Total:                    1 566
+
+rtcs.a: [11]
+    arp.o                     2 004
+    arpinit.o                    12                 4
+    bootcomm.o                   88
+    bootinit.o                   20                 8
+    checksum.o                  114
+    dhcpclnt.o                4 152
+    dhcputil.o                  112
+    dnshosts.o                           595      526
+    dnsinit.o                   420       16
+    dnsutil.o                 2 246       28    4 300
+    icmp.o                    1 554
+    ifadd.o                     168
+    ifdhcp.o                     80
+    ifdns.o                     504
+    ifrem.o                      64
+    ip-e.o                      940       24
+    ip.o                      2 252
+    ipcfg.o                   2 012        8      128
+    ipif_add.o                  416                 4
+    ipif_rem.o                  134
+    iplocal.o                   436       24        4
+    ipradix.o                   454
+    iproute.o                 2 260
+    iputil.o                    652
+    resolver.o                5 120       16       14
+    route.o                      34
+    rtcs.o                      222
+    rtcscmd.o                   560        8
+    rtcsglob.o                            33       69
+    rtcshost.o                           352
+    rtcsinit.o                            12
+    rtcsmsec.o                   26
+    rtcspart.o                  384
+    rtcspcb.o                 1 050
+    rtcsrand.o                  236        3       12
+    rtcstask.o                  162
+    sdgram.o                    868       76
+    sockutil.o                  252
+    sosel.o                     432
+    sotcp.o                      60        8
+    sstream.o                 1 532       60
+    tcp.o                     4 906
+    tcp_buf.o                   844
+    tcp_clos.o                  832
+    tcp_rcv.o                 1 658
+    tcp_send.o                3 782
+    tcpip.o                     308                 4
+    ticker.o                    820
+    timer.o                     172                 4
+    udp.o                     2 402
+    -------------------------------------------------
+    Total:                   47 756    1 263    5 077
+
+    Gaps                        119        4        2
+    Linker created                       112
+-----------------------------------------------------
+    Grand Total:            208 150   13 379    9 687
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                      Address    Size  Type      Object
+-----                      -------    ----  ----      ------
+?main                   0x000073a9          Code  Gb  cmain.o [10]
+ARP_age                 0x00034b9d    0x1e  Code  Lc  arp.o [11]
+ARP_close               0x0003495f    0x6a  Code  Gb  arp.o [11]
+ARP_delete              0x00034a85    0x4a  Code  Lc  arp.o [11]
+ARP_expire              0x00034bbd    0x64  Code  Lc  arp.o [11]
+ARP_find                0x000349c9    0x1e  Code  Lc  arp.o [11]
+ARP_freelist            0x7004228c     0x4  Data  Gb  arpinit.o [11]
+ARP_gratuitous_send     0x00034d2d    0xd0  Code  Lc  arp.o [11]
+ARP_init                0x00034515     0xc  Code  Gb  arpinit.o [11]
+ARP_insert              0x000349f3    0x92  Code  Lc  arp.o [11]
+ARP_is_complete         0x000349e7     0xc  Code  Gb  arp.o [11]
+ARP_open                0x000348e1    0x7e  Code  Gb  arp.o [11]
+ARP_request             0x00034e07    0x5a  Code  Gb  arp.o [11]
+ARP_resolve             0x00034c21   0x10c  Code  Gb  arp.o [11]
+ARP_send                0x00034ad1    0xca  Code  Lc  arp.o [11]
+ARP_service             0x00034e61   0x23c  Code  Gb  arp.o [11]
+AddCA                   0x00014223   0x13a  Code  Gb  ssl.o [4]
+AddLength               0x00024ae5    0x12  Code  Lc  sha.o [4]
+AddSession              0x0001472d   0x172  Code  Gb  ssl.o [4]
+AesCbcDecrypt           0x00027c47    0xac  Code  Gb  aes.o [4]
+AesCbcEncrypt           0x00027ba9    0x9e  Code  Gb  aes.o [4]
+AesDecrypt              0x000263ad   0x3f4  Code  Lc  aes.o [4]
+AesEncrypt              0x00025fb1   0x3f4  Code  Lc  aes.o [4]
+AesSetIV                0x00027cf3    0x20  Code  Gb  aes.o [4]
+AesSetKey               0x00025f93    0x1e  Code  Gb  aes.o [4]
+AesSetKeyLocal          0x00025c01   0x392  Code  Lc  aes.o [4]
+AlreadySigner           0x00014137    0x48  Code  Gb  ssl.o [4]
+Arc4Process             0x00028ba3    0x3a  Code  Gb  arc4.o [4]
+Arc4SetKey              0x00028b45    0x5e  Code  Gb  arc4.o [4]
+BOOT_close              0x000372db    0x22  Code  Gb  bootcomm.o [11]
+BOOT_count              0x70042290     0x4  Data  Gb  bootinit.o [11]
+BOOT_init               0x00034521    0x14  Code  Gb  bootinit.o [11]
+BOOT_open               0x000372b9    0x22  Code  Gb  bootcomm.o [11]
+BOOT_port               0x70042294     0x4  Data  Gb  bootinit.o [11]
+BOOT_send               0x000372fd     0xc  Code  Gb  bootcomm.o [11]
+BSL::CCriticalSection::CCriticalSection()
+                        0x0002151f    0x1a  Code  Gb  CCriticalSection.o [2]
+BSL::CCriticalSection::Lock()
+                        0x00021559     0xe  Code  Gb  CCriticalSection.o [2]
+BSL::CCriticalSection::Unlock()
+                        0x00021567     0xc  Code  Gb  CCriticalSection.o [2]
+BSL::CCriticalSection::~CCriticalSection()
+                        0x00021539    0x18  Code  Gb  CCriticalSection.o [2]
+BSL::CCriticalSection::~CCriticalSection() [deleting]
+                        0x00021501    0x1e  Code  Gb  CCriticalSection.o [2]
+BSL::CThread::CThread() [subobject]
+                        0x0000eaa9     0x2  Code  Gb  CThread.o [2]
+BSL::CThread::CreateThread(char *, unsigned char, unsigned int)
+                        0x0000eb07    0x6c  Code  Gb  CThread.o [2]
+BSL::CThread::ExitInstance()
+                        0x0000eaff     0x2  Code  Gb  CThread.o [2]
+BSL::CThread::ExitInstance(unsigned int)
+                        0x0000eb01     0x2  Code  Gb  CThread.o [2]
+BSL::CThread::GetCurrentThreadId()
+                        0x0000ebcf     0x8  Code  Gb  CThread.o [2]
+BSL::CThread::GetTickCount()
+                        0x0000eb8f    0x1a  Code  Gb  CThread.o [2]
+BSL::CThread::InitInstance()
+                        0x0000eafb     0x4  Code  Gb  CThread.o [2]
+BSL::CThread::Run()     0x0000eb03     0x4  Code  Gb  CThread.o [2]
+BSL::CThread::Sleep(unsigned int)
+                        0x0000eb85     0xa  Code  Gb  CThread.o [2]
+BSL::CThread::ThreadProc(unsigned int)
+                        0x0000eaaf    0x3a  Code  Gb  CThread.o [2]
+BSL::CThread::TimeExpired(unsigned int, unsigned int)
+                        0x0000eba9    0x26  Code  Gb  CThread.o [2]
+BSL::CThread::~CThread()
+                        0x0000eaf9     0x2  Code  Gb  CThread.o [2]
+BSL::CThread::~CThread() [deleting]
+                        0x0000eaab     0x4  Code  Gb  CThread.o [2]
+BSL::Logger::InitLogger()
+                        0x0000ebd9    0x24  Code  Gb  Logger.o [2]
+BSL::Logger::Log(unsigned int, char const *, unsigned int, char *)
+                        0x0000ec09    0x64  Code  Gb  Logger.o [2]
+BSL::Logger::SetLoggerMask(unsigned int)
+                        0x0000ebfd     0x6  Code  Gb  Logger.o [2]
+BSL::Logger::SetLoggerOutput(unsigned int)
+                        0x0000ec03     0x6  Code  Gb  Logger.o [2]
+BSL::Logger::c_LogToConsole
+                        0x0000bcb4     0x4  Data  Gb  Logger.o [2]
+BSL::Logger::logBuffer  0x70040098     0x4  Data  Gb  Logger.o [2]
+BSL::Logger::mtxLogger  0x700400a0    0x30  Data  Gb  Logger.o [2]
+BSL::Logger::s_loggerMask
+                        0x70040090     0x4  Data  Gb  Logger.o [2]
+BSL::Logger::s_loggerOutput
+                        0x70040094     0x4  Data  Gb  Logger.o [2]
+BSL::Logger::tmpLoggerBuffer
+                        0x7004009c     0x4  Data  Gb  Logger.o [2]
+BSL::OS::AllocateSRAM(unsigned int)
+                        0x000119dd    0x5a  Code  Gb  OS.o [2]
+BSL::OS::CopyBytes(void *, void *, unsigned int)
+                        0x00011a4d     0xa  Code  Gb  OS.o [2]
+BSL::OS::m_clearOnAllocate
+                        0x70042327     0x1  Data  Gb  OS.o [2]
+BuildCertHashes         0x0001ab19   0x16a  Code  Lc  internal.o [4]
+BuildFinished           0x0001969d   0x15a  Code  Lc  internal.o [4]
+BuildMessage            0x0001ace9   0x15e  Code  Lc  internal.o [4]
+BuildTlsFinished        0x0002589f    0x86  Code  Gb  tls.o [4]
+ByteReverseWords        0x00024c0d    0x26  Code  Lc  sha256.o [4]
+ByteReverseWords        0x00023ac5    0x26  Code  Lc  sha.o [4]
+CFMPROTROM$$Base        0x00004400           --   Gb  - Linker created -
+CFMPROTROM$$Limit       0x00004414           --   Gb  - Linker created -
+CTaoCryptGetErrorString
+                        0x00028bdd   0x37a  Code  Gb  error.o [4]
+CheckAvailableSize      0x0001967b    0x22  Code  Gb  internal.o [4]
+CleanPreMaster          0x00029f6f    0x52  Code  Lc  keys.o [4]
+ClearLED_Err            0x00011b2b     0x2  Code  Gb  TestPin_think.o [2]
+ClearLED_FW             0x00011b0d     0x2  Code  Gb  TestPin_think.o [2]
+ClientCache             0x70041010    0xdc  Data  Lc  ssl.o [4]
+ClockConfigurationID    0x7004232d     0x1  Data  Lc  bsp_cm.o [5]
+ConfirmNameConstraints  0x0001e9f1   0x304  Code  Lc  asn.o [4]
+ConfirmSignature        0x0001e887   0x162  Code  Lc  asn.o [4]
+ConstantCompare         0x0001a063    0x2c  Code  Lc  internal.o [4]
+Cpu_GetClockConfiguration
+                        0x00005c7f     0x6  Code  Gb  bsp_cm.o [5]
+Cpu_GetCurrentMCGMode   0x00005b0b    0x3e  Code  Lc  bsp_cm.o [5]
+Cpu_MCGAutoTrim         0x00005761    0x50  Code  Gb  bsp_cm.o [5]
+Cpu_SetClockConfiguration
+                        0x00005b49   0x136  Code  Gb  bsp_cm.o [5]
+Cpu_SetMCG              0x00005aad    0x5e  Code  Lc  bsp_cm.o [5]
+Cpu_SetMCGModeBLPI      0x00005991    0x3a  Code  Lc  bsp_cm.o [5]
+Cpu_SetMCGModeFBE       0x000058b1    0xc0  Code  Lc  bsp_cm.o [5]
+Cpu_SetMCGModeFBI       0x000059cb    0xc0  Code  Lc  bsp_cm.o [5]
+Cpu_SetMCGModePBE       0x0000580b    0x86  Code  Lc  bsp_cm.o [5]
+Cpu_SetMCGModePEE       0x000057b1    0x5a  Code  Lc  bsp_cm.o [5]
+CyaSSL_CTX_free         0x00013f1d     0xa  Code  Gb  ssl.o [4]
+CyaSSL_CTX_new          0x00013edd    0x40  Code  Gb  ssl.o [4]
+CyaSSL_CertManagerFree  0x000140f7    0x24  Code  Gb  ssl.o [4]
+CyaSSL_CertManagerNew   0x000140cd    0x2a  Code  Gb  ssl.o [4]
+CyaSSL_ERR_error_string
+                        0x00014075    0x14  Code  Gb  ssl.o [4]
+CyaSSL_ERR_reason_error_string
+                        0x0001b3ef   0x3f8  Code  Gb  internal.o [4]
+CyaSSL_GetMacSecret     0x000140b1    0x1c  Code  Gb  ssl.o [4]
+CyaSSL_Init             0x0001435d    0x48  Code  Gb  ssl.o [4]
+CyaSSL_SetTlsHmacInner  0x00025a37    0x62  Code  Gb  tls.o [4]
+CyaSSL_accept           0x000144fd   0x14a  Code  Gb  ssl.o [4]
+CyaSSL_connect          0x000143ed   0x110  Code  Gb  ssl.o [4]
+CyaSSL_free             0x00013f53     0xa  Code  Gb  ssl.o [4]
+CyaSSL_get_error        0x00014029    0x2c  Code  Gb  ssl.o [4]
+CyaSSL_negotiate        0x00013f71    0x28  Code  Gb  ssl.o [4]
+CyaSSL_new              0x00013f27    0x2c  Code  Gb  ssl.o [4]
+CyaSSL_read             0x00013fe5     0x4  Code  Gb  ssl.o [4]
+CyaSSL_read_internal    0x00013fb7    0x28  Code  Lc  ssl.o [4]
+CyaSSL_set_fd           0x00013f5d    0x14  Code  Gb  ssl.o [4]
+CyaSSL_set_verify       0x000143ad    0x38  Code  Gb  ssl.o [4]
+CyaSSL_shutdown         0x00013fe9    0x40  Code  Gb  ssl.o [4]
+CyaSSL_want_read        0x00014055    0x10  Code  Gb  ssl.o [4]
+CyaSSL_want_write       0x00014065    0x10  Code  Gb  ssl.o [4]
+CyaSSL_write            0x00013f99    0x1e  Code  Gb  ssl.o [4]
+CyaSSLv23_client_method
+                        0x00025b1b    0x28  Code  Gb  tls.o [4]
+DH::CApplication::AsyncSendNotification(char const *, cJSON *)
+                        0x0000de47    0x40  Code  Gb  Application.o [2]
+DH::CApplication::CApplication()
+                        0x0000db93    0x2a  Code  Gb  Application.o [2]
+DH::CApplication::CButtonChecker::Run()
+                        0x0000e4a9    0x88  Code  Gb  Application.o [2]
+DH::CApplication::CButtonChecker::~CButtonChecker()
+                        0x00039c5b     0xc  Code  Gb  Application.o [2]
+DH::CApplication::CButtonChecker::~CButtonChecker() [deleting]
+                        0x00039c8b    0x12  Code  Gb  Application.o [2]
+DH::CApplication::CGreenLedExecutor::Run()
+                        0x0000e36d   0x136  Code  Gb  Application.o [2]
+DH::CApplication::CGreenLedExecutor::~CGreenLedExecutor()
+                        0x00039c4f     0xc  Code  Gb  Application.o [2]
+DH::CApplication::CGreenLedExecutor::~CGreenLedExecutor() [deleting]
+                        0x00039c79    0x12  Code  Gb  Application.o [2]
+DH::CApplication::CRedLedExecutor::Run()
+                        0x0000e235   0x138  Code  Gb  Application.o [2]
+DH::CApplication::CRedLedExecutor::~CRedLedExecutor()
+                        0x00039c43     0xc  Code  Gb  Application.o [2]
+DH::CApplication::CRedLedExecutor::~CRedLedExecutor() [deleting]
+                        0x00039c67    0x12  Code  Gb  Application.o [2]
+DH::CApplication::ExitInstance()
+                        0x0000dc91     0x2  Code  Gb  Application.o [2]
+DH::CApplication::ExitInstance(unsigned int)
+                        0x0000dc93    0x4a  Code  Gb  Application.o [2]
+DH::CApplication::GetInstance()
+                        0x0000db77    0x1c  Code  Gb  Application.o [2]
+DH::CApplication::GetMacAddress(unsigned char *)
+                        0x0000e16f    0xb2  Code  Gb  Application.o [2]
+DH::CApplication::GetSerial(char *, unsigned char)
+                        0x0000e221     0xe  Code  Gb  Application.o [2]
+DH::CApplication::GetServerUrl()
+                        0x0000e22f     0x6  Code  Gb  Application.o [2]
+DH::CApplication::HandleCommand(cJSON *)
+                        0x0000dd1b   0x12c  Code  Gb  Application.o [2]
+DH::CApplication::HandleError(unsigned int)
+                        0x0000dcdd    0x3e  Code  Gb  Application.o [2]
+DH::CApplication::OnCommandAcknowledged(unsigned int, cJSON *)
+                        0x0000e049   0x126  Code  Gb  Application.o [2]
+DH::CApplication::OnCommandExecuted(unsigned int, cJSON *, DH::CCommandExecutor *)
+                        0x0000dfcd    0x7c  Code  Gb  Application.o [2]
+DH::CApplication::OnGatewayStarted(unsigned int)
+                        0x0000dee5    0x6c  Code  Gb  Application.o [2]
+DH::CApplication::OnNotificationSent(unsigned int, cJSON *)
+                        0x0000de87    0x5e  Code  Gb  Application.o [2]
+DH::CApplication::OnRegistered(unsigned int, cJSON *)
+                        0x0000df51    0x7c  Code  Gb  Application.o [2]
+DH::CApplication::Run()
+                        0x0000dc15    0x58  Code  Gb  Application.o [2]
+DH::CApplication::Start()
+                        0x0000dbe5    0x30  Code  Gb  Application.o [2]
+DH::CApplication::m_Terminated
+                        0x70042326     0x1  Data  Gb  Application.o [2]
+DH::CApplication::m_pSingletone
+                        0x70040080     0x4  Data  Gb  Application.o [2]
+DH::CApplication::~CApplication()
+                        0x0000dbbd    0x28  Code  Gb  Application.o [2]
+DH::CApplication::~CApplication() [deleting]
+                        0x0000db65    0x12  Code  Gb  Application.o [2]
+DH::CCommandExecutor::AsyncExecute(DH::CCommandExecutor::ExecutorListener *, void (DH::CCommandExecutor::ExecutorListener::*)(unsigned int, cJSON *, DH::CCommandExecutor*), cJSON *)
+                        0x00011601    0x3c  Code  Gb  CommandExecutor.o [2]
+DH::CCommandExecutor::CCommandExecutor() [subobject]
+                        0x0001150d    0x5a  Code  Gb  CommandExecutor.o [2]
+DH::CCommandExecutor::ExitInstance()
+                        0x000044fb     0x2  Code  Gb  CommandExecutor.o [2]
+DH::CCommandExecutor::ExitInstance(unsigned int)
+                        0x0001163d    0xe0  Code  Gb  CommandExecutor.o [2]
+DH::CCommandExecutor::~CCommandExecutor()
+                        0x000115bd    0x44  Code  Gb  CommandExecutor.o [2]
+DH::CCommandExecutor::~CCommandExecutor() [deleting]
+                        0x00011567    0x12  Code  Gb  CommandExecutor.o [2]
+DH::CCommandExecutor::~CCommandExecutor() [subobject]
+                        0x00011579    0x44  Code  Gb  CommandExecutor.o [2]
+DH::CConnection::CConnection(unsigned int, unsigned short)
+                        0x00021ae3    0x50  Code  Gb  Connection.o [2]
+DH::CConnection::Connect(unsigned int)
+                        0x00021b79   0x19a  Code  Gb  Connection.o [2]
+DH::CConnection::SetAtomicReadTimeout(unsigned int)
+                        0x00021d63    0x16  Code  Gb  Connection.o [2]
+DH::CConnection::SetAtomicWriteTimeout(unsigned int)
+                        0x00021d79    0x18  Code  Gb  Connection.o [2]
+DH::CConnection::Shutdown()
+                        0x00021d13    0x50  Code  Gb  Connection.o [2]
+DH::CConnection::Wait(unsigned int)
+                        0x00021d91    0xc6  Code  Gb  Connection.o [2]
+DH::CConnection::~CConnection()
+                        0x00021b33    0x46  Code  Gb  Connection.o [2]
+DH::CConnection::~CConnection() [deleting]
+                        0x00021abd     0xa  Code  Gb  Connection.o [2]
+DH::CConnectionGuard::CConnectionGuard()
+                        0x000215cf    0x60  Code  Gb  ConnectionGuard.o [2]
+DH::CConnectionGuard::ExitInstance()
+                        0x00005f0f     0x2  Code  Gb  ConnectionGuard.o [2]
+DH::CConnectionGuard::ExitInstance(unsigned int)
+                        0x00021739   0x19c  Code  Gb  ConnectionGuard.o [2]
+DH::CConnectionGuard::Guard(DH::CConnection *, unsigned int, DH::CConnectionGuard::GuardListener *, void (DH::CConnectionGuard::GuardListener::*)(unsigned int, DH::CConnectionGuard*), char const *)
+                        0x00021681    0x76  Code  Gb  ConnectionGuard.o [2]
+DH::CConnectionGuard::Match(unsigned int, unsigned short, bool)
+                        0x0002171b    0x1e  Code  Gb  ConnectionGuard.o [2]
+DH::CConnectionGuard::Run()
+                        0x000216f7    0x14  Code  Gb  ConnectionGuard.o [2]
+DH::CConnectionGuard::TakeConnection()
+                        0x0002170b    0x10  Code  Gb  ConnectionGuard.o [2]
+DH::CConnectionGuard::~CConnectionGuard()
+                        0x0002162f    0x52  Code  Gb  ConnectionGuard.o [2]
+DH::CConnectionGuard::~CConnectionGuard() [deleting]
+                        0x000215bd    0x12  Code  Gb  ConnectionGuard.o [2]
+DH::CGateway::AsyncAcknowledgeCommand(cJSON const *, void (DH::CGateway::GatewayListener::*)(unsigned int, cJSON *))
+                        0x0000efe7    0x6a  Code  Gb  GatewayDH.o [2]
+DH::CGateway::AsyncPollCommands(char const *)
+                        0x0000ef91    0x56  Code  Gb  GatewayDH.o [2]
+DH::CGateway::AsyncRegister(void (DH::CGateway::GatewayListener::*)(unsigned int, cJSON *))
+                        0x0000edd1   0x1b6  Code  Gb  GatewayDH.o [2]
+DH::CGateway::AsyncSendNotification(cJSON *, void (DH::CGateway::GatewayListener::*)(unsigned int, cJSON *))
+                        0x0000f059    0x70  Code  Gb  GatewayDH.o [2]
+DH::CGateway::AsyncStart(void (DH::CGateway::GatewayListener::*)(unsigned int))
+                        0x0000ed95    0x3c  Code  Gb  GatewayDH.o [2]
+DH::CGateway::CGateway()
+                        0x0000ecbf    0x86  Code  Gb  GatewayDH.o [2]
+DH::CGateway::ExitInstance()
+                        0x0000f30d     0x2  Code  Gb  GatewayDH.o [2]
+DH::CGateway::ExitInstance(unsigned int)
+                        0x0000f30f    0xaa  Code  Gb  GatewayDH.o [2]
+DH::CGateway::GetInstance()
+                        0x0000eca3    0x1c  Code  Gb  GatewayDH.o [2]
+DH::CGateway::Init(DH::CApplication *, DH::CGateway::DHCPModeEnum)
+                        0x0000ed65     0x8  Code  Gb  GatewayDH.o [2]
+DH::CGateway::OnCommandAcknowledged(unsigned int, cJSON *)
+                        0x0000f6f9   0x124  Code  Gb  GatewayDH.o [2]
+DH::CGateway::OnGotServerInfo(unsigned int, cJSON *)
+                        0x0000f3b9   0x17c  Code  Gb  GatewayDH.o [2]
+DH::CGateway::OnNotify(unsigned int, cJSON *)
+                        0x0000f823    0xb2  Code  Gb  GatewayDH.o [2]
+DH::CGateway::OnPollCommands(unsigned int, cJSON *)
+                        0x0000f5f5    0xfa  Code  Gb  GatewayDH.o [2]
+DH::CGateway::OnRegistered(unsigned int, cJSON *)
+                        0x0000f535    0xc0  Code  Gb  GatewayDH.o [2]
+DH::CGateway::Run()     0x0000f0f1   0x1b4  Code  Gb  GatewayDH.o [2]
+DH::CGateway::m_pSingletone
+                        0x70040088     0x4  Data  Gb  GatewayDH.o [2]
+DH::CGateway::~CGateway()
+                        0x0000ed6d    0x28  Code  Gb  GatewayDH.o [2]
+DH::CGateway::~CGateway() [deleting]
+                        0x0000ec91    0x12  Code  Gb  GatewayDH.o [2]
+DH::CHttpClient::AsyncSend(DH::CHttpTask *, DH::CHttpTask::TaskListener *, void (DH::CHttpTask::TaskListener::*)(unsigned int, DH::CHttpTask *), unsigned int, char const *)
+                        0x00015ad3    0x2c  Code  Gb  HttpClient.o [2]
+DH::CHttpClient::AsyncSendWithObject(DH::CHttpTask *, DH::CHttpTask::TaskListener *, void (DH::CHttpTask::TaskListener::*)(unsigned int, DH::CHttpTask *, void *), unsigned int, void *, char const *)
+                        0x00015aff    0x30  Code  Gb  HttpClient.o [2]
+DH::CHttpClient::CHttpClient()
+                        0x000155c7    0x1c  Code  Gb  HttpClient.o [2]
+DH::CHttpClient::CreateTask()
+                        0x0001567b    0xc8  Code  Gb  HttpClient.o [2]
+DH::CHttpClient::GetInstance()
+                        0x000155ab    0x1c  Code  Gb  HttpClient.o [2]
+DH::CHttpClient::NewGET(char const *)
+                        0x0001575b    0x18  Code  Gb  HttpClient.o [2]
+DH::CHttpClient::NewPOST(char const *)
+                        0x00015743    0x18  Code  Gb  HttpClient.o [2]
+DH::CHttpClient::NewPUT(char const *)
+                        0x00015773    0x18  Code  Gb  HttpClient.o [2]
+DH::CHttpClient::OnConnectionExpired(unsigned int, DH::CConnectionGuard *)
+                        0x00015d4d   0x136  Code  Gb  HttpClient.o [2]
+DH::CHttpClient::PrepareTask(DH::CHttpTask *)
+                        0x0001578b   0x33e  Code  Gb  HttpClient.o [2]
+DH::CHttpClient::ReleaseTask(DH::CHttpTask *)
+                        0x00015b3d   0x210  Code  Gb  HttpClient.o [2]
+DH::CHttpClient::m_pSingletone
+                        0x7004008c     0x4  Data  Gb  HttpClient.o [2]
+DH::CHttpClient::~CHttpClient()
+                        0x00015611    0x6a  Code  Gb  HttpClient.o [2]
+DH::CHttpClient::~CHttpClient() [deleting]
+                        0x00015599    0x12  Code  Gb  HttpClient.o [2]
+DH::CHttpTask::AddHeader(char const *, char const *)
+                        0x00016509    0x42  Code  Gb  HttpTask.o [2]
+DH::CHttpTask::AddPath(char const *)
+                        0x0001642d    0x2c  Code  Gb  HttpTask.o [2]
+DH::CHttpTask::AssembleResponse(unsigned int, unsigned int *, unsigned char **)
+                        0x00016a5d   0x4d2  Code  Gb  HttpTask.o [2]
+DH::CHttpTask::AsyncRun(char const *)
+                        0x00016805    0x5a  Code  Gb  HttpTask.o [2]
+DH::CHttpTask::CHttpTask()
+                        0x000161bf    0xf8  Code  Gb  HttpTask.o [2]
+DH::CHttpTask::ExitInstance()
+                        0x000073a7     0x2  Code  Gb  HttpTask.o [2]
+DH::CHttpTask::ExitInstance(unsigned int)
+                        0x00016ff7   0x126  Code  Gb  HttpTask.o [2]
+DH::CHttpTask::Finalize()
+                        0x00016621    0x24  Code  Gb  HttpTask.o [2]
+DH::CHttpTask::FinishUrl()
+                        0x000164c1    0x3e  Code  Gb  HttpTask.o [2]
+DH::CHttpTask::GetConnection()
+                        0x00016425     0x8  Code  Gb  HttpTask.o [2]
+DH::CHttpTask::GetHost()
+                        0x000163d1     0x8  Code  Gb  HttpTask.o [2]
+DH::CHttpTask::GetHttpStatus()
+                        0x0001667d     0x8  Code  Gb  HttpTask.o [2]
+DH::CHttpTask::GetPort()
+                        0x00016415     0x8  Code  Gb  HttpTask.o [2]
+DH::CHttpTask::GetResponseContent()
+                        0x0001668d     0x8  Code  Gb  HttpTask.o [2]
+DH::CHttpTask::GetResponseState()
+                        0x00016685     0x8  Code  Gb  HttpTask.o [2]
+DH::CHttpTask::HttpStatusIsSuccessfull()
+                        0x0001665f    0x1e  Code  Gb  HttpTask.o [2]
+DH::CHttpTask::Init(DH::ReqTypeEnum, char const *)
+                        0x0001635d    0x5a  Code  Gb  HttpTask.o [2]
+DH::CHttpTask::IsInterrupted()
+                        0x00016645     0x8  Code  Gb  HttpTask.o [2]
+DH::CHttpTask::NeedsSecure()
+                        0x000163d9    0x3c  Code  Gb  HttpTask.o [2]
+DH::CHttpTask::ParseUrl(char *)
+                        0x00016695   0x160  Code  Gb  HttpTask.o [2]
+DH::CHttpTask::QueryPath(char const *, char const *)
+                        0x00016459    0x68  Code  Gb  HttpTask.o [2]
+DH::CHttpTask::ReadResponse()
+                        0x00016975    0xe0  Code  Gb  HttpTask.o [2]
+DH::CHttpTask::ResponseIsComplited()
+                        0x0001664d    0x12  Code  Gb  HttpTask.o [2]
+DH::CHttpTask::Run()    0x00016f61    0x96  Code  Gb  HttpTask.o [2]
+DH::CHttpTask::SetConnection(DH::CConnection *)
+                        0x0001641d     0x8  Code  Gb  HttpTask.o [2]
+DH::CHttpTask::SetContent(char *)
+                        0x0001654b    0xc4  Code  Gb  HttpTask.o [2]
+DH::CHttpTask::Stop()   0x0001712d    0x1a  Code  Gb  HttpTask.o [2]
+DH::CHttpTask::WriteRequest()
+                        0x00016865    0xe4  Code  Gb  HttpTask.o [2]
+DH::CHttpTask::~CHttpTask()
+                        0x000162e5    0x5c  Code  Gb  HttpTask.o [2]
+DH::CHttpTask::~CHttpTask() [deleting]
+                        0x000161ad    0x12  Code  Gb  HttpTask.o [2]
+DH::CRestProtocol::AsyncAcknowledgeCommand(cJSON const *, void (DH::CRestProtocol::RestListener::*)(unsigned int, cJSON *))
+                        0x00012641   0x14e  Code  Gb  REST.o [2]
+DH::CRestProtocol::AsyncGetServerInfo(void (DH::CRestProtocol::RestListener::*)(unsigned int, cJSON *))
+                        0x00011c67    0x98  Code  Gb  REST.o [2]
+DH::CRestProtocol::AsyncPollCommands(char const *, void (DH::CRestProtocol::RestListener::*)(unsigned int, cJSON *))
+                        0x00012301   0x134  Code  Gb  REST.o [2]
+DH::CRestProtocol::AsyncRegister(cJSON *, void (DH::CRestProtocol::RestListener::*)(unsigned int, cJSON *))
+                        0x00011f91    0xee  Code  Gb  REST.o [2]
+DH::CRestProtocol::AsyncSendNotification(cJSON const *, void (DH::CRestProtocol::RestListener::*)(unsigned int, cJSON *))
+                        0x000129af   0x128  Code  Gb  REST.o [2]
+DH::CRestProtocol::CRestProtocol()
+                        0x00011bc3    0x4e  Code  Gb  REST.o [2]
+DH::CRestProtocol::GetInstance()
+                        0x00011ba7    0x1c  Code  Gb  REST.o [2]
+DH::CRestProtocol::OnCommandAcknowledged(unsigned int, DH::CHttpTask *, void *)
+                        0x000127b1   0x1f8  Code  Gb  REST.o [2]
+DH::CRestProtocol::OnGotRegistered(unsigned int, DH::CHttpTask *)
+                        0x000120b1   0x17e  Code  Gb  REST.o [2]
+DH::CRestProtocol::OnGotServerInfo(unsigned int, DH::CHttpTask *)
+                        0x00011d39   0x178  Code  Gb  REST.o [2]
+DH::CRestProtocol::OnNotify(unsigned int, DH::CHttpTask *)
+                        0x00012b39   0x200  Code  Gb  REST.o [2]
+DH::CRestProtocol::OnPollCommands(unsigned int, DH::CHttpTask *)
+                        0x0001243d   0x200  Code  Gb  REST.o [2]
+DH::CRestProtocol::m_pSingletone
+                        0x700400d0     0x4  Data  Gb  REST.o [2]
+DH::CRestProtocol::~CRestProtocol()
+                        0x00011c45    0x22  Code  Gb  REST.o [2]
+DH::CRestProtocol::~CRestProtocol() [deleting]
+                        0x00011b95    0x12  Code  Gb  REST.o [2]
+DH::HTTP::Accept        0x000132a8     0xc  Data  Lc  REST.o [2]
+DH::HTTP::AuthDeviceID  0x00012b14    0x10  Data  Lc  REST.o [2]
+DH::HTTP::AuthDeviceKey
+                        0x00012b24    0x14  Data  Lc  REST.o [2]
+DH::HTTP::Connection    0x000132b4    0x10  Data  Lc  REST.o [2]
+DH::HTTP::Content_Length
+                        0x00016f48    0x14  Data  Lc  HttpTask.o [2]
+DH::HTTP::Content_Type  0x00012b04    0x10  Data  Lc  REST.o [2]
+DH::HTTP::Host          0x00016500     0x8  Data  Lc  HttpTask.o [2]
+DH::HTTP::cCRLF         0x00016f5c     0x4  Data  Lc  HttpTask.o [2]
+DH::HTTP::cCRLFx2       0x00016f40     0x8  Data  Lc  HttpTask.o [2]
+DH::HTTP::cHTTP_1_1     0x00016f34     0xc  Data  Lc  HttpTask.o [2]
+DH::SecureConnection::Connect(unsigned int)
+                        0x0002214b   0x1f4  Code  Gb  Connection.o [2]
+DH::SecureConnection::ReadSome(unsigned char *, unsigned int, unsigned int &)
+                        0x000223c1    0xbc  Code  Gb  Connection.o [2]
+DH::SecureConnection::SecureConnection(unsigned int, unsigned short)
+                        0x000220a1    0x56  Code  Gb  Connection.o [2]
+DH::SecureConnection::Shutdown()
+                        0x0002247d    0x60  Code  Gb  Connection.o [2]
+DH::SecureConnection::WriteSome(unsigned char const *, unsigned int, unsigned int &)
+                        0x00022345    0x7c  Code  Gb  Connection.o [2]
+DH::SecureConnection::~SecureConnection()
+                        0x000220f7    0x54  Code  Gb  Connection.o [2]
+DH::SecureConnection::~SecureConnection() [deleting]
+                        0x00021ad9     0xa  Code  Gb  Connection.o [2]
+DH::SimpleConnection::Connect(unsigned int)
+                        0x00021ef7    0x6c  Code  Gb  Connection.o [2]
+DH::SimpleConnection::ReadSome(unsigned char *, unsigned int, unsigned int &)
+                        0x00021fdd    0x7a  Code  Gb  Connection.o [2]
+DH::SimpleConnection::Shutdown()
+                        0x00022057    0x4a  Code  Gb  Connection.o [2]
+DH::SimpleConnection::SimpleConnection(unsigned int, unsigned short)
+                        0x00021e57    0x4e  Code  Gb  Connection.o [2]
+DH::SimpleConnection::WriteSome(unsigned char const *, unsigned int, unsigned int &)
+                        0x00021f63    0x7a  Code  Gb  Connection.o [2]
+DH::SimpleConnection::~SimpleConnection()
+                        0x00021ea5    0x52  Code  Gb  Connection.o [2]
+DH::SimpleConnection::~SimpleConnection() [deleting]
+                        0x00021ac7     0x8  Code  Gb  Connection.o [2]
+DHCPCLNT_bind_attempt_timeout
+                        0x00036b91    0x54  Code  Lc  dhcpclnt.o [11]
+DHCPCLNT_copy_binding   0x00036dbd    0x38  Code  Lc  dhcpclnt.o [11]
+DHCPCLNT_decline        0x00036be5    0x30  Code  Lc  dhcpclnt.o [11]
+DHCPCLNT_fill_header    0x0003639f    0xa2  Code  Lc  dhcpclnt.o [11]
+DHCPCLNT_fill_options   0x00036441   0x1fe  Code  Lc  dhcpclnt.o [11]
+DHCPCLNT_find_option    0x000188d9     0x4  Code  Gb  dhcputil.o [11]
+DHCPCLNT_init           0x00036281    0x46  Code  Gb  dhcpclnt.o [11]
+DHCPCLNT_modify_options
+                        0x00036687   0x128  Code  Lc  dhcpclnt.o [11]
+DHCPCLNT_open           0x0003663f    0x48  Code  Lc  dhcpclnt.o [11]
+DHCPCLNT_parse_offer    0x00036c75   0x148  Code  Lc  dhcpclnt.o [11]
+DHCPCLNT_probe_address  0x000372ad     0xc  Code  Gb  dhcpclnt.o [11]
+DHCPCLNT_rebind_lease   0x00036a27    0x5a  Code  Lc  dhcpclnt.o [11]
+DHCPCLNT_release        0x000187d1    0x12  Code  Gb  ifdhcp.o [11]
+DHCPCLNT_release_internal
+                        0x00036c15    0x60  Code  Gb  dhcpclnt.o [11]
+DHCPCLNT_renew_lease    0x00036a81    0x64  Code  Lc  dhcpclnt.o [11]
+DHCPCLNT_send           0x000367b1   0x228  Code  Gb  dhcpclnt.o [11]
+DHCPCLNT_send_one_shot  0x000369d9    0x4e  Code  Lc  dhcpclnt.o [11]
+DHCPCLNT_service        0x00037213    0x86  Code  Gb  dhcpclnt.o [11]
+DHCPCLNT_service_ack    0x00037035   0x164  Code  Lc  dhcpclnt.o [11]
+DHCPCLNT_service_nak    0x000371c5    0x4e  Code  Lc  dhcpclnt.o [11]
+DHCPCLNT_service_offer  0x00036f05    0x80  Code  Lc  dhcpclnt.o [11]
+DHCPCLNT_set_timed_events
+                        0x00036f85    0xa6  Code  Lc  dhcpclnt.o [11]
+DHCPCLNT_start          0x000362d1    0xce  Code  Gb  dhcpclnt.o [11]
+DHCPCLNT_terminate_lease
+                        0x00036ae5    0xac  Code  Lc  dhcpclnt.o [11]
+DHCPCLNT_verify_address
+                        0x00037299    0x14  Code  Lc  dhcpclnt.o [11]
+DHCPCLNT_verify_packet  0x00036df5   0x110  Code  Lc  dhcpclnt.o [11]
+DHCP_find_option        0x000188dd    0x32  Code  Gb  dhcputil.o [11]
+DHCP_option_variable    0x0001890f    0x3a  Code  Gb  dhcputil.o [11]
+DNS_A_Root_server       0x7004250c    0x24  Data  Gb  dnshosts.o [11]
+DNS_B_Root_server       0x700424e8    0x24  Data  Gb  dnshosts.o [11]
+DNS_CACHE_NAME_LIMIT    0x7004118c     0x4  Data  Gb  dnshosts.o [11]
+DNS_C_Root_server       0x700424c4    0x24  Data  Gb  dnshosts.o [11]
+DNS_D_Root_server       0x700424a0    0x24  Data  Gb  dnshosts.o [11]
+DNS_E_Root_server       0x7004247c    0x24  Data  Gb  dnshosts.o [11]
+DNS_F_Root_server       0x70042458    0x24  Data  Gb  dnshosts.o [11]
+DNS_First_Local_server  0x70042560     0x4  Data  Gb  dnshosts.o [11]
+DNS_G_Root_server       0x70042434    0x24  Data  Gb  dnshosts.o [11]
+DNS_H_Root_server       0x70042410    0x24  Data  Gb  dnshosts.o [11]
+DNS_I_Root_server       0x700423ec    0x24  Data  Gb  dnshosts.o [11]
+DNS_J_Root_server       0x700423c8    0x24  Data  Gb  dnshosts.o [11]
+DNS_K_Root_server       0x700423a4    0x24  Data  Gb  dnshosts.o [11]
+DNS_L_Root_server       0x70042380    0x24  Data  Gb  dnshosts.o [11]
+DNS_Local_network_name  0x70042358     0x2  Data  Gb  dnshosts.o [11]
+DNS_Local_server_list   0x7004253c    0x24  Data  Gb  dnshosts.o [11]
+DNS_Local_server_name   0x70042530     0xc  Data  Gb  dnshosts.o [11]
+DNS_M_Root_server       0x7004235c    0x24  Data  Gb  dnshosts.o [11]
+DNS_Resolver_task       0x00033ec5   0x198  Code  Gb  resolver.o [11]
+DNS_Send_TCP_Query      0x00033db1     0x2  Code  Lc  resolver.o [11]
+DNS_Send_UDP_Query      0x00032ceb    0xe8  Code  Lc  resolver.o [11]
+DNS_add_query_to_list   0x00032ee7    0x3e  Code  Lc  resolver.o [11]
+DNS_add_to_cache        0x00033a77   0x248  Code  Lc  resolver.o [11]
+DNS_append_local_name   0x0002320d    0xba  Code  Lc  dnsutil.o [11]
+DNS_assign_answer_middle_ptr
+                        0x00033433    0x30  Code  Lc  resolver.o [11]
+DNS_assign_answer_pointers
+                        0x00033463    0x22  Code  Lc  resolver.o [11]
+DNS_check_local_host_file
+                        0x00023783   0x1ae  Code  Gb  dnsutil.o [11]
+DNS_check_outstanding_queries
+                        0x000330b5    0x6a  Code  Lc  resolver.o [11]
+DNS_check_packet_for_name
+                        0x000331ab    0xb4  Code  Lc  resolver.o [11]
+DNS_fill_answer_section_of_buffer
+                        0x0003325f   0x108  Code  Lc  resolver.o [11]
+DNS_fill_generic_response_buffer
+                        0x00032f9f    0x8a  Code  Lc  resolver.o [11]
+DNS_fill_response_buffer_with_rr_data
+                        0x00033367    0x5e  Code  Lc  resolver.o [11]
+DNS_find_slist_entry    0x00018611    0x1a  Code  Gb  ifdns.o [11]
+DNS_free_internal_query
+                        0x00032cbd    0x2e  Code  Lc  resolver.o [11]
+DNS_free_resource_record
+                        0x00032e31    0x26  Code  Lc  resolver.o [11]
+DNS_get_best_name_server_for_query
+                        0x00032e57    0x6c  Code  Lc  resolver.o [11]
+DNS_get_next_expired_query
+                        0x00032ec9    0x1e  Code  Lc  resolver.o [11]
+DNS_get_query_id        0x00032c71    0x2a  Code  Lc  resolver.o [11]
+DNS_gethostbyname       0x000185a9    0x68  Code  Gb  ifdns.o [11]
+DNS_handle_UDP_response
+                        0x00033dc5    0xfc  Code  Lc  resolver.o [11]
+DNS_handle_internal_query
+                        0x00033dad     0x4  Code  Lc  resolver.o [11]
+DNS_handle_new_query    0x00033875   0x192  Code  Lc  resolver.o [11]
+DNS_init                0x00013d3b   0x13a  Code  Gb  dnsinit.o [11]
+DNS_init_slist_entry    0x0001862b    0x20  Code  Gb  ifdns.o [11]
+DNS_init_unwind         0x00013ced    0x4e  Code  Lc  dnsinit.o [11]
+DNS_insert_IP_query     0x000231e5    0x28  Code  Lc  dnsutil.o [11]
+DNS_insert_slist_entry  0x0001864b    0xaa  Code  Lc  ifdns.o [11]
+DNS_is_dotted_IP_addr   0x000230a1   0x13e  Code  Gb  dnsutil.o [11]
+DNS_is_dotted_domain_name
+                        0x000232c7    0xa4  Code  Gb  dnsutil.o [11]
+DNS_is_valid_IP_addr    0x000335e7   0x198  Code  Lc  resolver.o [11]
+DNS_is_valid_domain_name
+                        0x00033785    0xf0  Code  Gb  resolver.o [11]
+DNS_parse_UDP_response  0x000233c9   0x1a4  Code  Gb  dnsutil.o [11]
+DNS_parse_answer_name_to_dotted_form
+                        0x0002336b    0x5e  Code  Lc  dnsutil.o [11]
+DNS_prepend_slist_entry
+                        0x000186f5    0x16  Code  Gb  ifdns.o [11]
+DNS_query_resolver_task
+                        0x00023573   0x210  Code  Gb  dnsutil.o [11]
+DNS_refresh_root_servers
+                        0x00033ec1     0x4  Code  Lc  resolver.o [11]
+DNS_remove_last_entry_from_cache
+                        0x00033a2f    0x48  Code  Lc  resolver.o [11]
+DNS_remove_slist_entry  0x00018727    0x66  Code  Gb  ifdns.o [11]
+DNS_retrieve_query      0x00033a0d    0x22  Code  Lc  resolver.o [11]
+DNS_retry_query_with_CNAME
+                        0x00033cbf    0xea  Code  Lc  resolver.o [11]
+DNS_return_UDP_response_to_query
+                        0x00032dd3    0x5e  Code  Lc  resolver.o [11]
+DNS_rr_canonical_data_exists
+                        0x000333c5    0x6e  Code  Lc  resolver.o [11]
+DNS_rr_data_exists      0x00033485   0x162  Code  Lc  resolver.o [11]
+DNS_search_response_for_referral
+                        0x00033da9     0x4  Code  Lc  resolver.o [11]
+DNS_send_error_response
+                        0x00033029    0x7a  Code  Lc  resolver.o [11]
+DNS_send_no_query_error_response
+                        0x00032f25    0x7a  Code  Lc  resolver.o [11]
+DNS_update_TTL          0x00032c9b    0x22  Code  Lc  resolver.o [11]
+DNS_update_cache        0x0003311f    0x8c  Code  Lc  resolver.o [11]
+DateGreaterThan         0x0001e33d    0x4c  Code  Lc  asn.o [4]
+DecodeAltNames          0x0001ecf5   0x112  Code  Lc  asn.o [4]
+DecodeCertExtensions    0x0001efb1   0x5a8  Code  Lc  asn.o [4]
+DecodeCrlDist           0x0001ee0f    0xf4  Code  Lc  asn.o [4]
+DecodeSubtree           0x0001ef03    0xa8  Code  Lc  asn.o [4]
+DecodeToKey             0x0001e557    0xa0  Code  Gb  asn.o [4]
+DeriveKeys              0x00029e39   0x12e  Code  Gb  keys.o [4]
+DeriveTlsKeys           0x00025925    0x74  Code  Gb  tls.o [4]
+Des3ProcessBlock        0x000280df    0x70  Code  Lc  des3.o [4]
+Des3_CbcDecrypt         0x000281e5    0xaa  Code  Gb  des3.o [4]
+Des3_CbcEncrypt         0x000281a7    0x3e  Code  Gb  des3.o [4]
+Des3_SetIV              0x0002828f    0x1c  Code  Gb  des3.o [4]
+Des3_SetKey             0x00027f6b    0x50  Code  Gb  des3.o [4]
+DesRawProcessBlock      0x00027fbb   0x124  Code  Lc  des3.o [4]
+DesSetKey               0x00027e43   0x128  Code  Lc  des3.o [4]
+DeviceHiveMain          0x0002cfdd    0x3a  Code  Gb  DeviceHiveMain.o [2]
+DoApplicationData       0x0001a22f   0x10e  Code  Gb  internal.o [4]
+DoCertificate           0x0001989f   0x310  Code  Lc  internal.o [4]
+DoCertificateRequest    0x0001c45d    0xfc  Code  Lc  internal.o [4]
+DoCertificateVerify     0x0001d41d   0x136  Code  Lc  internal.o [4]
+DoClientHello           0x0001d195   0x282  Code  Lc  internal.o [4]
+DoClientKeyExchange     0x0001d625   0x330  Code  Lc  internal.o [4]
+DoFinished              0x00019d19    0x7a  Code  Gb  internal.o [4]
+DoHandShakeMsgType      0x00019d95   0x2c8  Code  Lc  internal.o [4]
+DoHelloRequest          0x00019bb7   0x15c  Code  Lc  internal.o [4]
+DoServerHello           0x0001c311   0x140  Code  Lc  internal.o [4]
+ENET_0                  0x0000d8dc    0x10  Data  Gb  init_enet.o [5]
+ENET_Dequeue_Buffer     0x0002396f     0xc  Code  Gb  enutil.o [5]
+ENET_Enqueue_Buffer     0x00023967     0x8  Code  Gb  enutil.o [5]
+ENET_close              0x00035135    0x7c  Code  Gb  enclose.o [5]
+ENET_default_params     0x0000d8ec    0x24  Data  Gb  init_enet.o [5]
+ENET_find_receiver      0x000385a7    0xc4  Code  Gb  enrecv.o [5]
+ENET_get_MTU            0x0002398d    0x20  Code  Gb  enutil.o [5]
+ENET_get_address        0x000351b1    0x1c  Code  Gb  enaddr.o [5]
+ENET_get_options        0x000239ad    0x12  Code  Gb  enutil.o [5]
+ENET_initialize         0x00018a13     0xe  Code  Gb  eninit.o [5]
+ENET_initialize_ex      0x00018949    0xca  Code  Gb  eninit.o [5]
+ENET_join               0x0003532d    0x98  Code  Gb  enjoin.o [5]
+ENET_leave              0x000353c5    0xb0  Code  Gb  enleave.o [5]
+ENET_max_framesize      0x0002397b    0x12  Code  Gb  enutil.o [5]
+ENET_open               0x000350b5    0x80  Code  Gb  enopen.o [5]
+ENET_send               0x000351cd   0x14e  Code  Gb  ensend.o [5]
+ENET_shutdown           0x00018a31    0x44  Code  Gb  enstop.o [5]
+EmbedReceive            0x00035641    0xc8  Code  Gb  io.o [4]
+EmbedSend               0x00035709    0x6e  Code  Gb  io.o [4]
+EncodeSignature         0x0001e81d    0x6a  Code  Gb  asn.o [4]
+FLASHX_POOL$$Base       0x0003b000           --   Gb  - Linker created -
+FLASHX_POOL$$Limit      0x0003b001           --   Gb  - Linker created -
+FPERM                   0x00027dc9    0x7a  Code  Lc  des3.o [4]
+FreeAltNames            0x0001dd29     0x4  Code  Gb  asn.o [4]
+FreeCiphers             0x00018ce5    0x3c  Code  Gb  internal.o [4]
+FreeDecodedCert         0x0001dd4b    0x54  Code  Gb  asn.o [4]
+FreeHandshakeResources  0x00019395    0xba  Code  Gb  internal.o [4]
+FreeMutex               0x0001d967     0x6  Code  Gb  wc_port.o [4]
+FreeNameSubtrees        0x0001dd2d     0x2  Code  Gb  asn.o [4]
+FreeSSL                 0x0001944f    0x1e  Code  Gb  internal.o [4]
+FreeSSL_Ctx             0x00018c9d    0x32  Code  Gb  internal.o [4]
+FreeSigner              0x0001f797    0x38  Code  Gb  asn.o [4]
+FreeSignerTable         0x0001f7cf    0x2a  Code  Gb  asn.o [4]
+GenerateSeed            0x0002527f    0x44  Code  Gb  random.o [4]
+GetAlgoId               0x0001dabb    0x96  Code  Gb  asn.o [4]
+GetCA                   0x0001417f    0x46  Code  Gb  ssl.o [4]
+GetCAByName             0x000141d1    0x52  Code  Gb  ssl.o [4]
+GetCertHeader           0x0001dd9f    0xb0  Code  Lc  asn.o [4]
+GetDate                 0x0001e4b1    0xa0  Code  Lc  asn.o [4]
+GetInputData            0x0001a33d    0xec  Code  Lc  internal.o [4]
+GetInt                  0x0001da45    0x76  Code  Gb  asn.o [4]
+GetKey                  0x0001de55    0xca  Code  Lc  asn.o [4]
+GetLength               0x0001d985    0x52  Code  Gb  asn.o [4]
+GetMyVersion            0x0001da17    0x2e  Code  Gb  asn.o [4]
+GetName                 0x0001df25   0x3ca  Code  Lc  asn.o [4]
+GetPushButton           0x00011ad9    0x10  Code  Gb  TestPin_think.o [2]
+GetSequence             0x0001d9d7    0x2a  Code  Gb  asn.o [4]
+GetSession              0x00014647    0xd6  Code  Gb  ssl.o [4]
+GrowInputBuffer         0x000195f7    0x84  Code  Gb  internal.o [4]
+GrowOutputBuffer        0x00019579    0x7e  Code  Lc  internal.o [4]
+HashOutput              0x0001947d    0x50  Code  Lc  internal.o [4]
+HmacFinal               0x0002c2ef    0xbc  Code  Gb  hmac.o [4]
+HmacKeyInnerHash        0x0002c257    0x4a  Code  Lc  hmac.o [4]
+HmacSetKey              0x0002c137   0x120  Code  Gb  hmac.o [4]
+HmacUpdate              0x0002c2a1    0x4e  Code  Gb  hmac.o [4]
+ICMP_init               0x00032441    0x3a  Code  Gb  icmp.o [11]
+ICMP_send_error         0x00032a3b    0x18  Code  Gb  icmp.o [11]
+ICMP_send_error_internal
+                        0x000327d9   0x25c  Code  Gb  icmp.o [11]
+ICMP_service            0x0003247d   0x356  Code  Gb  icmp.o [11]
+IF_FREE                 0x70042298     0x4  Data  Gb  ipif_add.o [11]
+IPERM                   0x00027d4f    0x7a  Code  Lc  des3.o [4]
+IPE_close               0x000345d9    0x32  Code  Gb  ip-e.o [11]
+IPE_join                0x0003486d    0x3a  Code  Gb  ip-e.o [11]
+IPE_leave               0x000348a7    0x3a  Code  Gb  ip-e.o [11]
+IPE_open                0x00034535    0xa4  Code  Gb  ip-e.o [11]
+IPE_recv                0x0003460b   0x108  Code  Gb  ip-e.o [11]
+IPE_recv_ARP            0x00034719     0x4  Code  Gb  ip-e.o [11]
+IPE_recv_IP             0x00034715     0x4  Code  Gb  ip-e.o [11]
+IPE_send                0x00034725    0x76  Code  Gb  ip-e.o [11]
+IPE_send_ARP_bcast      0x00034821    0x38  Code  Gb  ip-e.o [11]
+IPE_send_ARP_ucast      0x00034859    0x14  Code  Gb  ip-e.o [11]
+IPE_send_IP             0x0003479b    0x7e  Code  Gb  ip-e.o [11]
+IPE_send_IP_ucast       0x00034819     0x8  Code  Gb  ip-e.o [11]
+IPIF_add                0x000360e1    0x8c  Code  Gb  ipif_add.o [11]
+IPIF_bind               0x0003616d    0x5c  Code  Gb  ipif_add.o [11]
+IPIF_bind_finish        0x000361c9    0x50  Code  Gb  ipif_add.o [11]
+IPIF_gate_add           0x00036221    0x2c  Code  Gb  ipif_add.o [11]
+IPIF_gate_add_redirect  0x0003624d    0x2a  Code  Gb  ipif_add.o [11]
+IPIF_gate_remove        0x00037373    0x18  Code  Gb  ipif_rem.o [11]
+IPIF_remove             0x00037311    0x28  Code  Gb  ipif_rem.o [11]
+IPIF_unbind             0x0003733d    0x36  Code  Gb  ipif_rem.o [11]
+IPLOCAL_close           0x0003096f     0x4  Code  Gb  iplocal.o [11]
+IPLOCAL_init            0x00030a63    0x24  Code  Gb  iplocal.o [11]
+IPLOCAL_open            0x0003094b    0x24  Code  Gb  iplocal.o [11]
+IPLOCAL_send            0x00030975    0x6c  Code  Gb  iplocal.o [11]
+IPLOCAL_service         0x000309e1    0x82  Code  Gb  iplocal.o [11]
+IPRADIX_findbest        0x00032a63    0x42  Code  Gb  ipradix.o [11]
+IPRADIX_init            0x00032a53    0x10  Code  Gb  ipradix.o [11]
+IPRADIX_insert          0x00032aa5   0x132  Code  Gb  ipradix.o [11]
+IPRADIX_walk            0x00032bd7    0x42  Code  Gb  ipradix.o [11]
+IP_MTU                  0x00030c51    0x2a  Code  Gb  iputil.o [11]
+IP_MTU_test             0x00030c0b    0x46  Code  Lc  iputil.o [11]
+IP_Sum_PCB              0x00031a19    0x4a  Code  Gb  checksum.o [11]
+IP_Sum_immediate        0x00031a0d     0xc  Code  Gb  checksum.o [11]
+IP_Sum_pseudo           0x00031a63    0x1c  Code  Gb  checksum.o [11]
+IP_complete_recv        0x00031641   0x10a  Code  Gb  ip.o [11]
+IP_complete_send        0x00031289   0x1e4  Code  Gb  ip.o [11]
+IP_dest                 0x000319f3     0x6  Code  Gb  ip.o [11]
+IP_get_ipif_addr        0x00030b29    0x24  Code  Gb  iputil.o [11]
+IP_get_ipif_addr_test   0x00030afb    0x2e  Code  Lc  iputil.o [11]
+IP_get_netmask          0x00030ac5    0x36  Code  Gb  iputil.o [11]
+IP_get_netmask_test     0x00030a99    0x2c  Code  Lc  iputil.o [11]
+IP_init                 0x00031141    0x84  Code  Gb  ip.o [11]
+IP_is_gate              0x00030bdf    0x1a  Code  Gb  iputil.o [11]
+IP_is_gate_test         0x00030bbd    0x1c  Code  Lc  iputil.o [11]
+IP_is_local             0x00030b85    0x38  Code  Gb  iputil.o [11]
+IP_is_local_test        0x00030b4d    0x38  Code  Lc  iputil.o [11]
+IP_open                 0x000308e5    0x66  Code  Gb  iplocal.o [11]
+IP_route                0x00032339    0xd2  Code  Gb  iproute.o [11]
+IP_route_add_direct     0x00031c71    0x9c  Code  Gb  iproute.o [11]
+IP_route_add_indirect   0x00031dc5    0x88  Code  Gb  iproute.o [11]
+IP_route_add_indirect_sort
+                        0x00031d6b    0x5a  Code  Lc  iproute.o [11]
+IP_route_delete         0x00031bd7    0x9a  Code  Lc  iproute.o [11]
+IP_route_delete_direct_test
+                        0x00031d0d    0x18  Code  Lc  iproute.o [11]
+IP_route_delete_indirect_all
+                        0x00031e53    0x6e  Code  Lc  iproute.o [11]
+IP_route_delete_indirect_test
+                        0x00031ec1    0x22  Code  Lc  iproute.o [11]
+IP_route_find           0x00030cc3    0x48  Code  Gb  iputil.o [11]
+IP_route_find_test      0x00030c7b    0x48  Code  Lc  iputil.o [11]
+IP_route_init           0x00031b6d    0x12  Code  Gb  iproute.o [11]
+IP_route_insert         0x00031b7f    0x58  Code  Lc  iproute.o [11]
+IP_route_local          0x00031f91    0x8e  Code  Gb  iproute.o [11]
+IP_route_local_test     0x00031f41    0x50  Code  Lc  iproute.o [11]
+IP_route_multi          0x0003211f    0x60  Code  Gb  iproute.o [11]
+IP_route_multi_test     0x0003201f   0x100  Code  Lc  iproute.o [11]
+IP_route_remove_direct  0x00031d25    0x46  Code  Gb  iproute.o [11]
+IP_route_remove_indirect
+                        0x00031ee3    0x56  Code  Gb  iproute.o [11]
+IP_route_test           0x0003217f   0x1ba  Code  Lc  iproute.o [11]
+IP_send                 0x000311c5    0x7e  Code  Gb  ip.o [11]
+IP_send_IF              0x00031243    0x46  Code  Gb  ip.o [11]
+IP_send_dgram           0x0003175d   0x288  Code  Gb  ip.o [11]
+IP_service              0x0003146d   0x1d4  Code  Gb  ip.o [11]
+IP_source               0x000319eb     0x8  Code  Gb  ip.o [11]
+InStream_Read           0x00039e71    0x22  Code  Lc  packbits_init.o [10]
+InitCipherSpecs         0x00018d21    0x1a  Code  Gb  internal.o [4]
+InitCiphers             0x00018ccf    0x16  Code  Gb  internal.o [4]
+InitDecodedCert         0x0001dc71    0xb8  Code  Gb  asn.o [4]
+InitLED_FW              0x00011ae9    0x20  Code  Gb  TestPin_think.o [2]
+InitMd5                 0x0001f865    0x22  Code  Gb  md5.o [4]
+InitMutex               0x0001d95d     0xa  Code  Gb  wc_port.o [4]
+InitPeripherals         0x00011abd    0x1c  Code  Gb  TestPin_think.o [2]
+InitRng                 0x00025225    0x3a  Code  Gb  random.o [4]
+InitRsaKey              0x000252cd    0x14  Code  Gb  rsa.o [4]
+InitSSL                 0x00018ef1   0x3ce  Code  Gb  internal.o [4]
+InitSSL_Ctx             0x00018b87    0xd8  Code  Gb  internal.o [4]
+InitSSL_Method          0x00018b73    0x14  Code  Gb  internal.o [4]
+InitSha                 0x00023aeb    0x20  Code  Gb  sha.o [4]
+InitSha256              0x00024c33    0x2c  Code  Gb  sha256.o [4]
+InitSuites              0x00018d3b   0x1ac  Code  Gb  internal.o [4]
+InitializeIIC           0x0001199f    0x34  Code  Gb  iic.o [2]
+IsAtLeastTLSv1_2        0x00018b55    0x1e  Code  Gb  internal.o [4]
+K                       0x000250b8   0x100  Data  Lc  sha256.o [4]
+KERNEL_DATA$$Base       0x71f00000           --   Gb  - Linker created -
+KERNEL_DATA$$Limit      0x71f00004           --   Gb  - Linker created -
+LWDNS_server_ipaddr     0x70041198     0x4  Data  Gb  resolver.o [11]
+LoadInt                 0x00020cdb    0x6e  Code  Lc  xprintffull.o [6]
+LockMutex               0x0001d975     0x8  Code  Gb  wc_port.o [4]
+LowResTimer             0x0001946d    0x10  Code  Gb  internal.o [4]
+MACNET_IF               0x0000da70    0x20  Data  Gb  macnet_init.o [5]
+MACNET_RX_ISR           0x00038585    0x22  Code  Gb  macnet_receive.o [5]
+MACNET_TX_ISR           0x00038a1d    0x28  Code  Gb  macnet_send.o [5]
+MACNET_add_buffers_to_rx_ring
+                        0x000381fd    0x8c  Code  Gb  macnet_receive.o [5]
+MACNET_device           0x0000d8c8    0x14  Data  Gb  init_enet.o [5]
+MACNET_discard_current_rx
+                        0x00038289    0x46  Code  Lc  macnet_receive.o [5]
+MACNET_free_context     0x00038145    0x32  Code  Gb  macnet_util.o [5]
+MACNET_get_base_address
+                        0x00037fc9     0xa  Code  Gb  macnet_mk70.o [5]
+MACNET_get_vector       0x00038127    0x12  Code  Gb  macnet_util.o [5]
+MACNET_initialize       0x00037bb5   0x414  Code  Gb  macnet_init.o [5]
+MACNET_install_isr      0x00037fe5    0x50  Code  Gb  macnet_util.o [5]
+MACNET_install_isrs     0x00038035    0x62  Code  Gb  macnet_util.o [5]
+MACNET_io_init          0x00037fd9     0xa  Code  Gb  macnet_mk70.o [5]
+MACNET_join             0x0003866d    0x78  Code  Gb  macnet_join.o [5]
+MACNET_mask_interrupts  0x00038097    0x20  Code  Gb  macnet_util.o [5]
+MACNET_mii_enabled      0x000386e5    0x10  Code  Lc  macnet_mii.o [5]
+MACNET_process_rx_bds   0x000382cf   0x2a8  Code  Lc  macnet_receive.o [5]
+MACNET_process_tx_bds   0x0003894d    0xd0  Code  Lc  macnet_send.o [5]
+MACNET_read_mii         0x00038769    0x12  Code  Gb  macnet_mii.o [5]
+MACNET_read_write_mii   0x000386f5    0x6e  Code  Lc  macnet_mii.o [5]
+MACNET_rejoin           0x000073c3    0x52  Code  Gb  macnet_rejoin.o [5]
+MACNET_rx_free          0x000381c3    0x3a  Code  Lc  macnet_receive.o [5]
+MACNET_rx_free_large    0x000381b5     0x8  Code  Lc  macnet_receive.o [5]
+MACNET_rx_free_small    0x000381ab     0xa  Code  Lc  macnet_receive.o [5]
+MACNET_rx_free_specific
+                        0x00038179    0x2a  Code  Lc  macnet_receive.o [5]
+MACNET_send             0x0003879d   0x1a8  Code  Gb  macnet_send.o [5]
+MACNET_shutdown         0x00038a45    0x4c  Code  Gb  macnet_stop.o [5]
+MACNET_uninstall_all_isrs
+                        0x000380fb    0x2c  Code  Gb  macnet_util.o [5]
+MACNET_uninstall_isr    0x000380b7    0x44  Code  Lc  macnet_util.o [5]
+MACNET_vectors          0x0000dae8    0x40  Data  Gb  macnet_mk70.o [5]
+MACNET_write_mii        0x0003877b    0x10  Code  Gb  macnet_mii.o [5]
+MCGTransitionMatrix     0x0000c3d0    0x1c  Data  Lc  bsp_cm.o [5]
+MQX_init_struct         0x0000db34    0x30  Data  Gb  mqx_init.o [5]
+MQX_template_list       0x0000c0b8    0x40  Data  Gb  Main.o [2]
+Main_task               0x0002d07d    0x22  Code  Gb  Main.o [2]
+MakeMasterSecret        0x0002a0fd     0xe  Code  Gb  keys.o [4]
+MakeSigner              0x0001f779    0x1e  Code  Gb  asn.o [4]
+MakeSslMasterSecret     0x00029fc1   0x134  Code  Lc  keys.o [4]
+MakeTlsMasterSecret     0x00025999    0x9e  Code  Gb  tls.o [4]
+MakeWordFromHash        0x00014121    0x16  Code  Lc  ssl.o [4]
+MatchDomainName         0x00019805    0x9a  Code  Lc  internal.o [4]
+MatchSuite              0x0001ceef    0x96  Code  Lc  internal.o [4]
+Md5Final                0x00020011    0x98  Code  Gb  md5.o [4]
+Md5Update               0x0001ffb9    0x58  Code  Gb  md5.o [4]
+PAD1                    0x0001ac88    0x30  Data  Lc  internal.o [4]
+PAD2                    0x0001acb8    0x30  Data  Lc  internal.o [4]
+PE_CpuClockConfigurations
+                        0x0000c3ec    0x78  Data  Gb  bsp_cm.o [5]
+PE_low_level_init       0x00005ddf    0x3a  Code  Gb  bsp_cm.o [5]
+PRF                     0x00025831    0x68  Code  Lc  tls.o [4]
+PadCheck                0x0001a08f    0x28  Code  Lc  internal.o [4]
+ParseCert               0x0001f55f    0x66  Code  Gb  asn.o [4]
+ParseCertRelative       0x0001f5c5   0x1ae  Code  Gb  asn.o [4]
+PickHashSigAlgo         0x0001c0f5    0x40  Code  Lc  internal.o [4]
+ProcessOldClientHello   0x0001cf85   0x20a  Code  Gb  internal.o [4]
+ProcessReply            0x0001a54d   0x406  Code  Gb  internal.o [4]
+RNG_GenerateBlock       0x0002525f    0x20  Code  Gb  random.o [4]
+ROUTE_new_bindif        0x00032c4d    0x22  Code  Gb  route.o [11]
+RTCSPCB_alloc           0x00030da1    0x2c  Code  Gb  rtcspcb.o [11]
+RTCSPCB_alloc_dup       0x00030e5f    0x86  Code  Gb  rtcspcb.o [11]
+RTCSPCB_alloc_recv      0x00030e0f    0x50  Code  Gb  rtcspcb.o [11]
+RTCSPCB_alloc_send      0x00030dcd    0x42  Code  Gb  rtcspcb.o [11]
+RTCSPCB_append_fragment
+                        0x000310a5    0x52  Code  Gb  rtcspcb.o [11]
+RTCSPCB_append_fragment_autofree
+                        0x00031089    0x1c  Code  Gb  rtcspcb.o [11]
+RTCSPCB_construct       0x00030d25    0x28  Code  Lc  rtcspcb.o [11]
+RTCSPCB_depend          0x00030ee5    0x1a  Code  Gb  rtcspcb.o [11]
+RTCSPCB_destroy         0x00030d4d     0xc  Code  Lc  rtcspcb.o [11]
+RTCSPCB_fork            0x00030eff    0x84  Code  Gb  rtcspcb.o [11]
+RTCSPCB_free_internal   0x00030f85    0x8e  Code  Lc  rtcspcb.o [11]
+RTCSPCB_init            0x00030d59    0x34  Code  Gb  rtcspcb.o [11]
+RTCSPCB_insert_header   0x00031013    0x26  Code  Gb  rtcspcb.o [11]
+RTCSPCB_memcopy         0x000310f7    0x48  Code  Gb  rtcspcb.o [11]
+RTCSPCB_next            0x00031039    0x2a  Code  Gb  rtcspcb.o [11]
+RTCSPCB_shrink          0x0003106f    0x1a  Code  Gb  rtcspcb.o [11]
+RTCS_HOST               0x700411ac    0x9c  Data  Lc  dnsutil.o [11]
+RTCS_HOST_ADDRS         0x70042238    0x40  Data  Lc  dnsutil.o [11]
+RTCS_HOST_NAMES         0x70041248   0xff0  Data  Lc  dnsutil.o [11]
+RTCS_Hosts_list         0x0000d940   0x130  Data  Gb  rtcshost.o [11]
+RTCS_IF_ENET            0x0000c380     0x4  Data  Gb  ip-e.o [11]
+RTCS_IF_LOCALHOST       0x0000d8b8     0x4  Data  Gb  iplocal.o [11]
+RTCS_IF_LOCALHOST_PRV   0x70042280     0x4  Data  Gb  iplocal.o [11]
+RTCS_attachsock         0x00018ae5    0x28  Code  Gb  rtcs.o [11]
+RTCS_cmd_complete       0x000134a9    0x12  Code  Gb  rtcscmd.o [11]
+RTCS_cmd_internal       0x00013497    0x12  Code  Gb  rtcscmd.o [11]
+RTCS_cmd_issue          0x0001344d    0x4a  Code  Gb  rtcscmd.o [11]
+RTCS_cmd_service        0x000134bb    0x30  Code  Gb  rtcscmd.o [11]
+RTCS_create             0x000132e1   0x132  Code  Gb  rtcscmd.o [11]
+RTCS_detachsock         0x00018b0d    0x1e  Code  Gb  rtcs.o [11]
+RTCS_gate_add           0x000188ab    0x10  Code  Gb  ifadd.o [11]
+RTCS_gate_remove        0x00018807    0x10  Code  Gb  ifrem.o [11]
+RTCS_geterror           0x00018b2b    0x1e  Code  Gb  rtcs.o [11]
+RTCS_if_add             0x00018831    0x26  Code  Gb  ifadd.o [11]
+RTCS_if_bind_DHCP       0x000187a1    0x1a  Code  Gb  ifdhcp.o [11]
+RTCS_if_probe_and_bind  0x00018857    0x54  Code  Gb  ifadd.o [11]
+RTCS_if_remove          0x000187f1     0xa  Code  Gb  ifrem.o [11]
+RTCS_if_unbind          0x000187fb     0xc  Code  Gb  ifrem.o [11]
+RTCS_mem_alloc          0x00017505    0x16  Code  Gb  rtcspart.o [11]
+RTCS_mem_alloc_system   0x00017531    0x16  Code  Gb  rtcspart.o [11]
+RTCS_mem_alloc_system_zero
+                        0x00017547    0x16  Code  Gb  rtcspart.o [11]
+RTCS_mem_alloc_zero     0x0001751b    0x16  Code  Gb  rtcspart.o [11]
+RTCS_part_alloc         0x000175e1    0x40  Code  Gb  rtcspart.o [11]
+RTCS_part_alloc_zero    0x00017621    0x16  Code  Gb  rtcspart.o [11]
+RTCS_part_create        0x00017561    0x80  Code  Gb  rtcspart.o [11]
+RTCS_part_destroy       0x0001764f    0x36  Code  Gb  rtcspart.o [11]
+RTCS_part_free          0x00017637    0x18  Code  Gb  rtcspart.o [11]
+RTCS_protocol_table     0x0000d8bc     0xc  Data  Gb  rtcsinit.o [11]
+RTCS_rand               0x00031a97    0xb8  Code  Gb  rtcsrand.o [11]
+RTCS_rand_seed          0x00031a81    0x16  Code  Gb  rtcsrand.o [11]
+RTCS_selectset          0x0002bb23    0x22  Code  Gb  sosel.o [11]
+RTCS_seterror           0x000134eb    0x26  Code  Gb  rtcscmd.o [11]
+RTCS_setsockerror       0x00018b4d     0x6  Code  Gb  rtcs.o [11]
+RTCS_shutdown           0x00018aaf    0x36  Code  Gb  rtcs.o [11]
+RTCS_socket             0x00018a75    0x3a  Code  Gb  rtcs.o [11]
+RTCS_task               0x00018081    0x1a  Code  Lc  rtcstask.o [11]
+RTCS_task_create        0x0001809b    0x60  Code  Gb  rtcstask.o [11]
+RTCS_task_exit          0x0001810d    0x16  Code  Gb  rtcstask.o [11]
+RTCS_task_resume_creator
+                        0x00018101     0xc  Code  Gb  rtcstask.o [11]
+RTCS_time_get           0x000308cb    0x1a  Code  Gb  rtcsmsec.o [11]
+ReceiveData             0x0001b247    0xde  Code  Gb  internal.o [4]
+Region$$Table$$Base     0x00039f44           --   Gb  - Linker created -
+Region$$Table$$Limit    0x00039fb0           --   Gb  - Linker created -
+RsaEncryptSize          0x00025657     0x4  Code  Gb  rsa.o [4]
+RsaFunction             0x000253ab   0x16c  Code  Lc  rsa.o [4]
+RsaPad                  0x000252e1    0x70  Code  Lc  rsa.o [4]
+RsaPrivateDecryptInline
+                        0x0002557d    0x2c  Code  Gb  rsa.o [4]
+RsaPrivateKeyDecode     0x0001db51    0xce  Code  Gb  asn.o [4]
+RsaPublicEncrypt        0x0002551f    0x58  Code  Gb  rsa.o [4]
+RsaPublicKeyDecode      0x0001dc1f    0x46  Code  Gb  asn.o [4]
+RsaSSL_Sign             0x000255d5    0x7c  Code  Gb  rsa.o [4]
+RsaSSL_VerifyInline     0x000255a9    0x2c  Code  Gb  rsa.o [4]
+RsaUnPad                0x00025351    0x5a  Code  Lc  rsa.o [4]
+SDAReadByte             0x00011937    0x68  Code  Gb  iic.o [2]
+SDASendByte             0x000118db    0x5c  Code  Gb  iic.o [2]
+SDAStart                0x000118a1    0x1e  Code  Gb  iic.o [2]
+SDAStop                 0x000118bf    0x1c  Code  Gb  iic.o [2]
+SOCK_DGRAM_CALL         0x0000c320    0x3c  Data  Gb  sdgram.o [11]
+SOCK_DGRAM_bind         0x000340bb    0x50  Code  Gb  sdgram.o [11]
+SOCK_DGRAM_connect      0x0003410b    0x5e  Code  Gb  sdgram.o [11]
+SOCK_DGRAM_getpeername  0x000341c5    0x5c  Code  Gb  sdgram.o [11]
+SOCK_DGRAM_getsockname  0x00034169    0x5c  Code  Gb  sdgram.o [11]
+SOCK_DGRAM_recv         0x00034221     0xe  Code  Gb  sdgram.o [11]
+SOCK_DGRAM_recvfrom     0x0003422f    0x86  Code  Gb  sdgram.o [11]
+SOCK_DGRAM_send         0x000342b5     0xe  Code  Gb  sdgram.o [11]
+SOCK_DGRAM_sendto       0x000342c3    0xae  Code  Gb  sdgram.o [11]
+SOCK_DGRAM_shutdown     0x00034371    0x16  Code  Gb  sdgram.o [11]
+SOCK_DGRAM_socket       0x0003407d    0x3e  Code  Gb  sdgram.o [11]
+SOCK_Free_sock_struct   0x00023a71    0x4c  Code  Gb  sockutil.o [11]
+SOCK_Get_sock_struct    0x000239c1    0xa2  Code  Gb  sockutil.o [11]
+SOCK_STREAM_CALL        0x0000c108    0x3c  Data  Gb  sstream.o [11]
+SOCK_STREAM_accept      0x0002d32b   0x124  Code  Gb  sstream.o [11]
+SOCK_STREAM_bind        0x0002d0c3    0x66  Code  Gb  sstream.o [11]
+SOCK_STREAM_connect     0x0002d129   0x11e  Code  Gb  sstream.o [11]
+SOCK_STREAM_getpeername
+                        0x0002d5ed    0x62  Code  Gb  sstream.o [11]
+SOCK_STREAM_getsockname
+                        0x0002d58d    0x60  Code  Gb  sstream.o [11]
+SOCK_STREAM_listen      0x0002d247    0xe4  Code  Gb  sstream.o [11]
+SOCK_STREAM_recv        0x0002d4f9    0x94  Code  Gb  sstream.o [11]
+SOCK_STREAM_send        0x0002d455    0xa4  Code  Gb  sstream.o [11]
+SOCK_STREAM_shutdown    0x0002d655    0x24  Code  Gb  sstream.o [11]
+SOCK_STREAM_socket      0x0002d0a1    0x22  Code  Gb  sstream.o [11]
+SOCK_check_addr         0x000343c5    0x1c  Code  Gb  sdgram.o [11]
+SOCK_check_valid        0x000343ad    0x18  Code  Gb  sdgram.o [11]
+SOCK_select_activity    0x0002ba01    0x3a  Code  Gb  sosel.o [11]
+SOCK_select_block       0x0002ba3b    0x3c  Code  Gb  sosel.o [11]
+SOCK_select_expire      0x0002ba79    0x20  Code  Gb  sosel.o [11]
+SOCK_select_unblock     0x0002ba99    0x2e  Code  Gb  sosel.o [11]
+SOCK_selectset          0x0002bb45    0x6c  Code  Gb  sosel.o [11]
+SOL_TCP_CALL            0x0000c144     0x8  Data  Gb  sotcp.o [11]
+SOL_TCP_getsockopt      0x00039c9d    0x1e  Code  Gb  sotcp.o [11]
+SOL_TCP_setsockopt      0x00039cbb    0x18  Code  Gb  sotcp.o [11]
+SSLCert                 0x00038a90  0x11b2  Data  Gb  CA_ROOT.pem [1]
+SSL_CtxResourceFree     0x00018c5f    0x3e  Code  Gb  internal.o [4]
+SSL_ResourceFree        0x000192bf    0xd6  Code  Gb  internal.o [4]
+SSL_hmac                0x0001a9c7   0x152  Code  Lc  internal.o [4]
+SendAlert               0x0001b32b    0xc4  Code  Gb  internal.o [4]
+SendBuffered            0x000194f9    0x80  Code  Gb  internal.o [4]
+SendCertificate         0x0001af31   0x108  Code  Gb  internal.o [4]
+SendCertificateRequest  0x0001b039   0x11e  Code  Gb  internal.o [4]
+SendCertificateVerify   0x0001c7ad   0x1ac  Code  Gb  internal.o [4]
+SendChangeCipher        0x0001a95d    0x60  Code  Gb  internal.o [4]
+SendClientHello         0x0001c135   0x1dc  Code  Gb  internal.o [4]
+SendClientKeyExchange   0x0001c559   0x24c  Code  Gb  internal.o [4]
+SendData                0x0001b157    0xea  Code  Gb  internal.o [4]
+SendFinished            0x0001ae4d    0xdc  Code  Gb  internal.o [4]
+SendServerHello         0x0001c963   0x14c  Code  Gb  internal.o [4]
+SendServerHelloDone     0x0001d55b    0xc2  Code  Gb  internal.o [4]
+SendServerKeyExchange   0x0001caaf    0xce  Code  Gb  internal.o [4]
+SessionCache            0x70040148   0xec8  Data  Lc  ssl.o [4]
+SetAlgoID               0x0001e64f   0x128  Code  Gb  asn.o [4]
+SetCipherSpecs          0x00029965   0x294  Code  Gb  keys.o [4]
+SetErrorString          0x0001c0dd    0x16  Code  Gb  internal.o [4]
+SetKeys                 0x00029c01   0x1a4  Code  Lc  keys.o [4]
+SetLED_Err              0x00011b27     0x4  Code  Gb  TestPin_think.o [2]
+SetLED_FW               0x00011b09     0x4  Code  Gb  TestPin_think.o [2]
+SetLength               0x0001e5f7    0x58  Code  Gb  asn.o [4]
+Sha256Final             0x00024ff3    0xc6  Code  Gb  sha256.o [4]
+Sha256Update            0x00024f85    0x6e  Code  Gb  sha256.o [4]
+ShaFinal                0x00024b55    0xb6  Code  Gb  sha.o [4]
+ShaUpdate               0x00024af7    0x5e  Code  Gb  sha.o [4]
+ShrinkOutputBuffer      0x000194cd    0x2c  Code  Gb  internal.o [4]
+Spbox                   0x00028344   0x800  Data  Lc  des3.o [4]
+StoreKeys               0x00029da5    0x92  Code  Gb  keys.o [4]
+TCP4_Service_packet     0x0002f51b   0x196  Code  Gb  tcp.o [11]
+TCPIP_Event_add         0x0002c53d    0x30  Code  Gb  timer.o [11]
+TCPIP_Event_cancel      0x0002c56d    0x24  Code  Gb  timer.o [11]
+TCPIP_Event_head        0x70041188     0x4  Data  Gb  timer.o [11]
+TCPIP_Event_init        0x0002c535     0x8  Code  Gb  timer.o [11]
+TCPIP_Event_time        0x0002c591    0x4c  Code  Gb  timer.o [11]
+TCPIP_fake_tick         0x000343e1     0x4  Code  Lc  tcpip.o [11]
+TCPIP_task              0x000343e5   0x112  Code  Gb  tcpip.o [11]
+TCP_Advance_receive_user
+                        0x0002da15    0x18  Code  Gb  tcp_rcv.o [11]
+TCP_Advertise_receive_window
+                        0x0002da61    0x4e  Code  Gb  tcp_rcv.o [11]
+TCP_Clone_tcb           0x0002ed51   0x12a  Code  Gb  tcp.o [11]
+TCP_Close_TCB           0x0002d749    0xea  Code  Gb  tcp_clos.o [11]
+TCP_Copy_from_buffer    0x0003062b    0x7a  Code  Gb  tcp_buf.o [11]
+TCP_Copy_from_ring      0x000305d5    0x56  Code  Gb  tcp_buf.o [11]
+TCP_Copy_to_Rbuffer     0x000306a5   0x17e  Code  Gb  tcp_buf.o [11]
+TCP_Copy_to_ring        0x0003057f    0x56  Code  Gb  tcp_buf.o [11]
+TCP_Event               0x0002e431    0x20  Code  Gb  tcp.o [11]
+TCP_Free_TCB            0x0002d69d    0x5c  Code  Gb  tcp_clos.o [11]
+TCP_Init                0x0002e38d    0xa4  Code  Gb  tcp.o [11]
+TCP_Must_send_ack       0x0002d9dd    0x38  Code  Gb  tcp_rcv.o [11]
+TCP_Process_RTT_measure
+                        0x0002f759    0xc0  Code  Gb  tcp_send.o [11]
+TCP_Process_abort       0x0002d951    0x84  Code  Gb  tcp_clos.o [11]
+TCP_Process_accept      0x0002e9f5    0x92  Code  Gb  tcp.o [11]
+TCP_Process_ack         0x000302b1   0x2ce  Code  Gb  tcp_send.o [11]
+TCP_Process_bind        0x0002e4a3    0xea  Code  Gb  tcp.o [11]
+TCP_Process_close       0x0002d879    0xce  Code  Gb  tcp_clos.o [11]
+TCP_Process_create      0x0002e451    0x52  Code  Gb  tcp.o [11]
+TCP_Process_data        0x0002de15   0x23c  Code  Gb  tcp_rcv.o [11]
+TCP_Process_effective_close
+                        0x0002d833    0x46  Code  Gb  tcp_clos.o [11]
+TCP_Process_open        0x0002e58d   0x468  Code  Gb  tcp.o [11]
+TCP_Process_packet      0x0002ee7b   0x6a0  Code  Gb  tcp.o [11]
+TCP_Process_receive     0x0002dd83    0x8c  Code  Gb  tcp_rcv.o [11]
+TCP_Process_release     0x0002d6f9    0x50  Code  Gb  tcp_clos.o [11]
+TCP_Process_send        0x000300d9   0x1ce  Code  Gb  tcp_send.o [11]
+TCP_Process_signal      0x0002ea87   0x1fc  Code  Gb  tcp.o [11]
+TCP_Reply_receive       0x0002dad5    0xb6  Code  Gb  tcp_rcv.o [11]
+TCP_Return_open         0x0002eca9    0xa8  Code  Gb  tcp.o [11]
+TCP_Send_IP_packet      0x0002f819    0x34  Code  Gb  tcp_send.o [11]
+TCP_Send_keepalive      0x0002fdc1    0x64  Code  Gb  tcp_send.o [11]
+TCP_Send_packet         0x0002f84d   0x38c  Code  Gb  tcp_send.o [11]
+TCP_Send_reply_reset    0x0002fbdf   0x120  Code  Gb  tcp_send.o [11]
+TCP_Send_reset          0x0002fcff    0xc2  Code  Gb  tcp_send.o [11]
+TCP_Setup_receive       0x0002dbc5   0x1be  Code  Gb  tcp_rcv.o [11]
+TCP_Start_receiving     0x0002daaf    0x26  Code  Gb  tcp_rcv.o [11]
+TCP_Start_sending       0x0003008d    0x4c  Code  Gb  tcp_send.o [11]
+TCP_Test_done_receive   0x0002db8b    0x3a  Code  Gb  tcp_rcv.o [11]
+TCP_Tick_server         0x0002e2b7    0xd4  Code  Gb  ticker.o [11]
+TCP_Timer_advance       0x0002e1f1    0x7c  Code  Gb  ticker.o [11]
+TCP_Timer_expire        0x0002e0c5    0x22  Code  Gb  ticker.o [11]
+TCP_Timer_oneshot_max   0x0002e26d    0x4a  Code  Gb  ticker.o [11]
+TCP_Timer_remove        0x0002e0e7    0x48  Code  Gb  ticker.o [11]
+TCP_Timer_schedule      0x0002e057    0x6e  Code  Gb  ticker.o [11]
+TCP_Timer_start         0x0002e16f    0x82  Code  Gb  ticker.o [11]
+TCP_Timer_stop          0x0002e12f    0x40  Code  Gb  ticker.o [11]
+TCP_Transmit            0x0002fe25   0x268  Code  Gb  tcp_send.o [11]
+TCP_Truncate_receive_chunks
+                        0x0002da2d    0x34  Code  Gb  tcp_rcv.o [11]
+TCP_Update_send_window  0x0002f6b9    0xa0  Code  Gb  tcp_send.o [11]
+TCP_Use_ringbuffer      0x00030829    0xa2  Code  Gb  tcp_buf.o [11]
+TCP_tick                0x700411a8     0x4  Data  Gb  tcpip.o [11]
+TLS_hmac                0x00025a99    0x82  Code  Gb  tls.o [4]
+Td                      0x000267a8  0x1400  Data  Lc  aes.o [4]
+Te                      0x0000c4a4  0x1400  Data  Lc  aes.o [4]
+TimingPadVerify         0x0001a0b7   0x178  Code  Lc  internal.o [4]
+ToggleLED_Err           0x00011b33    0x12  Code  Gb  TestPin_think.o [2]
+ToggleLED_FW            0x00011b15    0x12  Code  Gb  TestPin_think.o [2]
+Transform               0x0001f887   0x620  Code  Lc  md5.o [4]
+Transform               0x00024c81   0x304  Code  Lc  sha256.o [4]
+Transform               0x00023b21   0xfb8  Code  Lc  sha.o [4]
+UDP_bind                0x00035871    0xfc  Code  Gb  udp.o [11]
+UDP_close               0x00036035    0x9e  Code  Gb  udp.o [11]
+UDP_close_internal      0x00035821    0x14  Code  Gb  udp.o [11]
+UDP_connect             0x00035977    0xe2  Code  Gb  udp.o [11]
+UDP_init                0x0003577d    0x4c  Code  Gb  udp.o [11]
+UDP_open                0x00035835    0x3a  Code  Gb  udp.o [11]
+UDP_openbind_internal   0x000357c9    0x58  Code  Gb  udp.o [11]
+UDP_process             0x00035f99    0x96  Code  Gb  udp.o [11]
+UDP_receive             0x00035a59    0x98  Code  Gb  udp.o [11]
+UDP_send                0x00035af1   0x156  Code  Gb  udp.o [11]
+UDP_send_IF             0x00035ced    0xa2  Code  Gb  udp.o [11]
+UDP_send_internal       0x00035c47    0xa6  Code  Gb  udp.o [11]
+UDP_service             0x00035d91   0x208  Code  Gb  udp.o [11]
+UDP_source              0x000360d3     0xc  Code  Gb  udp.o [11]
+UnLockMutex             0x0001d97d     0x8  Code  Gb  wc_port.o [4]
+ValidateDate            0x0001e389   0x128  Code  Gb  asn.o [4]
+VerifyClientSuite       0x0001cb7d    0x62  Code  Gb  internal.o [4]
+VerifyMac               0x0001a439   0x10c  Code  Lc  internal.o [4]
+VerifyServerSuite       0x0001cbdf   0x310  Code  Lc  internal.o [4]
+Virtual function table for BSL::CCriticalSection
+                        0x0000bf90    0x10  Data  Gb  CCriticalSection.o [2]
+Virtual function table for BSL::CThread
+                        0x0000c040    0x20  Data  Gb  CThread.o [2]
+Virtual function table for DH::CApplication
+                        0x0000bf10    0x20  Data  Gb  Application.o [2]
+Virtual function table for DH::CApplication::CButtonChecker
+                        0x0000bf30    0x20  Data  Gb  Application.o [2]
+Virtual function table for DH::CApplication::CGreenLedExecutor
+                        0x0000bf70    0x20  Data  Gb  Application.o [2]
+Virtual function table for DH::CApplication::CRedLedExecutor
+                        0x0000bf50    0x20  Data  Gb  Application.o [2]
+Virtual function table for DH::CCommandExecutor
+                        0x0000bfa0    0x20  Data  Gb  CommandExecutor.o [2]
+Virtual function table for DH::CConnection
+                        0x0000bfc0    0x20  Data  Gb  Connection.o [2]
+Virtual function table for DH::CConnectionGuard
+                        0x0000c020    0x20  Data  Gb  ConnectionGuard.o [2]
+Virtual function table for DH::CGateway
+                        0x0000c060    0x20  Data  Gb  GatewayDH.o [2]
+Virtual function table for DH::CHttpClient
+                        0x0000c080    0x10  Data  Gb  HttpClient.o [2]
+Virtual function table for DH::CHttpTask
+                        0x0000c090    0x20  Data  Gb  HttpTask.o [2]
+Virtual function table for DH::CRestProtocol
+                        0x0000c0f8    0x10  Data  Gb  REST.o [2]
+Virtual function table for DH::SecureConnection
+                        0x0000c000    0x20  Data  Gb  Connection.o [2]
+Virtual function table for DH::SimpleConnection
+                        0x0000bfe0    0x20  Data  Gb  Connection.o [2]
+Wait                    0x00011885     0xe  Code  Lc  iic.o [2]
+WaitShort               0x00011893     0xe  Code  Lc  iic.o [2]
+_BSP_sram_pool          0x7004116c     0x4  Data  Gb  init_bsp.o [5]
+_DHCP_broadcast         0x7004232c     0x1  Data  Gb  rtcsglob.o [11]
+_GenldFull              0x00021253   0x264  Code  Lc  xprintffull.o [6]
+_Getdst                 0x0002c9bd   0x13c  Code  Gb  xgetdst.o [6]
+_Gettime                0x0002c953    0x42  Code  Gb  xgettime.o [6]
+_IP_forward             0x70042329     0x1  Data  Gb  rtcsglob.o [11]
+_IsdstStr               0x70040038     0x4  Data  Gb  setlocale.o [6]
+_Isdst_olddst           0x70040030     0x4  Data  Lc  xisdst.o [6]
+_Isdst_rules            0x7004003c     0x4  Data  Gb  xisdstData.o [6]
+_LdtobFull              0x00020e51   0x3fc  Code  Lc  xprintffull.o [6]
+_LitobFull              0x00020d49   0x106  Code  Lc  xprintffull.o [6]
+_PrintfFull             0x00020755   0x580  Code  Gb  xprintffull.o [6]
+_PutcharsFull           0x000214b7    0x2e  Code  Lc  xprintffull.o [6]
+_RTCSPCB_grow           0x7004119c     0x4  Data  Gb  rtcsglob.o [11]
+_RTCSPCB_init           0x70042568     0x4  Data  Gb  rtcsglob.o [11]
+_RTCSPCB_max            0x7004256c     0x4  Data  Gb  rtcsglob.o [11]
+_RTCSQUEUE_base         0x70042564     0x4  Data  Gb  rtcsglob.o [11]
+_RTCSTASK_priority      0x70042570     0x4  Data  Gb  rtcsglob.o [11]
+_RTCSTASK_stacksize     0x70042574     0x4  Data  Gb  rtcsglob.o [11]
+_RTCS_dhcp_term_timeout
+                        0x70042594     0x4  Data  Gb  rtcsglob.o [11]
+_RTCS_initialized       0x70042328     0x1  Data  Gb  rtcsglob.o [11]
+_RTCS_mem_pool          0x700411a4     0x4  Data  Gb  rtcsglob.o [11]
+_RTCS_msgpool_grow      0x70042580     0x4  Data  Gb  rtcsglob.o [11]
+_RTCS_msgpool_init      0x7004257c     0x4  Data  Gb  rtcsglob.o [11]
+_RTCS_msgpool_max       0x70042584     0x4  Data  Gb  rtcsglob.o [11]
+_RTCS_socket_part_grow  0x7004258c     0x4  Data  Gb  rtcsglob.o [11]
+_RTCS_socket_part_init  0x70042588     0x4  Data  Gb  rtcsglob.o [11]
+_RTCS_socket_part_max   0x70042590     0x4  Data  Gb  rtcsglob.o [11]
+_SOCK_select_signal     0x0002bad1    0x52  Code  Gb  sosel.o [11]
+_SProut                 0x00007a6f     0xa  Code  Gb  xsprout.o [6]
+_Stoflt                 0x0002cc29   0x1b4  Code  Gb  xstoflt.o [6]
+_Stopfx                 0x0002caf9   0x130  Code  Gb  xstopfx.o [6]
+_Stoxflt                0x0002cddd   0x1cc  Code  Gb  xstoxflt.o [6]
+_TCP_bypass_rx          0x7004232a     0x1  Data  Gb  rtcsglob.o [11]
+_TCP_bypass_tx          0x7004232b     0x1  Data  Gb  rtcsglob.o [11]
+_TCP_rto_min            0x700411a0     0x4  Data  Gb  rtcsglob.o [11]
+_Ttotm_ts               0x70040004    0x2c  Data  Lc  xttotm.o [6]
+_TzoneStr               0x70040034     0x4  Data  Gb  setlocale.o [6]
+_UDP_max_queue_size     0x70042578     0x4  Data  Gb  rtcsglob.o [11]
+__BOOT_STACK_ADDRESS {Abs}
+                        0x2000fef0           --   Gb  command line/config [3]
+__DEFAULT_INTERRUPT_STACK_SIZE {Abs}
+                        0x00000400           --   Gb  command line/config [3]
+__DEFAULT_PROCESSOR_NUMBER {Abs}
+                        0x00000001           --   Gb  command line/config [3]
+__EXTERNAL_DDR2_RAM_BASE {Abs}
+                        0x70000000           --   Gb  command line/config [3]
+__EXTERNAL_DDR2_RAM_SIZE {Abs}
+                        0x02000000           --   Gb  command line/config [3]
+__EXTERNAL_LCD_BASE {Abs}
+                        0x60000000           --   Gb  command line/config [3]
+__EXTERNAL_LCD_DC_BASE {Abs}
+                        0x60010000           --   Gb  command line/config [3]
+__EXTERNAL_LCD_SIZE {Abs}
+                        0x0001ffff           --   Gb  command line/config [3]
+__EXTERNAL_MRAM_RAM_BASE {Abs}
+                        0x60000000           --   Gb  command line/config [3]
+__EXTERNAL_MRAM_RAM_SIZE {Abs}
+                        0x00080000           --   Gb  command line/config [3]
+__EXTERNAL_MRAM_ROM_BASE {Abs}
+                        0x60000000           --   Gb  command line/config [3]
+__EXTERNAL_MRAM_ROM_SIZE {Abs}
+                        0x00000000           --   Gb  command line/config [3]
+__FLASHX_END_ADDR {Abs}
+                        0x00100000           --   Gb  command line/config [3]
+__FLASHX_SECT_SIZE {Abs}
+                        0x00001000           --   Gb  command line/config [3]
+__FLASHX_START_ADDR     0x0003b000     0x1  Data  Gb  vectors.o [5]
+__INTERNAL_FLASH_BASE {Abs}
+                        0x00000000           --   Gb  command line/config [3]
+__INTERNAL_FLASH_SIZE {Abs}
+                        0x00100000           --   Gb  command line/config [3]
+__INTERNAL_FLEXNVM_BASE {Abs}
+                        0x00000000           --   Gb  command line/config [3]
+__INTERNAL_FLEXNVM_SIZE {Abs}
+                        0x00000000           --   Gb  command line/config [3]
+__INTERNAL_SRAM_BASE {Abs}
+                        0x1fff0000           --   Gb  command line/config [3]
+__INTERNAL_SRAM_SIZE {Abs}
+                        0x00020000           --   Gb  command line/config [3]
+__KERNEL_DATA_END {Abs}
+                        0x72000000           --   Gb  command line/config [3]
+__KERNEL_DATA_START     0x71f00000          Data  Gb  kernel_symbols.o [9]
+__UNCACHED_DATA_END {Abs}
+                        0x2000fff0           --   Gb  command line/config [3]
+__UNCACHED_DATA_START   0x1fff0000     0x1  Data  Gb  vectors.o [5]
+__VECTOR_TABLE_RAM_START {Abs}
+                        0x1fff0000           --   Gb  command line/config [3]
+__VECTOR_TABLE_ROM_START {Abs}
+                        0x00004000           --   Gb  command line/config [3]
+__aeabi_cdcmpeq         0x0000b081          Code  Gb  DblCmpEq.o [8]
+__aeabi_cdcmple         0x0000b0dd          Code  Gb  DblCmpLe.o [8]
+__aeabi_cdrcmple        0x0000b0ad          Code  Gb  DblCmpGe.o [8]
+__aeabi_d2f             0x0002c5f1          Code  Gb  DblToFlt.o [8]
+__aeabi_d2iz            0x0000b399          Code  Gb  DblToI32.o [8]
+__aeabi_d2uiz           0x0000b3c5          Code  Gb  DblToI32.o [8]
+__aeabi_dadd            0x0000b2b1          Code  Gb  DblAdd.o [8]
+__aeabi_ddiv            0x0000b5a1          Code  Gb  DblDiv.o [8]
+__aeabi_dmul            0x0000b10d          Code  Gb  DblMul.o [8]
+__aeabi_dsub            0x0000b421          Code  Gb  DblSub.o [8]
+__aeabi_errno_addr      0x0000b0a1     0x6  Code  Gb  errno.o [6]
+__aeabi_f2d             0x0002b9b1          Code  Gb  FltToDbl.o [8]
+__aeabi_i2d             0x0000b3f1          Code  Gb  I32ToDbl.o [8]
+__aeabi_ldiv0           0x00009f99          Code  Gb  I64DivZer.o [10]
+__aeabi_ldivmod         0x00008a81          Code  Gb  I64DivMod.o [10]
+__aeabi_memclr          0x00006edd          Code  Gb  ABImemclr.o [10]
+__aeabi_memclr4         0x00007f6d          Code  Gb  ABImemclr4.o [10]
+__aeabi_memset          0x00007a79          Code  Gb  ABImemset.o [10]
+__aeabi_memset4         0x00008799          Code  Gb  ABImemset48.o [10]
+__aeabi_memset8         0x00008799          Code  Gb  ABImemset48.o [10]
+__aeabi_ui2d            0x0000b405          Code  Gb  I32ToDbl.o [8]
+__aeabi_uldivmod        0x00008ac5          Code  Gb  I64DivMod.o [10]
+__boot                  0x00004481          Code  Gb  boot.o [9]
+__cmain                 0x000073a9          Code  Gb  cmain.o [10]
+__cxa_pure_virtual      0x00039e6d     0x4  Code  Gb  xpurevirtual.o [6]
+__exit                  0x00008a75          Code  Gb  XXexit.o [10]
+__get_MSP               0x00007945          Code  Gb  dispatch.o [9]
+__get_PSP               0x0000793f          Code  Gb  dispatch.o [9]
+__get_PSR               0x00007951          Code  Gb  dispatch.o [9]
+__getzone               0x0002c949     0x6  Code  Gb  getzone.o [6]
+__gmtime32              0x0002b87d     0xa  Code  Gb  gmtime.o [6]
+__iar_Daysto32          0x0002c3ad    0x3a  Code  Gb  xttotm.o [6]
+__iar_Dint              0x0000b003    0x7e  Code  Gb  xdint.o [8]
+__iar_Dnorm             0x0000afc1    0x42  Code  Gb  xdnorm.o [8]
+__iar_Dscale            0x0000bba1   0x114  Code  Gb  xdscale.o [8]
+__iar_Dtentox           0x0000bd15   0x13e  Code  Gb  xdtento.o [8]
+__iar_Dtest             0x0000bb61    0x30  Code  Gb  xdtest.o [8]
+__iar_Dunscale          0x0000beb9    0x56  Code  Gb  xdunscal.o [8]
+__iar_Errno             0x70040000     0x4  Data  Gb  errno.o [6]
+__iar_Exp               0x0000b899   0x2be  Code  Gb  xexp.o [8]
+__iar_Isdst32           0x0002c681   0x134  Code  Gb  xisdst.o [6]
+__iar_Logpoly           0x0000b7e9    0x76  Code  Gb  xlog.o [8]
+__iar_Memchr            0x0002b949          Code  Gb  memchr.o [10]
+__iar_Memset            0x00007a79          Code  Gb  ABImemset.o [10]
+__iar_Memset4_word      0x000087a1          Code  Gb  ABImemset48.o [10]
+__iar_Memset8_word      0x000087a1          Code  Gb  ABImemset48.o [10]
+__iar_Memset_word       0x00007a81          Code  Gb  ABImemset.o [10]
+__iar_Stod              0x0002c919     0x4  Code  Gb  xstod.o [8]
+__iar_Stodx             0x0002c7b5   0x14e  Code  Gb  xstod.o [8]
+__iar_Strchr            0x000153c1          Code  Gb  strchr.o [10]
+__iar_Strstr            0x000229c9    0x2c  Code  Gb  strstr.o [6]
+__iar_Ttotm32           0x0002c3e7   0x112  Code  Gb  xttotm.o [6]
+__iar_TzoneStr_init     0x0002c91d    0x24  Code  Gb  setlocale.o [6]
+__iar_d2uiz             0x0000b3d1          Code  Gb  DblToI32.o [8]
+__iar_dadd              0x0000b2c5          Code  Gb  DblAdd.o [8]
+__iar_data_init3        0x00007b01    0x28  Code  Gb  data_init.o [10]
+__iar_dlib_perthread_access
+                        0x0000bb5f     0x2  Code  Gb  xtls.o [6]
+__iar_dsub              0x0000b435          Code  Gb  DblSub.o [8]
+__iar_dsubStart         0x0000b447          Code  Gb  DblSub.o [8]
+__iar_floor             0x0001541d          Code  Gb  floor.o [8]
+__iar_floorl            0x0001541d          Code  Gb  floor.o [8]
+__iar_init_vfp          0x00007385          Code  Gb  fpinit_M.o [8]
+__iar_modf              0x0002b8a1          Code  Gb  modf.o [8]
+__iar_modfl             0x0002b8a1          Code  Gb  modf.o [8]
+__iar_packbits_init3    0x00039e93    0xb0  Code  Gb  packbits_init.o [10]
+__iar_program_start     0x00005755          Code  Gb  cstartup_M.o [10]
+__iar_strcmp            0x00021579          Code  Gb  strcmp_unaligned.o [10]
+__iar_ui2d              0x0000b409          Code  Gb  I32ToDbl.o [8]
+__iar_unaligned___aeabi_memcpy
+                        0x000087d5          Code  Gb  ABImemcpy_unaligned.o [10]
+__iar_unaligned___aeabi_memcpy4
+                        0x000087f5          Code  Gb  ABImemcpy_unaligned.o [10]
+__iar_unaligned___aeabi_memcpy8
+                        0x000087f5          Code  Gb  ABImemcpy_unaligned.o [10]
+__iar_unaligned___aeabi_memmove
+                        0x00025b89          Code  Gb  ABImemmove_unaligned.o [10]
+__iar_unaligned___aeabi_memmove4
+                        0x00025b89          Code  Gb  ABImemmove_unaligned.o [10]
+__iar_unaligned___aeabi_memmove8
+                        0x00025b89          Code  Gb  ABImemmove_unaligned.o [10]
+__iar_unaligned_memcmp  0x0001f801          Code  Gb  memcmp_unaligned.o [10]
+__iar_unaligned_strcmp  0x00021579          Code  Gb  strcmp_unaligned.o [10]
+__iar_unaligned_strcpy  0x00013e99          Code  Gb  strcpy_unaligned.o [10]
+__iar_unaligned_strncpy
+                        0x000251b9          Code  Gb  strncpy_unaligned.o [10]
+__iar_vfp_floor         0x0001540d          Code  Gb  floor.o [8]
+__iar_vfp_floorl        0x0001540d          Code  Gb  floor.o [8]
+__iar_vfp_modf          0x0002b889          Code  Gb  modf.o [8]
+__iar_vfp_modfl         0x0002b889          Code  Gb  modf.o [8]
+__iar_vfp_pow           0x0000ab83    0x18  Code  Gb  pow.o [8]
+__iar_vfp_strtod        0x0002c5e1     0xe  Code  Gb  strtod.o [8]
+__iar_zero_init3        0x00007adf    0x22  Code  Gb  zero_init3.o [10]
+__low_level_init        0x000044e5     0xa  Code  Gb  comp.o [9]
+__pe_initialize_hardware
+                        0x00005c85   0x15a  Code  Gb  bsp_cm.o [5]
+__psp_ticks_to_milliseconds
+                        0x00008645    0x92  Code  Lc  psp_tims.o [9]
+__set_MSP               0x0000794b          Code  Gb  dispatch.o [9]
+__vector_table          0x00004000   0x400  Data  Gb  vectors.o [5]
+_bsp_ddr_setup          0x00004521   0x176  Code  Gb  init_hw.o [5]
+_bsp_dma_devif_list     0x0000c3a0    0x18  Data  Gb  init_dma.o [5]
+_bsp_edma_enable        0x00037b81    0x24  Code  Gb  edma_kinetisf.o [5]
+_bsp_enet_io_init       0x00005f2d    0x4c  Code  Gb  init_gpio.o [5]
+_bsp_esdhc0_init        0x0000c3b8     0xc  Data  Gb  init_esdhc.o [5]
+_bsp_esdhc_io_init      0x00005f19    0x14  Code  Gb  init_gpio.o [5]
+_bsp_get_clock          0x00005e33    0x24  Code  Gb  bsp_cm.o [5]
+_bsp_get_clock_configuration
+                        0x00005e31     0x2  Code  Gb  bsp_cm.o [5]
+_bsp_get_edma_done_vectors
+                        0x00037b65     0xe  Code  Gb  edma_kinetisf.o [5]
+_bsp_get_edma_error_vectors
+                        0x00037b73     0xe  Code  Gb  edma_kinetisf.o [5]
+_bsp_get_esdhc_base_address
+                        0x0000a55d     0xa  Code  Gb  esdhc_mk70.o [5]
+_bsp_get_esdhc_vector   0x0000a56d     0xa  Code  Gb  esdhc_mk70.o [5]
+_bsp_get_hwticks        0x00008a21    0x12  Code  Gb  init_bsp.o [5]
+_bsp_gpio_io_init       0x00005f79    0x30  Code  Gb  init_gpio.o [5]
+_bsp_init               0x000089cb    0x50  Code  Gb  init_bsp.o [5]
+_bsp_initialize_hardware
+                        0x00005f0d     0x2  Code  Gb  bsp_cm.o [5]
+_bsp_iodebug_init       0x0000c3c4     0xc  Data  Gb  init_iodebug.o [5]
+_bsp_low_level_init     0x00005f0b     0x2  Code  Gb  bsp_cm.o [5]
+_bsp_osc_autotrim       0x00005ef5    0x16  Code  Gb  bsp_cm.o [5]
+_bsp_pre_init           0x000088f5    0xd6  Code  Gb  init_bsp.o [5]
+_bsp_set_clock_configuration
+                        0x00005e19    0x18  Code  Gb  bsp_cm.o [5]
+_bsp_systimer_callback  0x00008a1d     0x4  Code  Gb  init_bsp.o [5]
+_bsp_watchdog_disable   0x000044fd    0x24  Code  Gb  init_hw.o [5]
+_call_main              0x000073b5          Code  Gb  cmain.o [10]
+_cfm                    0x00004400    0x10  Data  Gb  vectors.o [5]
+_dcache_enable          0x00008e09     0x6  Code  Gb  cache.o [9]
+_dcache_flush_line      0x00008e2b     0x4  Code  Gb  cache.o [9]
+_dcache_flush_mlines    0x00008e47    0x16  Code  Gb  cache.o [9]
+_dcache_invalidate_line
+                        0x00008e0f     0x6  Code  Gb  cache.o [9]
+_dcache_invalidate_mlines
+                        0x00008e15    0x16  Code  Gb  cache.o [9]
+_esdhc_close            0x000095e1    0x26  Code  Gb  esdhc.o [5]
+_esdhc_get_baudrate     0x00008f5d     0x8  Code  Lc  esdhc.o [5]
+_esdhc_get_baudrate_low
+                        0x00008f43    0x1a  Code  Lc  esdhc.o [5]
+_esdhc_get_card_type    0x0000925d   0x214  Code  Lc  esdhc.o [5]
+_esdhc_init             0x00008f77    0xa4  Code  Lc  esdhc.o [5]
+_esdhc_install          0x00009471    0xde  Code  Gb  esdhc.o [5]
+_esdhc_ioctl            0x00009609   0x26e  Code  Gb  esdhc.o [5]
+_esdhc_is_running       0x00008f65    0x12  Code  Lc  esdhc.o [5]
+_esdhc_isr              0x00009bbd   0x10c  Code  Lc  esdhc.o [5]
+_esdhc_open             0x000095a5    0x3a  Code  Gb  esdhc.o [5]
+_esdhc_read             0x000098bd   0x17a  Code  Gb  esdhc.o [5]
+_esdhc_send_command     0x00009021   0x236  Code  Lc  esdhc.o [5]
+_esdhc_set_baudrate     0x00008f09    0x3a  Code  Lc  esdhc.o [5]
+_esdhc_set_baudrate_low
+                        0x00008e8d    0x7c  Code  Lc  esdhc.o [5]
+_esdhc_uninstall        0x00009555    0x4e  Code  Gb  esdhc.o [5]
+_esdhc_write            0x00009a39   0x168  Code  Gb  esdhc.o [5]
+_exit                   0x000083d5          Code  Gb  cexit.o [10]
+_fp_exptmod             0x0002b085    0xf2  Code  Lc  tfm.o [4]
+_icache_enable          0x00008e5d     0x4  Code  Gb  cache.o [9]
+_int_default_isr        0x000061ed    0x54  Code  Gb  int.o [9]
+_int_disable            0x00006241    0x1e  Code  Gb  int.o [9]
+_int_enable             0x0000625f    0x2e  Code  Gb  int.o [9]
+_int_get_default_isr    0x0000628d     0xa  Code  Gb  int.o [9]
+_int_get_isr            0x00006297    0x56  Code  Gb  int.o [9]
+_int_get_isr_data       0x000062ed    0x56  Code  Gb  int.o [9]
+_int_init               0x00006443    0x6e  Code  Gb  int.o [9]
+_int_install_isr        0x00006343    0xfa  Code  Gb  int.o [9]
+_int_kernel_isr         0x000077dd          Code  Gb  dispatch.o [9]
+_int_set_vector_table   0x00008d2d     0xc  Code  Gb  int_vtab.o [9]
+_io_cvt                 0x000200a9   0x24e  Code  Gb  io_fp.o [9]
+_io_debug_buffer_flush  0x00009ed5    0x16  Code  Gb  iodebug.o [5]
+_io_debug_close         0x00009d8d    0x3a  Code  Gb  iodebug.o [5]
+_io_debug_install       0x00009cc9    0x58  Code  Gb  iodebug.o [5]
+_io_debug_ioctl         0x00009e95    0x40  Code  Gb  iodebug.o [5]
+_io_debug_itm_write_char
+                        0x00009f39    0x2c  Code  Gb  iodebug.o [5]
+_io_debug_open          0x00009d49    0x44  Code  Gb  iodebug.o [5]
+_io_debug_read          0x00009dc9    0x46  Code  Gb  iodebug.o [5]
+_io_debug_semi_buffer_flush
+                        0x00009eeb    0x1c  Code  Gb  iodebug.o [5]
+_io_debug_semi_buffer_write
+                        0x00009f07    0x32  Code  Gb  iodebug.o [5]
+_io_debug_semi_read_char
+                        0x00004471          Code  Gb  iodebug_asm.o [5]
+_io_debug_semi_write_char
+                        0x00004451          Code  Gb  iodebug_asm.o [5]
+_io_debug_semi_write_string
+                        0x00004461          Code  Gb  iodebug_asm.o [5]
+_io_debug_uninstall     0x00009d21    0x28  Code  Gb  iodebug.o [5]
+_io_debug_write         0x00009e11    0x84  Code  Gb  iodebug.o [5]
+_io_dev_install_ext     0x0000a579    0xd0  Code  Gb  io_instx.o [9]
+_io_doprint             0x00014917   0x910  Code  Gb  io_dopr.o [9]
+_io_doprint_prt         0x0001522d    0xa8  Code  Gb  io_dopr.o [9]
+_io_doprint_prt64       0x000152dd    0xd0  Code  Gb  io_dopr.o [9]
+_io_dtoa                0x00020373    0x3c  Code  Gb  io_fp.o [9]
+_io_dtoe                0x000203af    0xb2  Code  Gb  io_fp.o [9]
+_io_dtof                0x00020461    0xe2  Code  Gb  io_fp.o [9]
+_io_dtog                0x00020549   0x20a  Code  Gb  io_fp.o [9]
+_io_fopen               0x0000a649    0x8c  Code  Gb  io_fopen.o [9]
+_io_fputc               0x00039cd9    0x30  Code  Gb  io_fputc.o [9]
+_io_get_handle          0x00015559    0x40  Code  Gb  io_ghand.o [9]
+_io_inf_or_nan          0x00020309    0x6a  Code  Lc  io_fp.o [9]
+_io_init                0x00008de5    0x24  Code  Gb  io_init.o [9]
+_io_mputc               0x000148a5    0x32  Code  Lc  io_dopr.o [9]
+_io_printf              0x00011b6d    0x28  Code  Gb  io_pntf.o [9]
+_io_putstr              0x000148d7    0x40  Code  Lc  io_dopr.o [9]
+_io_scanline            0x0002bbb1   0x45c  Code  Gb  io_scanl.o [9]
+_io_scanline_base_convert
+                        0x0002c093    0x32  Code  Gb  io_scanl.o [9]
+_io_scanline_format_ignore_white_space
+                        0x0002c05f    0x34  Code  Gb  io_scanl.o [9]
+_io_scanline_ignore_white_space
+                        0x0002c021    0x3e  Code  Gb  io_scanl.o [9]
+_io_scanline_is_hex_digit
+                        0x0002c0d3    0x1c  Code  Gb  io_scanl.o [9]
+_io_scanline_is_octal_digit
+                        0x0002c0c5     0xe  Code  Gb  io_scanl.o [9]
+_io_serial_default_init
+                        0x00009f6d    0x2c  Code  Gb  io_sinit.o [5]
+_io_sprintf             0x000104bd    0x26  Code  Gb  io_spr.o [9]
+_io_sputc               0x000104e5     0xa  Code  Gb  io_spr.o [9]
+_io_sscanf              0x00022a17    0x10  Code  Gb  io_sscan.o [9]
+_kinetis_mpu_disable    0x00008d3d     0xa  Code  Gb  kinetis_mpu.o [9]
+_klog_block_internal    0x00006067    0x4c  Code  Gb  klog.o [9]
+_klog_context_switch_internal
+                        0x000060ff    0x54  Code  Gb  klog.o [9]
+_klog_isr_end_internal  0x000061a5    0x42  Code  Gb  klog.o [9]
+_klog_isr_start_internal
+                        0x00006153    0x50  Code  Gb  klog.o [9]
+_klog_log               0x00005ff9    0x6e  Code  Gb  klog.o [9]
+_klog_yield_internal    0x000060b3    0x4c  Code  Gb  klog.o [9]
+_lwevent_clear          0x0000a219    0x84  Code  Gb  lwevent.o [9]
+_lwevent_create         0x0000a115     0x4  Code  Gb  lwevent.o [9]
+_lwevent_create_internal
+                        0x0000a04d    0xc8  Code  Gb  lwevent.o [9]
+_lwevent_destroy        0x0000a215     0x4  Code  Gb  lwevent.o [9]
+_lwevent_destroy_internal
+                        0x0000a119    0xfc  Code  Gb  lwevent.o [9]
+_lwevent_get_signalled  0x0000a29d    0x4e  Code  Gb  lwevent.o [9]
+_lwevent_set            0x0000a2eb   0x114  Code  Gb  lwevent.o [9]
+_lwevent_wait_internal  0x0000a3ff    0xc0  Code  Gb  lwevent.o [9]
+_lwevent_wait_ticks     0x0000a4bf    0x90  Code  Gb  lwevent.o [9]
+_lwlog_write            0x000075eb    0x52  Code  Gb  lwlog.o [9]
+_lwlog_write_internal   0x0000752d    0xbe  Code  Gb  lwlog.o [9]
+_lwsem_create           0x00007043     0x6  Code  Gb  lwsem.o [9]
+_lwsem_create_hidden    0x00007049     0x6  Code  Gb  lwsem.o [9]
+_lwsem_create_internal  0x00006f91    0xb2  Code  Gb  lwsem.o [9]
+_lwsem_destroy          0x00007135     0x4  Code  Gb  lwsem.o [9]
+_lwsem_destroy_internal
+                        0x0000704f    0xe0  Code  Gb  lwsem.o [9]
+_lwsem_poll             0x00007139    0x88  Code  Gb  lwsem.o [9]
+_lwsem_post             0x000071c1    0xc2  Code  Gb  lwsem.o [9]
+_lwsem_wait             0x00007289    0xe0  Code  Gb  lwsem.o [9]
+_main                   0x000073bf          Code  Gb  cmain.o [10]
+_mem_alloc              0x000047cd    0x72  Code  Gb  mem.o [9]
+_mem_alloc_at           0x0000483f    0x74  Code  Gb  mem.o [9]
+_mem_alloc_at_internal  0x0000533d   0x238  Code  Gb  mem.o [9]
+_mem_alloc_from         0x000048c7    0x6a  Code  Gb  mem.o [9]
+_mem_alloc_internal     0x000051a1   0x19c  Code  Gb  mem.o [9]
+_mem_alloc_internal_align
+                        0x00005575   0x1be  Code  Gb  mem.o [9]
+_mem_alloc_system       0x00004ed7    0x6e  Code  Gb  mem.o [9]
+_mem_alloc_system_align
+                        0x00004f4b    0x78  Code  Gb  mem.o [9]
+_mem_alloc_system_from  0x00004e6b    0x6c  Code  Gb  mem.o [9]
+_mem_alloc_system_zero  0x00005123    0x7e  Code  Gb  mem.o [9]
+_mem_alloc_system_zero_from
+                        0x000050a9    0x74  Code  Gb  mem.o [9]
+_mem_alloc_uncached     0x000048b9     0xe  Code  Gb  mem.o [9]
+_mem_alloc_zero         0x00004931    0x78  Code  Gb  mem.o [9]
+_mem_alloc_zero_from    0x000049af    0x76  Code  Gb  mem.o [9]
+_mem_check_coalesce_internal
+                        0x00004d7b    0xf0  Code  Gb  mem.o [9]
+_mem_create_pool        0x00004af9    0x96  Code  Gb  mem.o [9]
+_mem_create_pool_internal
+                        0x00004a25    0xd4  Code  Gb  mem.o [9]
+_mem_free               0x00004b8f   0x1d4  Code  Gb  mem.o [9]
+_mem_get_highwater      0x00005039     0xc  Code  Gb  mem.o [9]
+_mem_get_next_block_internal
+                        0x00005029     0xc  Code  Gb  mem.o [9]
+_mem_get_system_pool_id
+                        0x00005045     0xc  Code  Gb  mem.o [9]
+_mem_init_internal      0x00004fc3    0x60  Code  Gb  mem.o [9]
+_mem_set_type           0x00005059    0x2a  Code  Gb  mem.o [9]
+_mem_sum_ip             0x00032c19    0x34  Code  Gb  ipsum.o [9]
+_mem_test_and_set       0x00007925          Code  Gb  dispatch.o [9]
+_mem_transfer_internal  0x00005083    0x26  Code  Gb  mem.o [9]
+_mqx                    0x00007f75   0x1da  Code  Gb  mqx.o [9]
+_mqx_api_call           0x00007679          Code  Gb  dispatch.o [9]
+_mqx_exit               0x0000814f    0x2a  Code  Gb  mqx.o [9]
+_mqx_get_io_component_handle
+                        0x00008181    0x1e  Code  Gb  mqx.o [9]
+_mqx_idle_task          0x0003559d    0x44  Code  Gb  idletask.o [9]
+_mqx_init_kernel_data_internal
+                        0x000082af    0xdc  Code  Gb  mqx.o [9]
+_mqx_init_task          0x000355e1    0x5c  Code  Gb  inittask.o [9]
+_mqx_kernel_data        0x70042354     0x4  Data  Gb  mqx.o [9]
+_mqx_link_io_component_handle
+                        0x000081d5    0x66  Code  Gb  mqx.o [9]
+_mqx_set_cpu_type       0x00008179     0x8  Code  Gb  mqx.o [9]
+_mqx_set_io_component_handle
+                        0x0000819f    0x36  Code  Gb  mqx.o [9]
+_mqx_system_stack       0x70041170     0x4  Data  Gb  mqx.o [9]
+_mqx_unlink_io_component_handle
+                        0x0000823b    0x68  Code  Gb  mqx.o [9]
+_mqx_vendor             0x0000c208     0x4  Data  Gb  mqx.o [9]
+_mqx_version_number     0x0000c204     0x4  Data  Gb  mqx.o [9]
+_mqx_zero_tick_struct   0x0000c1f8     0xc  Data  Gb  mqx.o [9]
+_msg_alloc              0x00018125   0x128  Code  Gb  msg.o [9]
+_msg_cleanup            0x000184f1    0xb0  Code  Gb  msg.o [9]
+_msg_create_component   0x0001824d   0x1c2  Code  Gb  msg.o [9]
+_msg_free               0x00018415    0xda  Code  Gb  msg.o [9]
+_msgpool_add_internal   0x00017fe7    0x94  Code  Gb  msgpool.o [9]
+_msgpool_create         0x00017e87    0x5e  Code  Gb  msgpool.o [9]
+_msgpool_create_internal
+                        0x00017ee5   0x102  Code  Gb  msgpool.o [9]
+_msgpool_destroy        0x00017d99    0xee  Code  Gb  msgpool.o [9]
+_msgq_get_id            0x00017685    0x1e  Code  Gb  msgq.o [9]
+_msgq_insert_message_internal
+                        0x00017d21    0x74  Code  Gb  msgq.o [9]
+_msgq_open              0x000176a3    0x5a  Code  Gb  msgq.o [9]
+_msgq_open_internal     0x000176fd    0xd2  Code  Gb  msgq.o [9]
+_msgq_receive           0x000177cf    0xa6  Code  Gb  msgq.o [9]
+_msgq_receive_internal  0x00017875   0x208  Code  Gb  msgq.o [9]
+_msgq_send              0x00017a81    0x54  Code  Gb  msgq.o [9]
+_msgq_send_blocked_internal
+                        0x00017ad5    0x52  Code  Gb  msgq.o [9]
+_msgq_send_internal     0x00017b2d   0x1ee  Code  Gb  msgq.o [9]
+_mutatr_init            0x0000fe09    0x7c  Code  Gb  mutex.o [9]
+_mutex_cleanup          0x00010371    0x46  Code  Gb  mutex.o [9]
+_mutex_create_component
+                        0x0000fe85    0xb6  Code  Gb  mutex.o [9]
+_mutex_destroy          0x0000ff49   0x12c  Code  Gb  mutex.o [9]
+_mutex_init             0x00010075   0x146  Code  Gb  mutex.o [9]
+_mutex_lock             0x000101c1   0x1aa  Code  Gb  mutex.o [9]
+_mutex_unlock           0x000103b7    0xe0  Code  Gb  mutex.o [9]
+_nvic_int_disable       0x0000a021    0x16  Code  Gb  nvic.o [9]
+_nvic_int_enable        0x0000a00b    0x16  Code  Gb  nvic.o [9]
+_nvic_int_init          0x00009fad    0x5e  Code  Gb  nvic.o [9]
+_partition_alloc_internal
+                        0x00022a29    0xe0  Code  Gb  partition.o [9]
+_partition_alloc_system
+                        0x00022fa9    0x50  Code  Gb  partition.o [9]
+_partition_cleanup      0x00023001    0x80  Code  Gb  partition.o [9]
+_partition_create       0x00022c61    0xdc  Code  Gb  partition.o [9]
+_partition_create_component
+                        0x00022b09    0xea  Code  Gb  partition.o [9]
+_partition_create_internal
+                        0x00022bf3    0x6e  Code  Gb  partition.o [9]
+_partition_destroy      0x00022d43   0x11e  Code  Gb  partition.o [9]
+_partition_extend_internal
+                        0x00022e61    0x52  Code  Gb  partition.o [9]
+_partition_free         0x00022eb3    0xf6  Code  Gb  partition.o [9]
+_pend_svc               0x0000770b          Code  Gb  dispatch.o [9]
+_psp_add_element_to_array
+                        0x00008c3f    0x32  Code  Gb  psp_mat3.o [9]
+_psp_add_ticks          0x00007f29    0x44  Code  Gb  psp_tiad.o [9]
+_psp_build_float_context
+                        0x00007a3d    0x32  Code  Gb  stack_bu.o [9]
+_psp_build_stack_frame  0x000079d5    0x64  Code  Gb  stack_bu.o [9]
+_psp_div_128_by_32      0x00008c71    0xa4  Code  Gb  psp_mat2.o [9]
+_psp_exception_return   0x000078af          Code  Gb  dispatch.o [9]
+_psp_init_readyqs       0x0000888b    0x5e  Code  Gb  sc_irdyq.o [9]
+_psp_int_init           0x00008d1b    0x12  Code  Gb  psp_iinit.o [9]
+_psp_int_install        0x00009f9d    0x10  Code  Gb  int_inst.o [9]
+_psp_msecs_to_ticks_quick
+                        0x0000858d    0x7c  Code  Gb  psp_mstiq.o [9]
+_psp_mul_128_by_32      0x00008bb3    0x8c  Code  Gb  psp_mat1.o [9]
+_psp_normalize_ticks    0x00008765    0x34  Code  Gb  psp_tinm.o [9]
+_psp_pop_fp_context     0x00004435          Code  Gb  support.o [9]
+_psp_push_fp_context    0x00004421          Code  Gb  support.o [9]
+_psp_save_fp_context_internal
+                        0x000078f1          Code  Gb  dispatch.o [9]
+_psp_set_kernel_disable_level
+                        0x0000884d    0x3e  Code  Gb  sc_irdyq.o [9]
+_psp_subtract_ticks     0x00008609    0x36  Code  Gb  psp_tisu.o [9]
+_psp_ticks_to_milliseconds
+                        0x000086dd     0x4  Code  Gb  psp_tims.o [9]
+_psp_ticks_to_time      0x000086e1    0x84  Code  Gb  psp_tkti.o [9]
+_queue_dequeue          0x00006f25    0x26  Code  Gb  queue.o [9]
+_queue_enqueue          0x00006eef    0x36  Code  Gb  queue.o [9]
+_queue_init             0x00006ee3     0xc  Code  Gb  queue.o [9]
+_queue_insert           0x00006f53    0x36  Code  Gb  queue.o [9]
+_sched_boost_priority_internal
+                        0x00008413    0x62  Code  Gb  sched.o [9]
+_sched_check_scheduler_internal
+                        0x00007659          Code  Gb  dispatch.o [9]
+_sched_execute_scheduler_internal
+                        0x00007675          Code  Gb  dispatch.o [9]
+_sched_get_max_priority_on_q_internal
+                        0x00008513    0x1e  Code  Gb  sched.o [9]
+_sched_insert_priorityq_internal
+                        0x000084e9    0x2a  Code  Gb  sched.o [9]
+_sched_run_internal     0x00007655          Code  Gb  dispatch.o [9]
+_sched_set_priority_internal
+                        0x00008531    0x54  Code  Gb  sched.o [9]
+_sched_start_internal   0x00007651          Code  Gb  dispatch.o [9]
+_sched_unboost_priority_internal
+                        0x00008475    0x74  Code  Gb  sched.o [9]
+_sched_yield            0x000083e1    0x32  Code  Gb  sched.o [9]
+_sleep_p3               0x00007969          Code  Gb  dispatch.o [9]
+_sleep_p3_end           0x000079af          Code  Gb  dispatch.o [9]
+_sleep_p3_loop          0x0000796b          Code  Gb  dispatch.o [9]
+_sleep_p3_loop_ram      0x70041178     0x4  Data  Gb  mqx.o [9]
+_sleep_p3_ram           0x70041174     0x4  Data  Gb  mqx.o [9]
+_sleep_p3_start         0x00007961          Code  Gb  dispatch.o [9]
+_sleep_p3_wfi           0x00007999          Code  Gb  dispatch.o [9]
+_sleep_p3_wfi_ram       0x7004117c     0x4  Data  Gb  mqx.o [9]
+_svc_handler            0x0000767f          Code  Gb  dispatch.o [9]
+_task_abort             0x000065d3     0x4  Code  Gb  task.o [9]
+_task_abort_internal    0x000064bd   0x116  Code  Gb  task.o [9]
+_task_alloc_td_internal
+                        0x00006da3    0xdc  Code  Gb  task.o [9]
+_task_block             0x0000767b          Code  Gb  dispatch.o [9]
+_task_build_internal    0x00006b29    0x66  Code  Gb  task.o [9]
+_task_check_stack       0x00006a19    0x20  Code  Gb  task.o [9]
+_task_create            0x0000669d     0x4  Code  Gb  task.o [9]
+_task_create_internal   0x000065d7    0xc6  Code  Gb  task.o [9]
+_task_destroy           0x000068ff     0x4  Code  Gb  task.o [9]
+_task_destroy_internal  0x000066a1   0x25e  Code  Gb  task.o [9]
+_task_exit_function_internal
+                        0x00006b97    0x3c  Code  Gb  task.o [9]
+_task_fill_stack_internal
+                        0x00006d2f    0x12  Code  Gb  task.o [9]
+_task_get_error         0x00006a39    0x16  Code  Gb  task.o [9]
+_task_get_error_ptr     0x00006a4f    0x16  Code  Gb  task.o [9]
+_task_get_id            0x00006a65     0xc  Code  Gb  task.o [9]
+_task_get_td            0x00006a71    0x4e  Code  Gb  task.o [9]
+_task_get_template_ptr  0x00006903     0xc  Code  Gb  task.o [9]
+_task_init_internal     0x00006bd3   0x156  Code  Gb  task.o [9]
+_task_ready             0x0000690f    0xa4  Code  Gb  task.o [9]
+_task_ready_internal    0x00006d41    0x60  Code  Gb  task.o [9]
+_task_set_error         0x00006abf    0x6a  Code  Gb  task.o [9]
+_task_set_error_td_internal
+                        0x00006e7f    0x54  Code  Gb  task.o [9]
+_task_stop_preemption   0x000069bd    0x56  Code  Gb  task.o [9]
+_task_sync_priority_internal
+                        0x00006da1     0x2  Code  Gb  task.o [9]
+_time_delay             0x00007b3d    0x84  Code  Gb  time.o [9]
+_time_delay_for         0x00007bc1    0x7e  Code  Gb  time.o [9]
+_time_delay_internal    0x00007c3f    0x6e  Code  Gb  time.o [9]
+_time_delay_until       0x00007cad    0x78  Code  Gb  time.o [9]
+_time_diff_milliseconds
+                        0x00007d3d    0x18  Code  Gb  time.o [9]
+_time_diff_ticks        0x00007d25    0x18  Code  Gb  time.o [9]
+_time_get               0x00007d9f    0x18  Code  Gb  time.o [9]
+_time_get_elapsed       0x00007d55    0x1a  Code  Gb  time.o [9]
+_time_get_elapsed_ticks
+                        0x00007d6f    0x30  Code  Gb  time.o [9]
+_time_get_hwticks       0x00007db7    0x18  Code  Gb  time.o [9]
+_time_get_hwticks_per_tick
+                        0x00007e39     0xc  Code  Gb  time.o [9]
+_time_get_resolution    0x00007ddb    0x14  Code  Gb  time.o [9]
+_time_get_ticks         0x00007def    0x3c  Code  Gb  time.o [9]
+_time_get_ticks_per_sec
+                        0x00007dcf     0xc  Code  Gb  time.o [9]
+_time_notify_kernel     0x00007e45    0xbc  Code  Gb  time.o [9]
+_time_set_hwtick_function
+                        0x00007f0b     0xe  Code  Gb  time.o [9]
+_time_set_hwticks_per_tick
+                        0x00007f19     0xa  Code  Gb  time.o [9]
+_time_set_ticks_per_sec
+                        0x00007f01     0xa  Code  Gb  time.o [9]
+abort                   0x00015553     0x6  Code  Gb  abort.o [6]
+bytebit                 0x00028324    0x20  Data  Lc  des3.o [4]
+cJSON_AddItemToArray    0x0001122d    0x18  Code  Gb  cJSON.o [2]
+cJSON_AddItemToObject   0x00011245    0x2a  Code  Gb  cJSON.o [2]
+cJSON_CreateBool        0x0001131d    0x26  Code  Gb  cJSON.o [2]
+cJSON_CreateNumber      0x00011343    0x3a  Code  Gb  cJSON.o [2]
+cJSON_CreateObject      0x000113b9    0x1c  Code  Gb  cJSON.o [2]
+cJSON_CreateString      0x0001137d    0x3c  Code  Gb  cJSON.o [2]
+cJSON_Delete            0x00010569    0x3c  Code  Gb  cJSON.o [2]
+cJSON_DetachItemFromArray
+                        0x0001126f    0x38  Code  Gb  cJSON.o [2]
+cJSON_Duplicate         0x000113d5    0xce  Code  Gb  cJSON.o [2]
+cJSON_GetArraySize      0x00011201    0x10  Code  Gb  cJSON.o [2]
+cJSON_GetErrorPtr       0x000104f1     0x8  Code  Gb  cJSON.o [2]
+cJSON_GetObjectItem     0x00011211    0x1c  Code  Gb  cJSON.o [2]
+cJSON_Parse             0x00010a89     0x6  Code  Gb  cJSON.o [2]
+cJSON_ParseWithOpts     0x00010a11    0x74  Code  Gb  cJSON.o [2]
+cJSON_PrintUnformatted  0x00010a8f     0x2  Code  Gb  cJSON.o [2]
+cJSON_ReplaceItemInArray
+                        0x000112a7    0x3c  Code  Gb  cJSON.o [2]
+cJSON_ReplaceItemInObject
+                        0x000112e3    0x3a  Code  Gb  cJSON.o [2]
+cJSON_free              0x70042338     0x4  Data  Lc  cJSON.o [2]
+cJSON_malloc            0x70042334     0x4  Data  Lc  cJSON.o [2]
+cJSON_strcasecmp        0x000104f9    0x48  Code  Lc  cJSON.o [2]
+cJSON_strdup            0x00010541    0x28  Code  Lc  cJSON.o [2]
+client                  0x00025b44     0x4  Data  Lc  tls.o [4]
+client                  0x0001af2c     0x4  Data  Lc  internal.o [4]
+count_mutex             0x700400e8    0x30  Data  Lc  ssl.o [4]
+devif_list              0x70042278     0x4  Data  Lc  dma.o [5]
+devif_list_count        0x7004227c     0x4  Data  Lc  dma.o [5]
+div                     0x0002b9a1     0xe  Code  Gb  div.o [6]
+dma_deinit              0x00008d99    0x44  Code  Gb  dma.o [5]
+dma_init                0x00008d55    0x44  Code  Gb  dma.o [5]
+dmamux_base_tab         0x700425cc     0x8  Data  Lc  edma.o [5]
+dmul                    0x0000bcb9    0x5a  Code  Lc  xdtento.o [8]
+doPRF                   0x0002575d    0xcc  Code  Lc  tls.o [4]
+edma_base_tab           0x700425c8     0x4  Data  Lc  edma.o [5]
+edma_channel_claim      0x00037669    0x7a  Code  Lc  edma.o [5]
+edma_channel_context    0x7004229c    0x80  Data  Lc  edma.o [5]
+edma_channel_release    0x000376e3    0x2e  Code  Lc  edma.o [5]
+edma_channel_reset      0x00037711    0x44  Code  Lc  edma.o [5]
+edma_channel_setup      0x00037755    0x4e  Code  Lc  edma.o [5]
+edma_channel_sgaidx     0x00037399    0x28  Code  Lc  edma.o [5]
+edma_channel_status     0x000377a3    0xce  Code  Lc  edma.o [5]
+edma_deinit             0x00037651    0x18  Code  Lc  edma.o [5]
+edma_devif              0x7004259c    0x2c  Data  Gb  edma.o [5]
+edma_done_isr           0x000373c1    0xbe  Code  Lc  edma.o [5]
+edma_done_vectors       0x0000daa4    0x40  Data  Lc  edma_kinetisf.o [5]
+edma_err_isr            0x0003747f    0x52  Code  Lc  edma.o [5]
+edma_error_vectors      0x0000dae4     0x4  Data  Lc  edma_kinetisf.o [5]
+edma_hwtcd_push         0x00037969    0x32  Code  Lc  edma.o [5]
+edma_init               0x0003763d    0x14  Code  Lc  edma.o [5]
+edma_install_isrs       0x00037531    0x88  Code  Lc  edma.o [5]
+edma_request_disable    0x00037b31    0x18  Code  Lc  edma.o [5]
+edma_request_enable     0x00037aff    0x32  Code  Lc  edma.o [5]
+edma_request_source     0x00037ad1    0x2e  Code  Lc  edma.o [5]
+edma_reset_module       0x000374d1    0x60  Code  Lc  edma.o [5]
+edma_tcd_prepare        0x00037871    0xf8  Code  Lc  edma.o [5]
+edma_transfer_submit    0x0003799b   0x136  Code  Lc  edma.o [5]
+edma_uninstall_isrs     0x000375b9    0x84  Code  Lc  edma.o [5]
+ep                      0x70042330     0x4  Data  Lc  cJSON.o [2]
+exit                    0x00007b39     0x4  Code  Gb  exit.o [6]
+firstByteMark           0x00010924     0x8  Data  Lc  cJSON.o [2]
+floor                   0x0001541d          Code  Gb  floor.o [8]
+floorl                  0x0001541d          Code  Gb  floor.o [8]
+fp_2expt                0x0002b1dd    0x36  Code  Gb  tfm.o [4]
+fp_add                  0x0002a12d    0x46  Code  Gb  tfm.o [4]
+fp_cmp                  0x0002b35b    0x2c  Code  Gb  tfm.o [4]
+fp_cmp_mag              0x0002b38d    0x42  Code  Gb  tfm.o [4]
+fp_count_bits           0x0002b6a5    0x24  Code  Gb  tfm.o [4]
+fp_div                  0x0002a59b   0x3aa  Code  Gb  tfm.o [4]
+fp_div_2                0x0002a94d    0x7a  Code  Gb  tfm.o [4]
+fp_div_2d               0x0002a9c7    0xb4  Code  Gb  tfm.o [4]
+fp_exptmod              0x0002b177    0x60  Code  Gb  tfm.o [4]
+fp_invmod               0x0002ae67   0x1e4  Code  Gb  tfm.o [4]
+fp_invmod_slow          0x0002ab6b   0x2f4  Code  Lc  tfm.o [4]
+fp_lshd                 0x0002b6c9    0x6a  Code  Gb  tfm.o [4]
+fp_mod                  0x0002aa83    0x50  Code  Gb  tfm.o [4]
+fp_mod_2d               0x0002aad3    0x98  Code  Gb  tfm.o [4]
+fp_montgomery_calc_normalization
+                        0x0002b403    0xa0  Code  Gb  tfm.o [4]
+fp_montgomery_reduce    0x0002b4a3   0x120  Code  Gb  tfm.o [4]
+fp_montgomery_setup     0x0002b3cf    0x34  Code  Gb  tfm.o [4]
+fp_mul_2                0x0002a311    0x6c  Code  Gb  tfm.o [4]
+fp_mul_2d               0x0002a417    0x8a  Code  Gb  tfm.o [4]
+fp_mul_comba            0x0002a4a1    0xfa  Code  Gb  tfm.o [4]
+fp_mul_d                0x0002a37d    0x9a  Code  Gb  tfm.o [4]
+fp_mulmod               0x0002b053    0x2c  Code  Gb  tfm.o [4]
+fp_read_unsigned_bin    0x0002b5c3    0x60  Code  Gb  tfm.o [4]
+fp_reverse              0x0002b7cf    0x22  Code  Gb  tfm.o [4]
+fp_rshb                 0x0002b733    0x36  Code  Gb  tfm.o [4]
+fp_rshd                 0x0002b769    0x66  Code  Gb  tfm.o [4]
+fp_sqr_comba            0x0002b213   0x148  Code  Gb  tfm.o [4]
+fp_sub                  0x0002a219    0x4c  Code  Gb  tfm.o [4]
+fp_to_unsigned_bin      0x0002b623    0x82  Code  Gb  tfm.o [4]
+free                    0x000044f3     0x4  Code  Gb  comp.o [9]
+g_pApp                  0x70040084     0x4  Data  Gb  DeviceHiveMain.o [2]
+getint                  0x0002c995    0x28  Code  Lc  xgetdst.o [6]
+gpio_ptr_arr            0x0000c180    0x18  Data  Lc  lwgpio_kgpio.o [5]
+hwtimer_callback_reg    0x00007519    0x14  Code  Gb  hwtimer.o [5]
+hwtimer_deinit          0x00007455    0x44  Code  Gb  hwtimer.o [5]
+hwtimer_get_modulo      0x000074f5     0x6  Code  Gb  hwtimer.o [5]
+hwtimer_get_time        0x000074fb    0x1e  Code  Gb  hwtimer.o [5]
+hwtimer_init            0x00007415    0x40  Code  Gb  hwtimer.o [5]
+hwtimer_set_freq        0x00007499    0x34  Code  Gb  hwtimer.o [5]
+hwtimer_start           0x000074d9    0x1c  Code  Gb  hwtimer.o [5]
+hwtimer_systick_deinit  0x000354f5    0x20  Code  Lc  hwtimer_systick.o [5]
+hwtimer_systick_get_time
+                        0x0003554d    0x38  Code  Lc  hwtimer_systick.o [5]
+hwtimer_systick_init    0x000354a3    0x52  Code  Lc  hwtimer_systick.o [5]
+hwtimer_systick_isr     0x00035475    0x2e  Code  Lc  hwtimer_systick.o [5]
+hwtimer_systick_set_div
+                        0x00035515    0x1e  Code  Lc  hwtimer_systick.o [5]
+hwtimer_systick_start   0x00035533     0xe  Code  Lc  hwtimer_systick.o [5]
+hwtimer_systick_stop    0x00035541     0xc  Code  Lc  hwtimer_systick.o [5]
+initRefCount            0x700400e4     0x4  Data  Lc  ssl.o [4]
+init_hardware           0x000047bd    0x10  Code  Gb  init_hw.o [5]
+internal_Pow            0x0000a701   0x478  Code  Lc  pow.o [8]
+ipcfg_add_dns_ip        0x00013577    0x40  Code  Gb  ipcfg.o [11]
+ipcfg_add_interface     0x00013531    0x46  Code  Gb  ipcfg.o [11]
+ipcfg_bind_autoip_internal_actual
+                        0x00013717    0xce  Code  Lc  ipcfg.o [11]
+ipcfg_bind_dhcp         0x000139df    0x2a  Code  Gb  ipcfg.o [11]
+ipcfg_bind_dhcp_func    0x00013809    0xf2  Code  Lc  ipcfg.o [11]
+ipcfg_bind_dhcp_internal
+                        0x00013937    0xa8  Code  Lc  ipcfg.o [11]
+ipcfg_bind_dhcp_wait    0x00013b67    0x3c  Code  Gb  ipcfg.o [11]
+ipcfg_data              0x700410ec    0x80  Data  Gb  ipcfg.o [11]
+ipcfg_del_dns_ip        0x000135b7    0x30  Code  Gb  ipcfg.o [11]
+ipcfg_dhcp_choice_func  0x00013805     0x4  Code  Lc  ipcfg.o [11]
+ipcfg_dhcp_fail_func    0x00013923    0x14  Code  Lc  ipcfg.o [11]
+ipcfg_dhcp_nak_func     0x000138fb    0x24  Code  Lc  ipcfg.o [11]
+ipcfg_dhcp_unbind_func  0x0001391f     0x4  Code  Lc  ipcfg.o [11]
+ipcfg_get_device_number
+                        0x00013511    0x20  Code  Gb  ipcfg.o [11]
+ipcfg_get_ip            0x000135e7    0x20  Code  Gb  ipcfg.o [11]
+ipcfg_init_device       0x00013ba5    0x40  Code  Gb  ipcfg.o [11]
+ipcfg_init_interface    0x00013be9    0xd4  Code  Gb  ipcfg.o [11]
+ipcfg_poll_dhcp         0x00013b1d    0x32  Code  Gb  ipcfg.o [11]
+ipcfg_poll_dhcp_internal
+                        0x00013a09   0x114  Code  Lc  ipcfg.o [11]
+ipcfg_unbind_internal_actual
+                        0x00013607   0x10a  Code  Lc  ipcfg.o [11]
+isalnum                 0x0002c0f9    0x1e  Code  Gb  isalnum.o [6]
+isdigit                 0x0002c0ef     0xa  Code  Gb  isdigit.o [6]
+key_label               0x00025b78    0x10  Data  Lc  tls.o [4]
+lmos                    0x0002c504    0x18  Data  Lc  xttotm.o [6]
+lnbias                  0x0000aba0   0x420  Data  Lc  pow.o [8]
+lower_hex_string        0x0000c1ac    0x14  Data  Lc  io_dopr.o [9]
+lwgpio_get_value        0x0001552d    0x16  Code  Gb  lwgpio_kgpio.o [5]
+lwgpio_init             0x0001547d    0x46  Code  Gb  lwgpio_kgpio.o [5]
+lwgpio_set_direction    0x000154e7    0x30  Code  Gb  lwgpio_kgpio.o [5]
+lwgpio_set_functionality
+                        0x000154cd    0x1a  Code  Gb  lwgpio_kgpio.o [5]
+lwgpio_set_value        0x00015517    0x16  Code  Gb  lwgpio_kgpio.o [5]
+main                    0x00007b29    0x10  Code  Gb  mqx_main.o [5]
+malloc                  0x000044ef     0x4  Code  Gb  comp.o [9]
+master_label            0x00025b68    0x10  Data  Lc  tls.o [4]
+memchr                  0x0002b949          Code  Gb  memchr.o [10]
+memcpy                  0x0002c117     0xc  Code  Gb  memcpy.o [6]
+memset                  0x0002c123    0x14  Code  Gb  memset.o [6]
+mos                     0x0002c51c    0x18  Data  Lc  xttotm.o [6]
+mp_add                  0x0002b80b     0xa  Code  Gb  tfm.o [4]
+mp_clear                0x0002b801     0x2  Code  Gb  tfm.o [4]
+mp_exptmod              0x0002b82d     0x2  Code  Gb  tfm.o [4]
+mp_init                 0x0002b7f1    0x10  Code  Gb  tfm.o [4]
+mp_mul                  0x0002b81f     0xa  Code  Gb  tfm.o [4]
+mp_mulmod               0x0002b829     0x4  Code  Gb  tfm.o [4]
+mp_read_unsigned_bin    0x0002b873     0xa  Code  Gb  tfm.o [4]
+mp_sub                  0x0002b815     0xa  Code  Gb  tfm.o [4]
+mp_to_unsigned_bin      0x0002b869     0xa  Code  Gb  tfm.o [4]
+mp_unsigned_bin_size    0x0002b82f     0x2  Code  Gb  tfm.o [4]
+operator delete (void *)
+                        0x0000ea79     0xa  Code  Gb  delop_0.o [7]
+operator delete[] (void *)
+                        0x000132dd     0x4  Code  Gb  delaop_0.o [7]
+operator new (unsigned int)
+                        0x0000ea85    0x24  Code  Gb  newop_0.o [7]
+operator new[] (unsigned int)
+                        0x00013e91     0x8  Code  Gb  newaop_0.o [7]
+p_hash                  0x0002565d    0xfa  Code  Lc  tls.o [4]
+parse_hex4              0x00010709    0xac  Code  Lc  cJSON.o [2]
+parse_number            0x000105a5   0x14c  Code  Lc  cJSON.o [2]
+parse_object            0x00010e77   0x138  Code  Lc  cJSON.o [2]
+parse_string            0x000107b5   0x168  Code  Lc  cJSON.o [2]
+parse_value             0x00010a95   0x142  Code  Lc  cJSON.o [2]
+pc1                     0x000282ac    0x38  Data  Lc  des3.o [4]
+pc2                     0x000282f4    0x30  Data  Lc  des3.o [4]
+pcr_reg_arr             0x7004233c    0x18  Data  Gb  lwgpio_kgpio.o [5]
+phy_ksz8041_IF          0x0000da90    0x14  Data  Gb  phy_ksz8041.o [5]
+phy_ksz8041_discover_addr
+                        0x00039d09    0x40  Code  Lc  phy_ksz8041.o [5]
+phy_ksz8041_get_link_status
+                        0x00039e13    0x5a  Code  Lc  phy_ksz8041.o [5]
+phy_ksz8041_get_speed   0x00039dd7    0x3c  Code  Lc  phy_ksz8041.o [5]
+phy_ksz8041_init        0x00039d49    0x8e  Code  Lc  phy_ksz8041.o [5]
+pows                    0x0000be70    0x48  Data  Lc  xdtento.o [8]
+print_array             0x00010d4d   0x124  Code  Lc  cJSON.o [2]
+print_object            0x00010fc5   0x234  Code  Lc  cJSON.o [2]
+print_string_ptr        0x0001092d    0xd4  Code  Lc  cJSON.o [2]
+print_value             0x00010bdd   0x152  Code  Lc  cJSON.o [2]
+pushButton              0x700400d4    0x10  Data  Lc  TestPin_think.o [2]
+rcon                    0x0000c47c    0x28  Data  Lc  aes.o [4]
+reseed                  0x70042288     0x4  Data  Lc  rtcsrand.o [11]
+rotlFixed               0x00023abd     0x8  Code  Lc  sha.o [4]
+rtcs_enet               0x0000c36c    0x14  Data  Lc  ip-e.o [11]
+rtcs_local              0x0000d8a4    0x14  Data  Lc  iplocal.o [11]
+s_fp_add                0x0002a173    0xa6  Code  Gb  tfm.o [4]
+s_fp_sub                0x0002a265    0xac  Code  Gb  tfm.o [4]
+seed                    0x70042284     0x4  Data  Lc  rtcsrand.o [11]
+server                  0x0001af28     0x4  Data  Lc  internal.o [4]
+session_mutex           0x70040118    0x30  Data  Lc  ssl.o [4]
+sprintf                 0x000153d9    0x34  Code  Gb  sprintf.o [6]
+state                   0x70042598     0x4  Data  Lc  rtcsrand.o [11]
+std::_NomemoryNothrow()
+                        0x00011b69     0x4  Code  Gb  nomemory.o [7]
+std::__iar_New_hand     0x7004231c     0x4  Data  Gb  new.o [7]
+strcat                  0x000229ad    0x1c  Code  Gb  strcat.o [6]
+strchr                  0x000153c1          Code  Gb  strchr.o [10]
+strcspn                 0x000229f5    0x22  Code  Gb  strcspn.o [6]
+strlen                  0x000114d5          Code  Gb  strlen.o [10]
+strncmp                 0x0000a6d5    0x2a  Code  Gb  strncmp.o [6]
+systick_devif           0x0000c464    0x18  Data  Gb  hwtimer_systick.o [5]
+systimer                0x70040040    0x40  Data  Gb  init_bsp.o [5]
+tls_client              0x00025b48    0x10  Data  Lc  tls.o [4]
+tls_server              0x00025b58    0x10  Data  Lc  tls.o [4]
+tolower                 0x00034071     0xc  Code  Gb  tolower.o [6]
+toolchain_startup       0x000044f7     0x4  Code  Gb  comp.o [9]
+totrot                  0x000282e4    0x10  Data  Lc  des3.o [4]
+upper_hex_string        0x0000c198    0x14  Data  Lc  io_dopr.o [9]
+xorbuf                  0x00027d15    0x3a  Code  Lc  des3.o [4]
+
+
+[1] = D:\Work\Buchi\DeviceHive-MQX\iar
+[2] = D:\Work\Buchi\DeviceHive-MQX\iar\Release\Obj
+[3] = command line
+[4] = CyaSSL-Lib.a
+[5] = bsp.a
+[6] = dl7M_tln.a
+[7] = dlpp7M_tl_nc.a
+[8] = m7M_tlv.a
+[9] = psp.a
+[10] = rt7M_tl.a
+[11] = rtcs.a
+
+  208 150 bytes of readonly  code memory
+   13 379 bytes of readonly  data memory
+    9 687 bytes of readwrite data memory
+
+Errors: none
+Warnings: 1
