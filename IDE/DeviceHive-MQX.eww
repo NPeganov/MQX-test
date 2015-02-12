@@ -8,6 +8,9 @@
     <path>$WS_DIR$\..\externals\SSL\CyaSSL\IDE\IAR-EWARM\Projects\CyaSSL-Lib\CyaSSL-Lib.ewp</path>
   </project>
   <project>
+    <path>$WS_DIR$\..\iar\DeviceHive-MQX.ewp</path>
+  </project>
+  <project>
     <path>$WS_DIR$\..\externals\MQX_4_1\mfs\build\iar\mfs_twrk70f120m\mfs_twrk70f120m.ewp</path>
   </project>
   <project>
@@ -39,6 +42,10 @@
         <project>CyaSSL-Lib</project>
         <configuration>Debug</configuration>
       </member>
+      <member>
+        <project>DeviceHive-MQX</project>
+        <configuration>Int Flash DDRData Debug</configuration>
+      </member>
     </batchDefinition>
     <batchDefinition>
       <name>DeviceHive-MQX Release</name>
@@ -61,6 +68,10 @@
       <member>
         <project>CyaSSL-Lib</project>
         <configuration>Release</configuration>
+      </member>
+      <member>
+        <project>DeviceHive-MQX</project>
+        <configuration>Int Flash DDRData Release</configuration>
       </member>
     </batchDefinition>
   </batchBuild>
